@@ -14,3 +14,4 @@ interface BlastP
   , AlignerViewOptionContainer
   , OutputFormatOptionContainer
   , AdvancedGeneralOptionContainer
+  , AdvancedClusteringAlignmentOptionContainer

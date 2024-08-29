@@ -13,3 +13,4 @@ interface RecomputeClustering
   , ClusteringGeneralOptionContainer
   , ClusteringReassignOptionContainer
   , ClusteringInputOptionContainer
+  , AdvancedClusteringAlignmentOptionContainer
