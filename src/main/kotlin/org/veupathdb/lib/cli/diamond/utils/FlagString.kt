@@ -15,24 +15,9 @@
  *
  */
 
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.utils
 
-import com.fasterxml.jackson.annotation.JsonGetter
-import com.fasterxml.jackson.annotation.JsonSetter
-import org.veupathdb.lib.cli.diamond.HeaderOption
-import org.veupathdb.lib.cli.diamond.utils.FlagString
-
-interface GeneralOutputHeaderOptionContainer {
-  /**
-   * Use header lines in tabular output format.
-   *
-   * > `--header [option]`
-   *
-   * Default: [HeaderOption.None]
-   */
-  @FlagString("header")
-  @get:JsonGetter("header")
-  @set:JsonSetter("header")
-  var header: HeaderOption
-}
-
+@Target(AnnotationTarget.PROPERTY)
+@Retention(AnnotationRetention.RUNTIME)
+@MustBeDocumented
+annotation class FlagString(val longForm: String, val shortForm: Char = '\u0000')

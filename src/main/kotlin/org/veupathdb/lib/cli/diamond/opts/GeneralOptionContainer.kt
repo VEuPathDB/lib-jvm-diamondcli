@@ -17,6 +17,9 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+import org.veupathdb.lib.cli.diamond.utils.FlagString
 import java.nio.file.Path
 
 interface GeneralOptionContainer {
@@ -34,6 +37,9 @@ interface GeneralOptionContainer {
    *
    * Default: `0`
    */
+  @FlagString("threads", 'p')
+  @get:JsonGetter("threads")
+  @set:JsonSetter("threads")
   var threads: Int
 
   /**
@@ -45,6 +51,9 @@ interface GeneralOptionContainer {
    *
    * TODO: verify whether this is mutually exclusive with [quiet]
    */
+  @FlagString("verbose", 'v')
+  @get:JsonGetter("verbose")
+  @set:JsonSetter("verbose")
   var verbose: Boolean
 
   /**
@@ -57,6 +66,9 @@ interface GeneralOptionContainer {
    *
    * TODO: how does this interact with [quiet] and [verbose]?
    */
+  @FlagString("log")
+  @get:JsonGetter("log")
+  @set:JsonSetter("log")
   var log: Boolean
 
   /**
@@ -68,6 +80,9 @@ interface GeneralOptionContainer {
    *
    * TODO: verify whether this is mutually exclusive with [verbose]
    */
+  @FlagString("quiet")
+  @get:JsonGetter("quiet")
+  @set:JsonSetter("quiet")
   var quiet: Boolean
 
   /**
@@ -77,6 +92,9 @@ interface GeneralOptionContainer {
    *
    * Default: `null`
    */
+  @FlagString("tmpdir", 't')
+  @get:JsonGetter("tmpdir")
+  @set:JsonSetter("tmpdir")
   var tempDir: Path?
 }
 

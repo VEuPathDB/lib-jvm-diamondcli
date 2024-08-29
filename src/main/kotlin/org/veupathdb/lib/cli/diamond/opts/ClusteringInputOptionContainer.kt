@@ -17,6 +17,20 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+import org.veupathdb.lib.cli.diamond.utils.FlagString
+import java.nio.file.Path
+
 interface ClusteringInputOptionContainer {
-  ("clusters", 0, "Clustering input file mapping sequences to representatives", clustering);
+  /**
+   * Clustering input file as 2-column tabular format mapping sequences to
+   * representatives.
+   *
+   * > `--clusters <path>`
+   */
+  @FlagString("clusters")
+  @get:JsonGetter("clusters")
+  @set:JsonSetter("clusters")
+  var clustersFile: Path
 }
