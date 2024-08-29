@@ -13,4 +13,6 @@ interface View
   , ViewAlignOptionContainer
 {
   var inputFile: Path
+
+  ("forwardonly", 0, "only show alignments of forward strand", forwardonly);
 }
