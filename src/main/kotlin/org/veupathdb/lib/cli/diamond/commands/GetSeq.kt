@@ -8,3 +8,6 @@ interface GetSeq
   : GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputOptionContainer
+{
+  ("seq", 0, "Space-separated list of sequence numbers to display.", seq_no);
+}
