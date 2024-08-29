@@ -8,6 +8,7 @@ interface GreedyVortexCover
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer
   , ClusteringReassignOptionContainer
+  , HiddenOptionContainer
 {
   ("centroid-out", 0, "Output file for centroids", centroid_out)
   ("edges", 0, "Input file for greedy vertex cover", edges)

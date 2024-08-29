@@ -14,3 +14,4 @@ interface ReassignClusters
   , ClusteringInputOptionContainer
   , AdvancedGeneralOptionContainer
   , AdvancedClusteringAlignmentOptionContainer
+  , HiddenOptionContainer

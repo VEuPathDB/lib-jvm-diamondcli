@@ -11,3 +11,4 @@ interface ClusterRealign
   , AlignerClusteringRealignOptionContainer
   , OutputFormatOptionContainer
   , ClusteringInputOptionContainer
+  , HiddenOptionContainer

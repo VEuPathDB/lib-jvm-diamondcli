@@ -17,3 +17,4 @@ interface BlastX
   , AdvancedClusteringAlignmentOptionContainer
   , AdvancedQueryOptionContainer
   , ViewAlignOptionContainer
+  , HiddenOptionContainer

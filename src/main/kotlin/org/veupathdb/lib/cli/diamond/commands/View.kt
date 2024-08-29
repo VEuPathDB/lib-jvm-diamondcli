@@ -11,6 +11,7 @@ interface View
   , AlignerViewOptionContainer
   , OutputFormatOptionContainer
   , ViewAlignOptionContainer
+  , HiddenOptionContainer
 {
   var inputFile: Path
 
