@@ -13,3 +13,4 @@ interface BlastX
   , AlignerSensitivityOptionContainer
   , AlignerViewOptionContainer
   , OutputFormatOptionContainer
+  , AdvancedGeneralOptionContainer

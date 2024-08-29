@@ -11,3 +11,4 @@ interface DeepClustering
   , AlignerClusteringOptionContainer
   , ClusteringGeneralOptionContainer
   , ClusteringReassignOptionContainer
+  , AdvancedGeneralOptionContainer

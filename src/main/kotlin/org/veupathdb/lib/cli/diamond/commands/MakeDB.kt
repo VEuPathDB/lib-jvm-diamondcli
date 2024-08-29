@@ -1,10 +1,11 @@
 package org.veupathdb.lib.cli.diamond.commands
 
+import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import java.nio.file.Path
 
-interface MakeDB : GeneralOptionContainer, GeneralDBOptionContainer {
+interface MakeDB : GeneralOptionContainer, GeneralDBOptionContainer, AdvancedGeneralOptionContainer {
   /**
    * Path to the input protein reference database file in FASTA format (may be
    * gzip compressed).
