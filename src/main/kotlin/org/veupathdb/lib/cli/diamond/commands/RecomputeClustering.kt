@@ -12,3 +12,4 @@ interface RecomputeClustering
   , AlignerClusteringOptionContainer
   , ClusteringGeneralOptionContainer
   , ClusteringReassignOptionContainer
+  , ClusteringInputOptionContainer
