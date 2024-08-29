@@ -15,3 +15,4 @@ interface BlastP
   , OutputFormatOptionContainer
   , AdvancedGeneralOptionContainer
   , AdvancedClusteringAlignmentOptionContainer
+  , AdvancedQueryOptionContainer

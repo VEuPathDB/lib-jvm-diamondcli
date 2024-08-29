@@ -15,3 +15,4 @@ interface BlastX
   , OutputFormatOptionContainer
   , AdvancedGeneralOptionContainer
   , AdvancedClusteringAlignmentOptionContainer
+  , AdvancedQueryOptionContainer
