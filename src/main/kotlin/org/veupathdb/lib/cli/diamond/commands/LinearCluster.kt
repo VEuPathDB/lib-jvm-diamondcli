@@ -11,3 +11,4 @@ interface LinearCluster
   , AlignerClusteringRealignOptionContainer
   , AlignerClusteringOptionContainer
   , ClusteringGeneralOptionContainer
+  , ClusteringReassignOptionContainer

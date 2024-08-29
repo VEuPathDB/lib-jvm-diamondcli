@@ -10,3 +10,4 @@ interface Cluster
   , AlignerClusteringRealignOptionContainer
   , AlignerClusteringOptionContainer
   , ClusteringGeneralOptionContainer
+  , ClusteringReassignOptionContainer
