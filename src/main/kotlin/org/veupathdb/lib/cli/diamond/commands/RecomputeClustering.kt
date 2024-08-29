@@ -10,3 +10,4 @@ interface RecomputeClustering
   , GeneralOutputOptionContainer
   , AlignerClusteringRealignOptionContainer
   , AlignerClusteringOptionContainer
+  , ClusteringGeneralOptionContainer

@@ -9,3 +9,4 @@ interface DeepClustering
   , GeneralOutputOptionContainer
   , AlignerClusteringRealignOptionContainer
   , AlignerClusteringOptionContainer
+  , ClusteringGeneralOptionContainer

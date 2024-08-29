@@ -10,3 +10,4 @@ interface LinearCluster
   , GeneralOutputOptionContainer
   , AlignerClusteringRealignOptionContainer
   , AlignerClusteringOptionContainer
+  , ClusteringGeneralOptionContainer
