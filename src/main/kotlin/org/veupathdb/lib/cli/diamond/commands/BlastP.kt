@@ -16,3 +16,4 @@ interface BlastP
   , AdvancedGeneralOptionContainer
   , AdvancedClusteringAlignmentOptionContainer
   , AdvancedQueryOptionContainer
+  , ViewAlignOptionContainer

@@ -10,6 +10,7 @@ interface View
   , GeneralOutputOptionContainer
   , AlignerViewOptionContainer
   , OutputFormatOptionContainer
+  , ViewAlignOptionContainer
 {
   var inputFile: Path
 }
