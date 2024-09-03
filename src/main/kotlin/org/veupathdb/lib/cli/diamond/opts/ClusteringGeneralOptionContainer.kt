@@ -17,10 +17,43 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
-interface ClusteringGeneralOptionContainer {
-  ("cluster-steps", 0, "Clustering steps", cluster_steps)
-  ("kmer-ranking", 0, "Rank sequences based on kmer frequency in linear stage", kmer_ranking)
-  ("round-coverage", 0, "Per-round coverage cutoffs for cascaded clustering", round_coverage)
-  ("round-approx-id", 0, "Per-round approx-id cutoffs for cascaded clustering", round_approx_id);
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
 
+interface ClusteringGeneralOptionContainer {
+  // Clustering steps
+  // `--cluster-steps`
+  // Default = ``
+  // Type = `string_vector`
+  // Config Var = `cluster_steps`
+  @get:JsonGetter("clusterSteps")
+  @set:JsonSetter("clusterSteps")
+  var clusterSteps: List<String> // TODO: what is this
+
+  // Rank sequences based on kmer frequency in linear stage
+  // `--kmer-ranking`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `kmer_ranking`
+  @get:JsonGetter("kmerRanking")
+  @set:JsonSetter("kmerRanking")
+  var kmerRanking: Boolean
+
+  // Per-round coverage cutoffs for cascaded clustering
+  // `--round-coverage`
+  // Default = ``
+  // Type = `std::vector<string>`
+  // Config Var = `round_coverage`
+  @get:JsonGetter("roundCoverage")
+  @set:JsonSetter("roundCoverage")
+  var roundCoverage: List<String> // TODO: what is this
+
+  // Per-round approx-id cutoffs for cascaded clustering
+  // `--round-approx-id`
+  // Default = ``
+  // Type = `string_vector`
+  // Config Var = `round_approx_id`
+  @get:JsonGetter("roundApproxID")
+  @set:JsonSetter("roundApproxID")
+  var roundApproxID: List<String>
 }
