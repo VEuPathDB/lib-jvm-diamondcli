@@ -17,11 +17,53 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+
 interface AlignerClusteringRealignOptionContainer {
-  ("comp-based-stats", 0, "composition based statistics mode (0-4)", comp_based_stats, 1u)
-  ("masking", 0, "masking algorithm (none, seg, tantan=default)", masking_)
-  ("soft-masking", 0, "soft masking (none=default, seg, tantan)", soft_masking)
-  ("mmseqs-compat", 0, "", mmseqs_compat)
-  ("no-block-size-limit", 0, "", no_block_size_limit);
+  // composition based statistics mode (0-4)
+  // `--comp-based-stats`
+  // Default = `1u`
+  // Type = `unsigned`
+  // Config Var = `comp_based_stats`
+  @get:JsonGetter("compBasedStats")
+  @set:JsonSetter("compBasedStats")
+  var compBasedStats: UInt // TODO: enum this?
+
+  // masking algorithm (none, seg, tantan=default)
+  // `--masking`
+  // Default = ``
+  // Type = `Option<string>` // TODO: what is this?
+  // Config Var = `masking_`
+  @get:JsonGetter("masking")
+  @set:JsonSetter("masking")
+  var masking: String
+
+  // soft masking (none=default, seg, tantan)
+  // `--soft-masking`
+  // Default = ``
+  // Type = `string`
+  // Config Var = `soft_masking`
+  @get:JsonGetter("softMasking")
+  @set:JsonSetter("softMasking")
+  var softMasking: String // TODO: enum this?
+
+  // TODO: document this
+  // `--mmseqs-compat`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `mmseqs_compat`
+  @get:JsonGetter("mmseqsCompat")
+  @set:JsonSetter("mmseqsCompat")
+  var mmseqsCompat: Boolean
+
+  // TODO: document this
+  // `--no-block-size-limit`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `no_block_size_limit`
+  @get:JsonGetter("noBlockSizeLimit")
+  @set:JsonSetter("noBlockSizeLimit")
+  var noBlockSizeLimit: Boolean
 }
 

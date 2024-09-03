@@ -17,11 +17,56 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+
 interface AdvancedClusteringAlignmentOptionContainer {
-  ("bin", 0, "number of query bins for seed search", query_bins_)
-  ("ext-chunk-size", 0, "chunk size for adaptive ranking (default=auto)", ext_chunk_size)
-  ("no-ranking", 0, "disable ranking heuristic", no_ranking)
-  ("dbsize", 0, "effective database size (in letters)", db_size)
-  ("no-auto-append", 0, "disable auto appending of DAA and DMND file extensions", no_auto_append)
-  ("tantan-minMaskProb", 0, "minimum repeat probability for masking (default=0.9)", tantan_minMaskProb, 0.9);
+  // number of query bins for seed search
+  // `--bin`
+  // `unsigned`
+  @get:JsonGetter("bins")
+  @set:JsonSetter("bins")
+  var bins: UInt
+
+  // chunk size for adaptive ranking (default=auto)
+  // `--ext-chunk-size`
+  // `size_t`
+  @get:JsonGetter("extChunkSize")
+  @set:JsonSetter("extChunkSize")
+  var extChunkSize: ULong
+
+  // disable ranking heuristic
+  // `--no-ranking` | `-`
+  // Default = `false`
+  // Type = `bool`
+  // config var = `no_ranking`
+  @get:JsonGetter("noRanking")
+  @set:JsonSetter("noRanking")
+  var noRanking: Boolean
+
+  // effective database size (in letters)
+  // `--dbsize` | `-`
+  // Default = `0`
+  // Type = `uint64_t`
+  // config var = `db_size`
+  @get:JsonGetter("dbSize")
+  @set:JsonSetter("dbSize")
+  var dbSize: ULong
+
+  // disable auto appending of DAA and DMND file extensions
+  // `--no-auto-append` | `-`
+  // Default = `false`
+  // Type = `bool`
+  // config var = `no_auto_append`
+  @get:JsonGetter("noAutoAppend")
+  @set:JsonSetter("noAutoAppend")
+  var noAutoAppend: Any
+
+  // minimum repeat probability for masking (default=0.9)
+  // `--tantan-minMaskProb` | `-`
+  // Default = `0.9`
+  // config var = `tantan_minMaskProb`
+  @get:JsonGetter("tantanMinMaskProb")
+  @set:JsonSetter("tantanMinMaskProb")
+  var tantanMinMaskProb: Double
 }

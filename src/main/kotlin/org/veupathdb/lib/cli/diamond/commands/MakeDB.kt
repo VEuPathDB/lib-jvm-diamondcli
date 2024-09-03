@@ -17,12 +17,14 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 import java.nio.file.Path
 
+@CliCommand(Command, SubCommands.MakeDB)
 interface MakeDB
   : GeneralOptionContainer
   , GeneralDBOptionContainer

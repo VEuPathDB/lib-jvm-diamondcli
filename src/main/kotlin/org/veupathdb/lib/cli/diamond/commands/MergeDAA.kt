@@ -17,11 +17,13 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 import java.nio.file.Path
 
+@CliCommand(Command, SubCommands.MergeDAA)
 interface MergeDAA : GeneralOptionContainer, GeneralOutputOptionContainer, HiddenOptionContainer {
   var inputFiles: List<Path>
 }

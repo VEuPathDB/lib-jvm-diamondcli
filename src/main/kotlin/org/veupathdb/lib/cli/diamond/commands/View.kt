@@ -17,9 +17,11 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 import java.nio.file.Path
 
+@CliCommand(Command, SubCommands.View)
 interface View
   : GeneralOptionContainer
   , GeneralDBOptionContainer

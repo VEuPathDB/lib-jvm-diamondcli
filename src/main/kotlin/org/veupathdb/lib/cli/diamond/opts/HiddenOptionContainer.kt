@@ -20,8 +20,15 @@ package org.veupathdb.lib.cli.diamond.opts
 // THIS IS ONLY USED WHEN COMPILED WITH 'EXTRA' AND IT IS UNCLEAR WHAT FLAG GOES
 // WITH WHAT COMMAND.  ADD A GENERAL WARNING TO ALL PROPERTIES IN THIS TYPE!
 interface HiddenOptionContainer {
-  ("match1", 0, "", match_file1)
-  ("match2", 0, "", match_file2)
+  // ("match1", 0, "", match_file1) // unused in 2.1.9
+  // ("match2", 0, "", match_file2) // unused in 2.1.9
+
+  /**
+   *
+   */
+  // TODO: potentially used by blastp/blastx
+  var maximumSeedFrequency: Double
+
   ("seed-freq", 0, "maximum seed frequency", max_seed_freq, -15.0)
   ("space-penalty", 0, "", space_penalty, 0.5)
   ("reverse", 0, "", reverse)

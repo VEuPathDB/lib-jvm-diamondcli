@@ -17,8 +17,10 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 
+@CliCommand(Command, SubCommands.DeepClustering)
 interface DeepClustering
   : GeneralOptionContainer
   , GeneralDBOptionContainer

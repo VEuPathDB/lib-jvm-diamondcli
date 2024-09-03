@@ -17,9 +17,11 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 
 // CLUSTER_REASSIGN
+@CliCommand(Command, SubCommands.ReassignClusters)
 interface ReassignClusters
   : GeneralOptionContainer
   , GeneralDBOptionContainer

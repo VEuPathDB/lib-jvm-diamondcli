@@ -17,9 +17,43 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+
 interface AdvancedGeneralOptionContainer {
-  ("file-buffer-size", 0, "file buffer size in bytes (default=67108864)", file_buffer_size, (size_t)67108864)
-  ("no-unlink", 0, "Do not unlink temporary files.", no_unlink)
-  ("ignore-warnings", 0, "Ignore warnings", ignore_warnings)
-  ("no-parse-seqids", 0, "Print raw seqids without parsing", no_parse_seqids);
+  // file buffer size in bytes (default=67108864)
+  // `--file-buffer-size`
+  // Default = `(size_t)67108864`
+  // Type = `size_t`
+  // Config Var = `file_buffer_size`
+  @get:JsonGetter("fileBufferSize")
+  @set:JsonSetter("fileBufferSize")
+  var fileBufferSize: ULong
+
+  // Do not unlink temporary files.
+  // `--no-unlink`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `no_unlink`
+  @get:JsonGetter("noUnlink")
+  @set:JsonSetter("noUnlink")
+  var noUnlink: Boolean
+
+  // Ignore warnings
+  // `--ignore-warnings`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `ignore_warnings`
+  @get:JsonGetter("ignoreWarnings")
+  @set:JsonSetter("ignoreWarnings")
+  var ignoreWarnings: Boolean
+
+  // Print raw seqids without parsing
+  // `--no-parse-seqids`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `no_parse_seqids`
+  @get:JsonGetter("noParseSeqIDs")
+  @set:JsonSetter("noParseSeqIDs")
+  var noParseSeqIDs: Boolean
 }

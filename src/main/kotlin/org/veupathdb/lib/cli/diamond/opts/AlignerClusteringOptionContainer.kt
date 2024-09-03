@@ -17,9 +17,43 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+
 interface AlignerClusteringOptionContainer {
-  ("evalue", 'e', "maximum e-value to report alignments (default=0.001)", max_evalue, 0.001)
-  ("motif-masking", 0, "softmask abundant motifs (0/1)", motif_masking)
-  ("approx-id", 0, "minimum approx. identity% to report an alignment/to cluster sequences", approx_min_id)
-  ("ext", 0, "Extension mode (banded-fast/banded-slow/full)", ext_);
+  // maximum e-value to report alignments (default=0.001)
+  // `--evalue` | `-e`
+  // Default = `0.001`
+  // Type = `double`
+  // Config Var = `max_evalue`
+  @get:JsonGetter("eValue")
+  @set:JsonSetter("eValue")
+  var eValue: Double
+
+  // softmask abundant motifs (0/1)
+  // `--motif-masking`
+  // Default = ``
+  // Type = `string`
+  // Config Var = `motif_masking`
+  @get:JsonGetter("motifMasking")
+  @set:JsonSetter("motifMasking")
+  var motifMasking: String
+
+  // minimum approx. identity% to report an alignment/to cluster sequences
+  // `--approx-id`
+  // Default = ``
+  // Type = `Option<double>` // TODO: what is this?
+  // Config Var = `approx_min_id`
+  @get:JsonGetter("approxID")
+  @set:JsonSetter("approxID")
+  var approxID: Double
+
+  // Extension mode (banded-fast/banded-slow/full)
+  // `--ext`
+  // Default = ``
+  // Type = `string`
+  // Config Var = `ext_`
+  @get:JsonGetter("ext")
+  @set:JsonSetter("ext")
+  var ext: String
 }

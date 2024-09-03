@@ -17,8 +17,10 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
+@CliCommand(Command, SubCommands.PrepDB)
 interface PrepDB : GeneralOptionContainer, GeneralDBOptionContainer, HiddenOptionContainer

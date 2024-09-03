@@ -17,9 +17,11 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 
 // RECLUSTER
+@CliCommand(Command, SubCommands.RecomputeClustering)
 interface RecomputeClustering
   : GeneralOptionContainer
   , GeneralDBOptionContainer

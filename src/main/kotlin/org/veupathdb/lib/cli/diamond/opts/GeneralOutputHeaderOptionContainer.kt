@@ -20,7 +20,7 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import org.veupathdb.lib.cli.diamond.HeaderOption
-import org.veupathdb.lib.cli.diamond.utils.FlagString
+import org.veupathdb.lib.cli.diamond.utils.CliFlag
 
 interface GeneralOutputHeaderOptionContainer {
   /**
@@ -30,7 +30,7 @@ interface GeneralOutputHeaderOptionContainer {
    *
    * Default: [HeaderOption.None]
    */
-  @FlagString("header")
+  @CliFlag("header")
   @get:JsonGetter("header")
   @set:JsonSetter("header")
   var header: HeaderOption
