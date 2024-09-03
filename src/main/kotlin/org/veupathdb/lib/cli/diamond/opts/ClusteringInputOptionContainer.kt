@@ -19,7 +19,6 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
-import org.veupathdb.lib.cli.diamond.utils.CliFlag
 import java.nio.file.Path
 
 interface ClusteringInputOptionContainer {
@@ -29,7 +28,6 @@ interface ClusteringInputOptionContainer {
    *
    * > `--clusters <path>`
    */
-  @CliFlag("clusters")
   @get:JsonGetter("clusters")
   @set:JsonSetter("clusters")
   var clustersFile: Path

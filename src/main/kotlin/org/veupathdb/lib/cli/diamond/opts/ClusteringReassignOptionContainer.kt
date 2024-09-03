@@ -17,8 +17,34 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+
 interface ClusteringReassignOptionContainer {
-  ("memory-limit", 'M', "Memory limit in GB (default = 16G)", memory_limit)
-  ("member-cover", 0, "Minimum coverage% of the cluster member sequence (default=80.0)", member_cover)
-  ("mutual-cover", 0, "Minimum mutual coverage% of the cluster member and representative sequence", mutual_cover);
+  // Memory limit in GB (default = 16G)
+  // `--memory-limit` | `-M`
+  // Default = ``
+  // Type = `Option<string>`
+  // Config Var = `memory_limit`
+  @get:JsonGetter("memoryLimit")
+  @set:JsonSetter("memoryLimit")
+  var memoryLimit: String // TODO: new-type this
+
+  // Minimum coverage% of the cluster member sequence (default=80.0)
+  // `--member-cover`
+  // Default = ``
+  // Type = `Option<double>`
+  // Config Var = `member_cover`
+  @get:JsonGetter("memberCover")
+  @set:JsonSetter("memberCover")
+  var memberCover: Double
+
+  // Minimum mutual coverage% of the cluster member and representative sequence
+  // `--mutual-cover`
+  // Default = ``
+  // Type = `Option<double>`
+  // Config Var = `mutual_cover`
+  @get:JsonGetter("mutualCover")
+  @set:JsonSetter("mutualCover")
+  var mutualCover: Double
 }
