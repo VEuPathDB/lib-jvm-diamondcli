@@ -17,7 +17,25 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
+
 interface AlignerViewOptionContainer {
-  ("max-target-seqs", 'k', "maximum number of target sequences to report alignments for (default=25)", max_target_seqs_)
-  ("top", 0, "report alignments within this percentage range of top alignment score (overrides --max-target-seqs)", toppercent, 100.0);
+  // maximum number of target sequences to report alignments for (default=25)
+  // `--max-target-seqs` | `-k`
+  // Default = `25`
+  // Type = `Option<int64_t>` // TODO: what is this
+  // Config Var = `max_target_seqs_`
+  @get:JsonGetter("maxTargetSeqs")
+  @set:JsonSetter("maxTargetSeqs")
+  var maxTargetSeqs: Long
+
+  // report alignments within this percentage range of top alignment score (overrides --max-target-seqs)
+  // `--top`
+  // Default = `100.0`
+  // Type = `double`
+  // Config Var = `toppercent`
+  @get:JsonGetter("top")
+  @set:JsonSetter("top")
+  var top: Double
 }
