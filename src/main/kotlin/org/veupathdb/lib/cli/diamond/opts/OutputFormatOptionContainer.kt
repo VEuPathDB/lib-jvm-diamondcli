@@ -30,7 +30,6 @@ interface OutputFormatOptionContainer {
   @set:JsonSetter("outputFormat")
   var outputFormat: Any // TODO: complex type
 
-
   // Include lineage in the taxonomic classification format
   // `--include-lineage`
   // Default = ``
@@ -40,3 +39,7 @@ interface OutputFormatOptionContainer {
   @set:JsonSetter("includeLineage")
   var includeLineage: Boolean
 }
+
+interface OutputFormat
+
+
