@@ -19,7 +19,6 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
-import org.veupathdb.lib.cli.diamond.utils.CliFlag
 import java.nio.file.Path
 
 interface GeneralOutputOptionContainer {
@@ -30,7 +29,6 @@ interface GeneralOutputOptionContainer {
    *
    * > `--out/-o <file>`
    */
-  @CliFlag("out", 'o')
   @get:JsonGetter("out")
   @set:JsonSetter("out")
   var outputFile: Path?
