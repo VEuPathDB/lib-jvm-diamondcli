@@ -17,6 +17,8 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
 import java.nio.file.Path
 
 interface ViewAlignOptionContainer {
@@ -25,5 +27,7 @@ interface ViewAlignOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `daa_file`
+  @get:JsonGetter("daa")
+  @set:JsonSetter("daa")
   var daa: Path
 }
