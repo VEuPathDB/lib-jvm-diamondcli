@@ -17,6 +17,13 @@
 
 package org.veupathdb.lib.cli.diamond.opts
 
+import java.nio.file.Path
+
 interface ViewAlignOptionContainer {
-  ("daa", 'a', "DIAMOND alignment archive (DAA) file", daa_file);
+  // DIAMOND alignment archive (DAA) file
+  // `--daa` | `-a`
+  // Default = ``
+  // Type = `string`
+  // Config Var = `daa_file`
+  var daa: Path
 }
