@@ -34,5 +34,10 @@ interface View
 {
   var inputFile: Path
 
-  ("forwardonly", 0, "only show alignments of forward strand", forwardonly);
+  // only show alignments of forward strand
+  // `--forwardonly` | `-`
+  // Default = ``
+  // Type = `bool`
+  // Config Var = `forwardonly`
+  var forwardonly: Boolean
 }
