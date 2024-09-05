@@ -1,0 +1,37 @@
+package org.veupathdb.lib.cli.diamond.opts.output_format
+
+@JvmInline
+value class SimpleOutputFormat private constructor(override val formatType: OutputFormat) : OutputFormatOptions {
+  companion object {
+    @JvmStatic
+    val Pairwise by lazy { SimpleOutputFormat(OutputFormat.Pairwise) }
+
+    @JvmStatic
+    val XML by lazy { SimpleOutputFormat(OutputFormat.XML) }
+
+    // DiamondAlignmentArchiveFormat
+    @JvmStatic
+    val DAA by lazy { SimpleOutputFormat(OutputFormat.DiamondAlignmentArchive) }
+
+    @JvmStatic
+    val SAM by lazy { SimpleOutputFormat(OutputFormat.SAM) }
+
+    @JvmStatic
+    val TaxonomicClassification by lazy { SimpleOutputFormat(OutputFormat.Taxon) }
+
+    @JvmStatic
+    val PAF by lazy { SimpleOutputFormat(OutputFormat.PAF) }
+
+    @JvmStatic
+    val Null by lazy { SimpleOutputFormat(OutputFormat.Null) }
+
+    @JvmStatic
+    val Bin1 by lazy { SimpleOutputFormat(OutputFormat.Bin1) }
+
+    @JvmStatic
+    val Clustering by lazy { SimpleOutputFormat(OutputFormat.Clustering) }
+
+    @JvmStatic
+    val Edge by lazy { SimpleOutputFormat(OutputFormat.Edge) }
+  }
+}
