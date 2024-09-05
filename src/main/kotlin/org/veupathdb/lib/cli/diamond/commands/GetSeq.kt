@@ -30,5 +30,10 @@ interface GetSeq
   , GeneralOutputOptionContainer
   , HiddenOptionContainer
 {
-  ("seq", 0, "Space-separated list of sequence numbers to display.", seq_no);
+  // Space-separated list of sequence numbers to display.
+  // `--seq`
+  // Default = ``
+  // Type = `string_vector`
+  // Config Var = `seq_no`
+  var seq: List<String> // should this be a list of numbers?
 }
