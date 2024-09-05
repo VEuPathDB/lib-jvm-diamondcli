@@ -1,3 +1,4 @@
 package org.veupathdb.lib.cli.diamond.opts.output_format
 
-class BlastTabFormat : BlastTabFormatBase(OutputFormat.BlastTab)
+class BlastTabFormat(override var formatFields: Iterable<BlastTabFormatField> = emptyList())
+  : BlastTabFormatBase<Iterable<BlastTabFormatField>>(OutputFormat.BlastTab)
