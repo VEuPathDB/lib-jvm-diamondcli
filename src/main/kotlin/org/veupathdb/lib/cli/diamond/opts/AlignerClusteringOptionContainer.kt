@@ -41,7 +41,7 @@ interface AlignerClusteringOptionContainer {
   @CliFlag("motif-masking")
   @get:JsonGetter("motifMasking")
   @set:JsonSetter("motifMasking")
-  var motifMasking: MaskingAlgorithm
+  var motifMasking: MotifMaskingAlgorithm
 
   /**
    * Minimum approximate identity % to report an alignment/to cluster sequences.

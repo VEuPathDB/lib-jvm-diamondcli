@@ -5,12 +5,12 @@ import io.foxcapades.lib.cli.wrapper.flag.doubleFlag
 import io.foxcapades.lib.cli.wrapper.serial.values.ArgumentFormatter
 import org.veupathdb.lib.cli.diamond.opts.AlignerClusteringOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.ExtensionMode
-import org.veupathdb.lib.cli.diamond.opts.MaskingAlgorithm
+import org.veupathdb.lib.cli.diamond.opts.MotifMaskingAlgorithm
 
 class AlignerClusteringOptionContainerImpl : AlignerClusteringOptionContainer {
   override var expectValue by doubleFlag { default = 0.001 }
 
-  override var motifMasking by flag<MaskingAlgorithm> { argument.formatter = ArgumentFormatter.ofToString() }
+  override var motifMasking by flag<MotifMaskingAlgorithm> { argument.formatter = ArgumentFormatter.ofToString() }
 
   override var approxIdentity by doubleFlag()
 
