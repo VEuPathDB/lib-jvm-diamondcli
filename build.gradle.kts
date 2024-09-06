@@ -19,7 +19,7 @@ repositories {
 
 dependencies {
   api("org.veupathdb.lib:jackson-singleton:3.2.0")
-  implementation("io.foxcapades.kt:cli-builder:0.2.0")
+  implementation("io.foxcapades.kt:cli-builder:0.3.0")
 
   testImplementation(kotlin("test"))
 }

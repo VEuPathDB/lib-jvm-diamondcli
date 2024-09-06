@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *    http: *www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,53 +19,69 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface AdvancedClusteringAlignmentOptionContainer {
-  // number of query bins for seed search
-  // `--bin`
-  // `unsigned`
+  /**
+   * Number of query bins for seed search
+   *
+   * Flag = `--bin`
+   */
+  @CliFlag("bin")
   @get:JsonGetter("bins")
   @set:JsonSetter("bins")
   var bins: UInt
 
-  // chunk size for adaptive ranking (default=auto)
-  // `--ext-chunk-size`
-  // `size_t`
+  /**
+   * Chunk size for adaptive ranking (default=auto)
+   *
+   * Flag = `--ext-chunk-size`
+   */
+  @CliFlag("ext-chunk-size")
   @get:JsonGetter("extChunkSize")
   @set:JsonSetter("extChunkSize")
   var extChunkSize: ULong
 
-  // disable ranking heuristic
-  // `--no-ranking` | `-`
-  // Default = `false`
-  // Type = `bool`
-  // config var = `no_ranking`
+  /**
+   * Disable ranking heuristic.
+   *
+   * Flag = `--no-ranking`
+   * Default = `false`
+   */
+  @CliFlag("no-ranking")
   @get:JsonGetter("noRanking")
   @set:JsonSetter("noRanking")
   var noRanking: Boolean
 
-  // effective database size (in letters)
-  // `--dbsize` | `-`
-  // Default = `0`
-  // Type = `uint64_t`
-  // config var = `db_size`
+  /**
+   * Effective database size (in letters)
+   *
+   * Flag = `--dbsize`
+   * Default = `0`
+   */
+  @CliFlag("dbsize")
   @get:JsonGetter("dbSize")
   @set:JsonSetter("dbSize")
   var dbSize: ULong
 
-  // disable auto appending of DAA and DMND file extensions
-  // `--no-auto-append` | `-`
-  // Default = `false`
-  // Type = `bool`
-  // config var = `no_auto_append`
+  /**
+   * Disable auto appending of DAA and DMND file extensions.
+   *
+   * Flag = `--no-auto-append`
+   * Default = `false`
+   */
+  @CliFlag("no-auto-append")
   @get:JsonGetter("noAutoAppend")
   @set:JsonSetter("noAutoAppend")
-  var noAutoAppend: Any
+  var noAutoAppend: Boolean
 
-  // minimum repeat probability for masking (default=0.9)
-  // `--tantan-minMaskProb` | `-`
-  // Default = `0.9`
-  // config var = `tantan_minMaskProb`
+  /**
+   * minimum repeat probability for masking (default=0.9)
+   *
+   * Flag = `--tantan-minMaskProb`
+   * Default = `0.9`
+   */
+  @CliFlag("tantan-minMaskProb")
   @get:JsonGetter("tantanMinMaskProb")
   @set:JsonSetter("tantanMinMaskProb")
   var tantanMinMaskProb: Double
