@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *    http: *www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,40 +19,46 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface AdvancedGeneralOptionContainer {
-  // file buffer size in bytes (default=67108864)
-  // `--file-buffer-size`
-  // Default = `(size_t)67108864`
-  // Type = `size_t`
-  // Config Var = `file_buffer_size`
+  /**
+   * File buffer size in bytes.
+   *
+   * Flag = `--file-buffer-size`
+   * Default = `67108864`
+   */
+  @CliFlag("file-buffer-size")
   @get:JsonGetter("fileBufferSize")
   @set:JsonSetter("fileBufferSize")
   var fileBufferSize: ULong
 
-  // Do not unlink temporary files.
-  // `--no-unlink`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `no_unlink`
+  /**
+   * Do not unlink temporary files.
+   *
+   * Flag = `--no-unlink`
+   */
+  @CliFlag("no-unlink")
   @get:JsonGetter("noUnlink")
   @set:JsonSetter("noUnlink")
   var noUnlink: Boolean
 
-  // Ignore warnings
-  // `--ignore-warnings`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `ignore_warnings`
+  /**
+   * Ignore warnings
+   *
+   * Flag = `--ignore-warnings`
+   */
+  @CliFlag("ignore-warnings")
   @get:JsonGetter("ignoreWarnings")
   @set:JsonSetter("ignoreWarnings")
   var ignoreWarnings: Boolean
 
-  // Print raw seqids without parsing
-  // `--no-parse-seqids`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `no_parse_seqids`
+  /**
+   * Print raw seqids without parsing
+   *
+   * Flag = `--no-parse-seqids`
+   */
+  @CliFlag("no-parse-seqids")
   @get:JsonGetter("noParseSeqIDs")
   @set:JsonSetter("noParseSeqIDs")
   var noParseSeqIDs: Boolean
