@@ -5,6 +5,7 @@ import io.foxcapades.lib.cli.wrapper.flag.*
 import io.foxcapades.lib.cli.wrapper.serial.values.ArgumentFormatter
 import org.veupathdb.lib.cli.diamond.opts.AdvancedQueryOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.DNAExtensionAlgorithm
+import org.veupathdb.lib.cli.diamond.util.enumFormatter
 import java.nio.file.Path
 
 class AdvancedQueryOptionContainerImpl : AdvancedQueryOptionContainer {
@@ -80,7 +81,7 @@ class AdvancedQueryOptionContainerImpl : AdvancedQueryOptionContainer {
 
   override var repetitionCutoff by doubleFlag { default = 0.0002 }
 
-  override var extension by flag<DNAExtensionAlgorithm> { argument.formatter = ArgumentFormatter.ofToString() }
+  override var extension by flag<DNAExtensionAlgorithm> { argument.formatter = enumFormatter() }
 
   override var chainingOut by toggleFlag()
 

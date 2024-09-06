@@ -31,7 +31,7 @@ interface AlignerClusteringRealignOptionContainer {
   @CliFlag("comp-based-stats")
   @get:JsonGetter("compBasedStats")
   @set:JsonSetter("compBasedStats")
-  var compBasedStats: CompBasedStats
+  var compBasedStats: CompositionBasedStats
 
   /**
    * Masking algorithm.

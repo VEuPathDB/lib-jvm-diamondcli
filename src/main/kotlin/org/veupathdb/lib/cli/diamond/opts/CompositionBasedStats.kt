@@ -3,24 +3,34 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
+import org.veupathdb.lib.cli.diamond.DiamondExtras
+import org.veupathdb.lib.cli.diamond.util.CliEnum
 
-enum class CompBasedStats {
-  Disabled,
-  Hauser,
-  Deprecated1,
-  HauserAndMatrixAdjust,
-  MatrixAdjust,
-  // ONLY AVAILABLE WITH EXTRAS!!!
-  CompBasedStats,
-  CompBasedStatsAndMatrixAdjust,
-  HauserGlobal,
+enum class CompositionBasedStats(
+  @get:JsonValue
+  val jsonName: String
+) : CliEnum {
+  Disabled("disabled"),
+  Hauser("hauser"),
+  Deprecated1("deprecated-1"),
+  HauserAndMatrixAdjust("hauser-and-matrix-adjust"),
+  MatrixAdjust("matrix-adjust"),
+
+  @DiamondExtras
+  CompBasedStats("comp-based-stats"),
+
+  @DiamondExtras
+  CompBasedStatsAndMatrixAdjust("comp-based-stats-and-matrix-adjust"),
+
+  @DiamondExtras
+  HauserGlobal("hauser-global"),
   ;
 
   @get:JsonValue
   val value
     get() = ordinal
 
-  val cliValue
+  override val cliValue
     get() = toString()
 
   override fun toString() = ordinal.toString()

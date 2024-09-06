@@ -1,25 +1,25 @@
 package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonCreator
-import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
 import org.veupathdb.lib.cli.diamond.util.CliEnum
 import org.veupathdb.lib.cli.diamond.util.invalid
 
-enum class ExtensionMode(
-  @get:JsonValue
-  val value: String
-) : CliEnum {
-  BandedFast("banded-fast"),
-  BandedSlow("banded-slow"),
-  Full("full"),
-  Global("global"),
+enum class ScoreMatrix : CliEnum {
+  BLOSUM45,
+  BLOSUM62,
+  BLOSUM50,
+  BLOSUM80,
+  BLOSUM90,
+  PAM250,
+  PAM30,
+  PAM70,
   ;
 
-  override val cliValue
-    get() = toString()
+  override val cliValue: String
+    get() = name.lowercase()
 
-  override fun toString() = value
+  override fun toString() = cliValue
 
   companion object {
     @JvmStatic
@@ -31,7 +31,7 @@ enum class ExtensionMode(
 
     @JvmStatic
     fun fromString(value: String) =
-      value.lowercase().let { target -> entries.find { it.value == target } }
+      value.uppercase().let { target -> entries.find { it.name == target } }
         ?: invalid(value)
   }
 }
