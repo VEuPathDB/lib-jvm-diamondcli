@@ -5,7 +5,7 @@
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *    http://www.apache.org/licenses/LICENSE-2.0
+ *    http: *www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,41 +19,47 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface AlignerClusteringOptionContainer {
-  // maximum e-value to report alignments (default=0.001)
-  // `--evalue` | `-e`
-  // Default = `0.001`
-  // Type = `double`
-  // Config Var = `max_evalue`
+  /**
+   * Maximum e-value to report alignments.
+   *
+   * Flag = `--evalue` | `-e`
+   * Default = `0.001`
+   */
+  @CliFlag("evalue", 'e')
   @get:JsonGetter("eValue")
   @set:JsonSetter("eValue")
-  var eValue: Double
+  var expectValue: Double
 
-  // softmask abundant motifs (0/1)
-  // `--motif-masking`
-  // Default = ``
-  // Type = `string`
-  // Config Var = `motif_masking`
+  /**
+   * Softmask abundant motifs (0/1)
+   *
+   * Flag = `--motif-masking`
+   */
+  @CliFlag("motif-masking")
   @get:JsonGetter("motifMasking")
   @set:JsonSetter("motifMasking")
-  var motifMasking: String
+  var motifMasking: MaskingAlgorithm
 
-  // minimum approx. identity% to report an alignment/to cluster sequences
-  // `--approx-id`
-  // Default = ``
-  // Type = `Option<double>` // TODO: what is this?
-  // Config Var = `approx_min_id`
+  /**
+   * Minimum approximate identity % to report an alignment/to cluster sequences.
+   *
+   * Flag = `--approx-id`
+   */
+  @CliFlag("approx-id")
   @get:JsonGetter("approxID")
   @set:JsonSetter("approxID")
-  var approxID: Double
+  var approxIdentity: Double
 
-  // Extension mode (banded-fast/banded-slow/full)
-  // `--ext`
-  // Default = ``
-  // Type = `string`
-  // Config Var = `ext_`
+  /**
+   * Extension mode.
+   *
+   * Flag = `--ext`
+   */
+  @CliFlag("ext")
   @get:JsonGetter("ext")
   @set:JsonSetter("ext")
-  var ext: String
+  var extensionMode: ExtensionMode
 }
