@@ -26,7 +26,7 @@ interface GeneralDBOptionContainer {
   /**
    * Path to the target DIAMOND database file.
    *
-   * > `--db/-d <file>`
+   * Flag = `--db` | `-d`
    */
   @CliFlag("db", 'd')
   @get:JsonGetter("db")

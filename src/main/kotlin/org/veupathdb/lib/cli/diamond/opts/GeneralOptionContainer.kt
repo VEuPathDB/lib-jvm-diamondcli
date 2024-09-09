@@ -95,6 +95,6 @@ interface GeneralOptionContainer {
   @CliFlag("tmpdir", 't')
   @get:JsonGetter("tmpdir")
   @set:JsonSetter("tmpdir")
-  var tempDir: Path?
+  var tempDir: Path
 }
 

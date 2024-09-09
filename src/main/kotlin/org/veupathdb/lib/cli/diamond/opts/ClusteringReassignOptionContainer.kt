@@ -22,31 +22,34 @@ import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface ClusteringReassignOptionContainer {
-  // Memory limit in GB (default = 16G)
-  // `--memory-limit` | `-M`
-  // Default = ``
-  // Type = `Option<string>`
-  // Config Var = `memory_limit`
+  /**
+   * Memory limit in GB
+   *
+   * Flag = `--memory-limit` | `-M`
+   * Default = `"16G"`
+   */
   @CliFlag("memory-limit", 'M')
   @get:JsonGetter("memoryLimit")
   @set:JsonSetter("memoryLimit")
   var memoryLimit: String // TODO: new-type this
 
-  // Minimum coverage% of the cluster member sequence (default=80.0)
-  // `--member-cover`
-  // Default = ``
-  // Type = `Option<double>`
-  // Config Var = `member_cover`
+  /**
+   * Minimum coverage percentage of the cluster member sequence.
+   *
+   * Flag = `--member-cover`
+   * Default = `80.0`
+   */
   @CliFlag("member-cover")
   @get:JsonGetter("memberCover")
   @set:JsonSetter("memberCover")
   var memberCover: Double
 
-  // Minimum mutual coverage% of the cluster member and representative sequence
-  // `--mutual-cover`
-  // Default = ``
-  // Type = `Option<double>`
-  // Config Var = `mutual_cover`
+  /**
+   * Minimum mutual coverage percentage of the cluster member and representative
+   * sequence.
+   *
+   * Flag = `--mutual-cover`
+   */
   @CliFlag("mutual-cover")
   @get:JsonGetter("mutualCover")
   @set:JsonSetter("mutualCover")

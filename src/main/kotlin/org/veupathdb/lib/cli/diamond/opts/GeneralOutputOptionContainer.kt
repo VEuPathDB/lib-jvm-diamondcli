@@ -28,10 +28,10 @@ interface GeneralOutputOptionContainer {
    * written to the standard output and all other program output will be
    * suppressed.
    *
-   * > `--out/-o <file>`
+   * * Flag = `--out` | `-o`
    */
   @CliFlag("out", 'o')
   @get:JsonGetter("out")
   @set:JsonSetter("out")
-  var outputFile: Path?
+  var outputFile: Path
 }

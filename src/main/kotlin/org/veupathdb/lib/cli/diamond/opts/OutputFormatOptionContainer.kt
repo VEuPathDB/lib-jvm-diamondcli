@@ -20,23 +20,22 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import org.veupathdb.lib.cli.diamond.opts.output_format.OutputFormatOptions
 
 interface OutputFormatOptionContainer {
-  //
-  // `--outfmt` | `-f`
-  // Default = ``
-  // Type = `string_vector`
-  // Config Var = `output_format`
+  /**
+   * Flag = `--outfmt` | `-f`
+   */
   @CliFlag("outfmt", 'f')
   @get:JsonGetter("outputFormat")
   @set:JsonSetter("outputFormat")
-  var outputFormat: Any // TODO: complex type
+  var outputFormat: OutputFormatOptions
 
-  // Include lineage in the taxonomic classification format
-  // `--include-lineage`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `include_lineage`
+  /**
+   * Include lineage in the taxonomic classification format.
+   *
+   * Flag = `--include-lineage`
+   */
   @CliFlag("include-lineage")
   @get:JsonGetter("includeLineage")
   @set:JsonSetter("includeLineage")

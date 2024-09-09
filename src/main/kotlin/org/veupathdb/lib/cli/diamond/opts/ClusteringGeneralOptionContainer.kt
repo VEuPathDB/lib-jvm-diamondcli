@@ -22,41 +22,44 @@ import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface ClusteringGeneralOptionContainer {
-  // Clustering steps
-  // `--cluster-steps`
-  // Default = ``
-  // Type = `string_vector`
-  // Config Var = `cluster_steps`
+  /**
+   * Clustering steps.
+   *
+   * Flag = `--cluster-steps`
+   */
   @CliFlag("cluster-steps")
   @get:JsonGetter("clusterSteps")
   @set:JsonSetter("clusterSteps")
-  var clusterSteps: List<String> // TODO: what is this
+  var clusterSteps: List<String>
 
-  // Rank sequences based on kmer frequency in linear stage
-  // `--kmer-ranking`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `kmer_ranking`
+  /**
+   * Rank sequences based on kmer frequency in linear stage.
+   *
+   * Flag = `--kmer-ranking`
+   * Default = ``
+   * Type = `bool`
+   * Config Var = `kmer_ranking`
+   */
   @CliFlag("kmer-ranking")
   @get:JsonGetter("kmerRanking")
   @set:JsonSetter("kmerRanking")
   var kmerRanking: Boolean
 
-  // Per-round coverage cutoffs for cascaded clustering
-  // `--round-coverage`
-  // Default = ``
-  // Type = `std::vector<string>`
-  // Config Var = `round_coverage`
+  /**
+   * Per-round coverage cutoffs for cascaded clustering.
+   *
+   * Flag = `--round-coverage`
+   */
   @CliFlag("round-coverage")
   @get:JsonGetter("roundCoverage")
   @set:JsonSetter("roundCoverage")
-  var roundCoverage: List<String> // TODO: what is this
+  var roundCoverage: List<String>
 
-  // Per-round approx-id cutoffs for cascaded clustering
-  // `--round-approx-id`
-  // Default = ``
-  // Type = `string_vector`
-  // Config Var = `round_approx_id`
+  /**
+   * Per-round approx-id cutoffs for cascaded clustering.
+   *
+   * Flag = `--round-approx-id`
+   */
   @CliFlag("round-approx-id")
   @get:JsonGetter("roundApproxID")
   @set:JsonSetter("roundApproxID")

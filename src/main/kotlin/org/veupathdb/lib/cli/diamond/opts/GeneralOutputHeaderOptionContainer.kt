@@ -26,9 +26,8 @@ interface GeneralOutputHeaderOptionContainer {
   /**
    * Use header lines in tabular output format.
    *
-   * > `--header [option]`
-   *
-   * Default: [HeaderOption.None]
+   * * Flag: `--header`
+   * * Default: [HeaderOption.None]
    */
   @CliFlag("header")
   @get:JsonGetter("header")

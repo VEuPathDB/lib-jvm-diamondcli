@@ -22,21 +22,25 @@ import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface AlignerViewOptionContainer {
-  // maximum number of target sequences to report alignments for (default=25)
-  // `--max-target-seqs` | `-k`
-  // Default = `25`
-  // Type = `Option<int64_t>` // TODO: what is this
-  // Config Var = `max_target_seqs_`
+  /**
+   * Maximum number of target sequences to report alignments for.
+   *
+   * Flag = `--max-target-seqs` | `-k`
+   * Default = `25`
+   */
   @CliFlag("max-target-seqs", 'k')
   @get:JsonGetter("maxTargetSeqs")
   @set:JsonSetter("maxTargetSeqs")
   var maxTargetSeqs: Long
 
-  // report alignments within this percentage range of top alignment score (overrides --max-target-seqs)
-  // `--top`
-  // Default = `100.0`
-  // Type = `double`
-  // Config Var = `toppercent`
+  /**
+   * Report alignments within this percentage range of top alignment score.
+   *
+   * Overrides: `--max-target-seqs`
+   *
+   * Flag = `--top`
+   * Default = `100.0`
+   */
   @CliFlag("top")
   @get:JsonGetter("top")
   @set:JsonSetter("top")

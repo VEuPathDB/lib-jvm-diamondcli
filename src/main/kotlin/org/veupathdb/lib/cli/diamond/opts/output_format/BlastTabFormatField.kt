@@ -1,5 +1,10 @@
 package org.veupathdb.lib.cli.diamond.opts.output_format
 
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonValue
+import com.fasterxml.jackson.databind.JsonNode
+import org.veupathdb.lib.cli.diamond.util.invalid
+
 enum class BlastTabFormatField(val key: String) {
   // 0 means Query Seq - id
   QuerySequenceID("qseqid"),
@@ -156,4 +161,22 @@ enum class BlastTabFormatField(val key: String) {
   // 76 Subject lineages
   SubjectLineages("slineages"),
   ;
+
+  @JsonValue
+  override fun toString() = key
+
+  companion object {
+    @JvmStatic
+    @JsonCreator
+    fun fromJson(json: JsonNode) =
+      when {
+        json.isTextual -> fromString(json.textValue())
+        else           -> invalid(json)
+      }
+
+    @JvmStatic
+    fun fromString(string: String) =
+      string.lowercase().let { key -> entries.find { it.key == key } }
+        ?: invalid(string)
+  }
 }

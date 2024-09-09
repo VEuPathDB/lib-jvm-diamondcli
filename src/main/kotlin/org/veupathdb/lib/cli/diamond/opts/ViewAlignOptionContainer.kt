@@ -23,11 +23,11 @@ import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import java.nio.file.Path
 
 interface ViewAlignOptionContainer {
-  // DIAMOND alignment archive (DAA) file
-  // `--daa` | `-a`
-  // Default = ``
-  // Type = `string`
-  // Config Var = `daa_file`
+  /**
+   * DIAMOND alignment archive (DAA) file
+   *
+   * Flag = `--daa` | `-a`
+   */
   @CliFlag("daa", 'a')
   @get:JsonGetter("daa")
   @set:JsonSetter("daa")

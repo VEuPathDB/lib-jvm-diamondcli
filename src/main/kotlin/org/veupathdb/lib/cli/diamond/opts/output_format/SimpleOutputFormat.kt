@@ -34,4 +34,6 @@ value class SimpleOutputFormat private constructor(override val formatType: Outp
     @JvmStatic
     val Edge by lazy { SimpleOutputFormat(OutputFormat.Edge) }
   }
+
+  override fun toString() = formatType.toString()
 }
