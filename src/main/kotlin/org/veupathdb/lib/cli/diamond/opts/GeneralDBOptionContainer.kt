@@ -19,6 +19,7 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import java.nio.file.Path
 
 interface GeneralDBOptionContainer {
@@ -27,6 +28,7 @@ interface GeneralDBOptionContainer {
    *
    * > `--db/-d <file>`
    */
+  @CliFlag("db", 'd')
   @get:JsonGetter("db")
   @set:JsonSetter("db")
   var databaseFile: Path

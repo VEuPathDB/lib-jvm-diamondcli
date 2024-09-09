@@ -19,6 +19,7 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface ClusteringReassignOptionContainer {
   // Memory limit in GB (default = 16G)
@@ -26,6 +27,7 @@ interface ClusteringReassignOptionContainer {
   // Default = ``
   // Type = `Option<string>`
   // Config Var = `memory_limit`
+  @CliFlag("memory-limit", 'M')
   @get:JsonGetter("memoryLimit")
   @set:JsonSetter("memoryLimit")
   var memoryLimit: String // TODO: new-type this
@@ -35,6 +37,7 @@ interface ClusteringReassignOptionContainer {
   // Default = ``
   // Type = `Option<double>`
   // Config Var = `member_cover`
+  @CliFlag("member-cover")
   @get:JsonGetter("memberCover")
   @set:JsonSetter("memberCover")
   var memberCover: Double
@@ -44,6 +47,7 @@ interface ClusteringReassignOptionContainer {
   // Default = ``
   // Type = `Option<double>`
   // Config Var = `mutual_cover`
+  @CliFlag("mutual-cover")
   @get:JsonGetter("mutualCover")
   @set:JsonSetter("mutualCover")
   var mutualCover: Double

@@ -19,6 +19,7 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface AlignerViewOptionContainer {
   // maximum number of target sequences to report alignments for (default=25)
@@ -26,6 +27,7 @@ interface AlignerViewOptionContainer {
   // Default = `25`
   // Type = `Option<int64_t>` // TODO: what is this
   // Config Var = `max_target_seqs_`
+  @CliFlag("max-target-seqs", 'k')
   @get:JsonGetter("maxTargetSeqs")
   @set:JsonSetter("maxTargetSeqs")
   var maxTargetSeqs: Long
@@ -35,6 +37,7 @@ interface AlignerViewOptionContainer {
   // Default = `100.0`
   // Type = `double`
   // Config Var = `toppercent`
+  @CliFlag("top")
   @get:JsonGetter("top")
   @set:JsonSetter("top")
   var top: Double

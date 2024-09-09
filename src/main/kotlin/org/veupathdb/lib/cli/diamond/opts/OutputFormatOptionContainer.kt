@@ -19,6 +19,7 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface OutputFormatOptionContainer {
   //
@@ -26,6 +27,7 @@ interface OutputFormatOptionContainer {
   // Default = ``
   // Type = `string_vector`
   // Config Var = `output_format`
+  @CliFlag("outfmt", 'f')
   @get:JsonGetter("outputFormat")
   @set:JsonSetter("outputFormat")
   var outputFormat: Any // TODO: complex type
@@ -35,6 +37,7 @@ interface OutputFormatOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `include_lineage`
+  @CliFlag("include-lineage")
   @get:JsonGetter("includeLineage")
   @set:JsonSetter("includeLineage")
   var includeLineage: Boolean

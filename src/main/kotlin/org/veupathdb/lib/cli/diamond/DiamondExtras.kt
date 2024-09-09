@@ -6,3 +6,4 @@ package org.veupathdb.lib.cli.diamond
 )
 @Retention(AnnotationRetention.BINARY)
 annotation class DiamondExtras
+

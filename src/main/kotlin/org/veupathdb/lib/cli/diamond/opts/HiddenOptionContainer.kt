@@ -19,6 +19,8 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import org.veupathdb.lib.cli.diamond.DiamondHidden
 import java.nio.file.Path
 
 // THIS IS ONLY USED WHEN COMPILED WITH 'EXTRA' AND IT IS UNCLEAR WHAT FLAG GOES
@@ -27,28 +29,25 @@ interface HiddenOptionContainer {
   // ("match1", 0, "", match_file1) // unused in 2.1.9
   // ("match2", 0, "", match_file2) // unused in 2.1.9
 
-  /**
-   *
-   */
-  // TODO: potentially used by blastp/blastx
-  @get:JsonGetter("maximumSeedFrequency")
-  @set:JsonSetter("maximumSeedFrequency")
-  var maximumSeedFrequency: Double
-
   // maximum seed frequency
   // `--seed-freq`
   // Default = `-15.0`
   // Type = `double`
   // Config Var = `max_seed_freq`
-  @get:JsonGetter("seedFreq")
-  @set:JsonSetter("seedFreq")
-  var seedFreq: Double
+  // TODO: potentially used by blastp/blastx
+  @DiamondHidden
+  @CliFlag("seed-freq")
+  @get:JsonGetter("maximumSeedFrequency")
+  @set:JsonSetter("maximumSeedFrequency")
+  var maximumSeedFrequency: Double
 
   //
   // `--space-penalty`
   // Default = `0.5`
   // Type = `double`
   // Config Var = `space_penalty`
+  @DiamondHidden
+  @CliFlag("space-penalty")
   @get:JsonGetter("spacePenalty")
   @set:JsonSetter("spacePenalty")
   var spacePenalty: Double
@@ -58,6 +57,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `reverse`
+  @DiamondHidden
+  @CliFlag("reverse")
   @get:JsonGetter("reverse")
   @set:JsonSetter("reverse")
   var reverse: Boolean
@@ -67,6 +68,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int`
   // Config Var = `neighborhood_score`
+  @DiamondHidden
+  @CliFlag("neighborhood-score")
   @get:JsonGetter("neighborhoodScore")
   @set:JsonSetter("neighborhoodScore")
   var neighborhoodScore: Int
@@ -76,6 +79,8 @@ interface HiddenOptionContainer {
   // Default = `7u`
   // Type = `unsigned`
   // Config Var = `seed_weight`
+  @DiamondHidden
+  @CliFlag("seed-weight", 'w')
   @get:JsonGetter("seedWeight")
   @set:JsonSetter("seedWeight")
   var seedWeight: UInt
@@ -85,6 +90,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `unsigned`
   // Config Var = `id_left`
+  @DiamondHidden
+  @CliFlag("idl")
   @get:JsonGetter("idLeft")
   @set:JsonSetter("idLeft")
   var idLeft: UInt
@@ -94,6 +101,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `unsigned`
   // Config Var = `id_right`
+  @DiamondHidden
+  @CliFlag("idr")
   @get:JsonGetter("idRight")
   @set:JsonSetter("idRight")
   var idRight: UInt
@@ -103,6 +112,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `unsigned`
   // Config Var = `id_n`
+  @DiamondHidden
+  @CliFlag("idn")
   @get:JsonGetter("idN")
   @set:JsonSetter("idN")
   var idN: UInt
@@ -112,33 +123,41 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int`
   // Config Var = `bmatch`
-  @get:JsonGetter("bmatch")
-  @set:JsonSetter("bmatch")
-  var bmatch: Int
+  @DiamondHidden
+  @CliFlag("bmatch")
+  @get:JsonGetter("bMatch")
+  @set:JsonSetter("bMatch")
+  var bMatch: Int
 
   //
   // `--bmismatch`
   // Default = ``
   // Type = `int`
   // Config Var = `bmismatch`
-  @get:JsonGetter("bmismatch")
-  @set:JsonSetter("bmismatch")
-  var bmismatch: Int
+  @DiamondHidden
+  @CliFlag("bmismatch")
+  @get:JsonGetter("bMismatch")
+  @set:JsonSetter("bMismatch")
+  var bMismatch: Int
 
   //
   // `--bcutoff`
   // Default = ``
   // Type = `int`
   // Config Var = `bcutoff`
-  @get:JsonGetter("bcutoff")
-  @set:JsonSetter("bcutoff")
-  var bcutoff: Int
+  @DiamondHidden
+  @CliFlag("cutoff")
+  @get:JsonGetter("bCutoff")
+  @set:JsonSetter("bCutoff")
+  var bCutoff: Int
 
   //
   // `--ants`
   // Default = `uint64_t(100)`
   // Type = `uint64_t`
   // Config Var = `n_ants`
+  @DiamondHidden
+  @CliFlag("ants")
   @get:JsonGetter("ants")
   @set:JsonSetter("ants")
   var ants: ULong
@@ -148,6 +167,8 @@ interface HiddenOptionContainer {
   // Default = `0.99`
   // Type = `double`
   // Config Var = `rho`
+  @DiamondHidden
+  @CliFlag("rho")
   @get:JsonGetter("rho")
   @set:JsonSetter("rho")
   var rho: Double
@@ -157,33 +178,41 @@ interface HiddenOptionContainer {
   // Default = `0.05`
   // Type = `double`
   // Config Var = `p_best`
-  @get:JsonGetter("p_best")
-  @set:JsonSetter("p_best")
-  var p_best: Double
+  @DiamondHidden
+  @CliFlag("p_best")
+  @get:JsonGetter("pBest")
+  @set:JsonSetter("pBest")
+  var pBest: Double
 
   //
   // `--d_exp`
   // Default = `1.0`
   // Type = `double`
   // Config Var = `d_exp`
-  @get:JsonGetter("d_exp")
-  @set:JsonSetter("d_exp")
-  var d_exp: Double
+  @DiamondHidden
+  @CliFlag("d_exp")
+  @get:JsonGetter("dExp")
+  @set:JsonSetter("dExp")
+  var dExp: Double
 
   //
   // `--d_new`
   // Default = `1.0`
   // Type = `double`
   // Config Var = `d_new`
-  @get:JsonGetter("d_new")
-  @set:JsonSetter("d_new")
-  var d_new: Double
+  @DiamondHidden
+  @CliFlag("d_new")
+  @get:JsonGetter("dNew")
+  @set:JsonSetter("dNew")
+  var dNew: Double
 
   //
   // `--score-estimate-factor`
   // Default = `0.0`
   // Type = `double`
   // Config Var = `score_estimate_factor`
+  @DiamondHidden
+  @CliFlag("score-estimate-factor")
   @get:JsonGetter("scoreEstimateFactor")
   @set:JsonSetter("scoreEstimateFactor")
   var scoreEstimateFactor: Double
@@ -193,6 +222,8 @@ interface HiddenOptionContainer {
   // Default = `17`
   // Type = `int`
   // Config Var = `diag_min_estimate`
+  @DiamondHidden
+  @CliFlag("diag-min-estimate")
   @get:JsonGetter("diagMinEstimate")
   @set:JsonSetter("diagMinEstimate")
   var diagMinEstimate: Int
@@ -202,6 +233,8 @@ interface HiddenOptionContainer {
   // Default = `0.92`
   // Type = `double`
   // Config Var = `path_cutoff`
+  @DiamondHidden
+  @CliFlag("path-cutoff")
   @get:JsonGetter("pathCutoff")
   @set:JsonSetter("pathCutoff")
   var pathCutoff: Double
@@ -211,6 +244,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `use_smith_waterman`
+  @DiamondHidden
+  @CliFlag("sw")
   @get:JsonGetter("useSmithWaterman")
   @set:JsonSetter("useSmithWaterman")
   var useSmithWaterman: Boolean
@@ -220,6 +255,8 @@ interface HiddenOptionContainer {
   // Default = `128`
   // Type = `int`
   // Config Var = `superblock`
+  @DiamondHidden
+  @CliFlag("superblock")
   @get:JsonGetter("superblock")
   @set:JsonSetter("superblock")
   var superblock: Int
@@ -229,6 +266,8 @@ interface HiddenOptionContainer {
   // Default = `10000000u`
   // Type = `unsigned`
   // Config Var = `max_cells`
+  @DiamondHidden
+  @CliFlag("max-cells")
   @get:JsonGetter("maxCells")
   @set:JsonSetter("maxCells")
   var maxCells: UInt
@@ -238,6 +277,8 @@ interface HiddenOptionContainer {
   // Default = `(unsigned)Config::query_parallel`
   // Type = `unsigned`
   // Config Var = `load_balancing`
+  @DiamondHidden
+  @CliFlag("load-balancing")
   @get:JsonGetter("loadBalancing")
   @set:JsonSetter("loadBalancing")
   var loadBalancing: UInt
@@ -247,6 +288,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `log_query`
+  @DiamondHidden
+  @CliFlag("log-query")
   @get:JsonGetter("logQuery")
   @set:JsonSetter("logQuery")
   var logQuery: Boolean
@@ -256,6 +299,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `log_subject`
+  @DiamondHidden
+  @CliFlag("log-subject")
   @get:JsonGetter("logSubject")
   @set:JsonSetter("logSubject")
   var logSubject: Boolean
@@ -265,15 +310,19 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `unsigned`
   // Config Var = `threads_align`
-  @get:JsonGetter("palign")
-  @set:JsonSetter("palign")
-  var palign: UInt
+  @DiamondHidden
+  @CliFlag("palign")
+  @get:JsonGetter("pAlign")
+  @set:JsonSetter("pAlign")
+  var pAlign: UInt
 
   //
   // `--score-ratio`
   // Default = `0.9`
   // Type = `double`
   // Config Var = `score_ratio`
+  @DiamondHidden
+  @CliFlag("score-ratio")
   @get:JsonGetter("scoreRatio")
   @set:JsonSetter("scoreRatio")
   var scoreRatio: Double
@@ -283,6 +332,8 @@ interface HiddenOptionContainer {
   // Default = `4096u`
   // Type = `unsigned`
   // Config Var = `fetch_size`
+  @DiamondHidden
+  @CliFlag("fetch-size")
   @get:JsonGetter("fetchSize")
   @set:JsonSetter("fetchSize")
   var fetchSize: UInt
@@ -292,6 +343,8 @@ interface HiddenOptionContainer {
   // Default = `4u`
   // Type = `unsigned`
   // Config Var = `target_fetch_size`
+  @DiamondHidden
+  @CliFlag("target-fetch-size")
   @get:JsonGetter("targetFetchSize")
   @set:JsonSetter("targetFetchSize")
   var targetFetchSize: UInt
@@ -301,6 +354,8 @@ interface HiddenOptionContainer {
   // Default = `-1.0`
   // Type = `double`
   // Config Var = `rank_factor`
+  @DiamondHidden
+  @CliFlag("rank-factor")
   @get:JsonGetter("rankFactor")
   @set:JsonSetter("rankFactor")
   var rankFactor: Double
@@ -310,6 +365,8 @@ interface HiddenOptionContainer {
   // Default = `1.0`
   // Type = `double`
   // Config Var = `transcript_len_estimate`
+  @DiamondHidden
+  @CliFlag("transcript-len-estimate")
   @get:JsonGetter("transcriptLenEstimate")
   @set:JsonSetter("transcriptLenEstimate")
   var transcriptLenEstimate: Double
@@ -319,6 +376,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `family_counts_file`
+  @DiamondHidden
+  @CliFlag("family-counts")
   @get:JsonGetter("familyCountsFile")
   @set:JsonSetter("familyCountsFile")
   var familyCountsFile: Path
@@ -328,6 +387,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `radix_cluster_buffered`
+  @DiamondHidden
+  @CliFlag("radix-cluster-buffered")
   @get:JsonGetter("radixClusterBuffered")
   @set:JsonSetter("radixClusterBuffered")
   var radixClusterBuffered: Boolean
@@ -337,6 +398,8 @@ interface HiddenOptionContainer {
   // Default = `100000u`
   // Type = `unsigned`
   // Config Var = `join_split_size`
+  @DiamondHidden
+  @CliFlag("join-split-size")
   @get:JsonGetter("joinSplitSize")
   @set:JsonSetter("joinSplitSize")
   var joinSplitSize: UInt
@@ -346,6 +409,8 @@ interface HiddenOptionContainer {
   // Default = `17u`
   // Type = `unsigned`
   // Config Var = `join_split_key_len`
+  @DiamondHidden
+  @CliFlag("join-split-key-len")
   @get:JsonGetter("joinSplitKeyLen")
   @set:JsonSetter("joinSplitKeyLen")
   var joinSplitKeyLen: UInt
@@ -355,6 +420,8 @@ interface HiddenOptionContainer {
   // Default = `8u`
   // Type = `unsigned`
   // Config Var = `radix_bits`
+  @DiamondHidden
+  @CliFlag("radix-bits")
   @get:JsonGetter("radixBits")
   @set:JsonSetter("radixBits")
   var radixBits: UInt // TODO: should this be capped/enum'd?
@@ -364,6 +431,8 @@ interface HiddenOptionContainer {
   // Default = `1.3`
   // Type = `double`
   // Config Var = `join_ht_factor`
+  @DiamondHidden
+  @CliFlag("join-ht-factor")
   @get:JsonGetter("joinHTFactor")
   @set:JsonSetter("joinHTFactor")
   var joinHTFactor: Double
@@ -373,6 +442,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `sort_join`
+  @DiamondHidden
+  @CliFlag("sort-join")
   @get:JsonGetter("sortJoin")
   @set:JsonSetter("sortJoin")
   var sortJoin: Boolean
@@ -382,6 +453,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `simple_freq`
+  @DiamondHidden
+  @CliFlag("simple-freq")
   @get:JsonGetter("simpleFreq")
   @set:JsonSetter("simpleFreq")
   var simpleFreq: Boolean
@@ -391,6 +464,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `freq_treshold`
+  @DiamondHidden
+  @CliFlag("freq-treshold") // TYPO: This typo exists in the diamond cli source.
   @get:JsonGetter("freqThreshold")
   @set:JsonSetter("freqThreshold")
   var freqThreshold: Double
@@ -400,6 +475,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `use_dataset_field`
+  @DiamondHidden
+  @CliFlag("use-dataset-field")
   @get:JsonGetter("useDatasetField")
   @set:JsonSetter("useDatasetField")
   var useDatasetField: Boolean
@@ -409,6 +486,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `store_query_quality`
+  @DiamondHidden
+  @CliFlag("store-query-quality")
   @get:JsonGetter("storeQueryQuality")
   @set:JsonSetter("storeQueryQuality")
   var storeQueryQuality: Boolean
@@ -418,6 +497,8 @@ interface HiddenOptionContainer {
   // Default = `256u`
   // Type = `unsigned`
   // Config Var = `swipe_chunk_size`
+  @DiamondHidden
+  @CliFlag("swipe-chunk-size")
   @get:JsonGetter("swipeChunkSize")
   @set:JsonSetter("swipeChunkSize")
   var swipeChunkSize: UInt
@@ -427,6 +508,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `hardmasked`
+  @DiamondHidden
+  @CliFlag("hard-masked")
   @get:JsonGetter("hardMasked")
   @set:JsonSetter("hardMasked")
   var hardMasked: Boolean
@@ -436,6 +519,8 @@ interface HiddenOptionContainer {
   // Default = `40`
   // Type = `int`
   // Config Var = `cbs_window`
+  @DiamondHidden
+  @CliFlag("cbs-window")
   @get:JsonGetter("cbsWindow")
   @set:JsonSetter("cbsWindow")
   var cbsWindow: Int
@@ -445,6 +530,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_dict`
+  @DiamondHidden
+  @CliFlag("no-dict")
   @get:JsonGetter("noDict")
   @set:JsonSetter("noDict")
   var noDict: Boolean
@@ -454,6 +541,8 @@ interface HiddenOptionContainer {
   // Default = `(uint64_t)10000000`
   // Type = `uint64_t`
   // Config Var = `upgma_edge_limit`
+  @DiamondHidden
+  @CliFlag("upgma-edge-limit")
   @get:JsonGetter("upGmaEdgeLimit")
   @set:JsonSetter("upGmaEdgeLimit")
   var upGmaEdgeLimit: ULong
@@ -463,6 +552,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `tree_file`
+  @DiamondHidden
+  @CliFlag("tree")
   @get:JsonGetter("tree")
   @set:JsonSetter("tree")
   var tree: Path
@@ -472,6 +563,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `upgma_dist`
+  @DiamondHidden
+  @CliFlag("upgma-dist")
   @get:JsonGetter("upGmaDist")
   @set:JsonSetter("upGmaDist")
   var upGmaDist: String // TODO: what is this?
@@ -481,6 +574,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `upgma_input`
+  @DiamondHidden
+  @CliFlag("upgma-input")
   @get:JsonGetter("upGmaInput")
   @set:JsonSetter("upGmaInput")
   var upGmaInput: String // TODO: what is this?
@@ -490,6 +585,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `log_extend`
+  @DiamondHidden
+  @CliFlag("log-extend")
   @get:JsonGetter("logExtend")
   @set:JsonSetter("logExtend")
   var logExtend: Boolean
@@ -499,6 +596,8 @@ interface HiddenOptionContainer {
   // Default = `2000`
   // Type = `int`
   // Config Var = `chaining_maxgap`
+  @DiamondHidden
+  @CliFlag("chaining-maxgap")
   @get:JsonGetter("chainingMaxGap")
   @set:JsonSetter("chainingMaxGap")
   var chainingMaxGap: Int
@@ -508,6 +607,8 @@ interface HiddenOptionContainer {
   // Default = `15`
   // Type = `int`
   // Config Var = `tantan_maxRepeatOffset`
+  @DiamondHidden
+  @CliFlag("tantan-maxRepeatOffset") // NOTE: Capitalization is present in DIAMOND CLI source code
   @get:JsonGetter("tantanMaxRepeatOffset")
   @set:JsonSetter("tantanMaxRepeatOffset")
   var tantanMaxRepeatOffset: Int
@@ -517,6 +618,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `tantan_ungapped`
+  @DiamondHidden
+  @CliFlag("tantan-ungapped")
   @get:JsonGetter("tantanUngapped")
   @set:JsonSetter("tantanUngapped")
   var tantanUngapped: Boolean
@@ -526,6 +629,8 @@ interface HiddenOptionContainer {
   // Default = `(size_t)8`
   // Type = `size_t`
   // Config Var = `chaining_range_cover`
+  @DiamondHidden
+  @CliFlag("chaining-range-cover")
   @get:JsonGetter("chainingRangeCover")
   @set:JsonSetter("chainingRangeCover")
   var chainingRangeCover: ULong
@@ -535,6 +640,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_swipe_realign`
+  @DiamondHidden
+  @CliFlag("no-swipe-realign")
   @get:JsonGetter("noSwipeRealign")
   @set:JsonSetter("noSwipeRealign")
   var noSwipeRealign: Boolean
@@ -544,6 +651,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `size_t`
   // Config Var = `chaining_maxnodes`
+  @DiamondHidden
+  @CliFlag("chaining-maxnodes")
   @get:JsonGetter("chainingMaxNodes")
   @set:JsonSetter("chainingMaxNodes")
   var chainingMaxNodes: ULong
@@ -553,6 +662,8 @@ interface HiddenOptionContainer {
   // Default = `240`
   // Type = `int`
   // Config Var = `cutoff_score_8bit`
+  @DiamondHidden
+  @CliFlag("cutoff-score-8bit")
   @get:JsonGetter("cutoffScore8Bit")
   @set:JsonSetter("cutoffScore8Bit")
   var cutoffScore8Bit: Int // TODO: is this supposed to be limited to 8 bits?
@@ -562,6 +673,8 @@ interface HiddenOptionContainer {
   // Default = `0.0`
   // Type = `double`
   // Config Var = `min_band_overlap`
+  @DiamondHidden
+  @CliFlag("min-band-overlap")
   @get:JsonGetter("minBandOverlap")
   @set:JsonSetter("minBandOverlap")
   var minBandOverlap: Double
@@ -571,6 +684,8 @@ interface HiddenOptionContainer {
   // Default = `30`
   // Type = `int`
   // Config Var = `min_realign_overhang`
+  @DiamondHidden
+  @CliFlag("min-realign-overhang")
   @get:JsonGetter("minRealignOverhang")
   @set:JsonSetter("minRealignOverhang")
   var minRealignOverhang: Int
@@ -580,6 +695,8 @@ interface HiddenOptionContainer {
   // Default = `48`
   // Type = `int`
   // Config Var = `ungapped_window`
+  @DiamondHidden
+  @CliFlag("ungapped-window")
   @get:JsonGetter("ungappedWindow")
   @set:JsonSetter("ungappedWindow")
   var ungappedWindow: Int
@@ -589,6 +706,8 @@ interface HiddenOptionContainer {
   // Default = `12.0`
   // Type = `double`
   // Config Var = `gapped_filter_diag_bit_score`
+  @DiamondHidden
+  @CliFlag("gapped-filter-diag-score")
   @get:JsonGetter("gappedFilterDiagBitScore")
   @set:JsonSetter("gappedFilterDiagBitScore")
   var gappedFilterDiagBitScore: Double
@@ -598,6 +717,8 @@ interface HiddenOptionContainer {
   // Default = `200`
   // Type = `int`
   // Config Var = `gapped_filter_window`
+  @DiamondHidden
+  @CliFlag("gapped-filter-window")
   @get:JsonGetter("gappedFilterWindow")
   @set:JsonSetter("gappedFilterWindow")
   var gappedFilterWindow: Int
@@ -607,6 +728,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `output_hits`
+  @DiamondHidden
+  @CliFlag("output-hits")
   @get:JsonGetter("outputHits")
   @set:JsonSetter("outputHits")
   var outputHits: Boolean
@@ -616,6 +739,8 @@ interface HiddenOptionContainer {
   // Default = `-1.0`
   // Type = `double`
   // Config Var = `ungapped_evalue_`
+  @DiamondHidden
+  @CliFlag("ungapped-evalue")
   @get:JsonGetter("ungappedEValue")
   @set:JsonSetter("ungappedEValue")
   var ungappedEValue: Double
@@ -625,6 +750,8 @@ interface HiddenOptionContainer {
   // Default = `-1.0`
   // Type = `double`
   // Config Var = `ungapped_evalue_short_`
+  @DiamondHidden
+  @CliFlag("ungapped-evalue-short")
   @get:JsonGetter("ungappedEValueShort")
   @set:JsonSetter("ungappedEValueShort")
   var ungappedEValueShort: Double
@@ -634,6 +761,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_logfile`
+  @DiamondHidden
+  @CliFlag("no-logfile")
   @get:JsonGetter("noLogFile")
   @set:JsonSetter("noLogFile")
   var noLogFile: Boolean
@@ -643,6 +772,8 @@ interface HiddenOptionContainer {
   // Default = `24`
   // Type = `int`
   // Config Var = `band_bin`
+  @DiamondHidden
+  @CliFlag("band-bin")
   @get:JsonGetter("bandBin")
   @set:JsonSetter("bandBin")
   var bandBin: Int
@@ -652,6 +783,8 @@ interface HiddenOptionContainer {
   // Default = `400`
   // Type = `int`
   // Config Var = `col_bin`
+  @DiamondHidden
+  @CliFlag("col-bin")
   @get:JsonGetter("colBin")
   @set:JsonSetter("colBin")
   var colBin: Int
@@ -661,6 +794,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `self`
+  @DiamondHidden
+  @CliFlag("self")
   @get:JsonGetter("self")
   @set:JsonSetter("self")
   var self: Boolean
@@ -670,6 +805,8 @@ interface HiddenOptionContainer {
   // Default = `(int64_t)10e9`
   // Type = `int64_t`
   // Config Var = `trace_pt_fetch_size`
+  @DiamondHidden
+  @CliFlag("trace-pt-fetch-size")
   @get:JsonGetter("tracePtFetchSize")
   @set:JsonSetter("tracePtFetchSize")
   var tracePtFetchSize: Long
@@ -679,6 +816,8 @@ interface HiddenOptionContainer {
   // Default = `(uint32_t)1024`
   // Type = `uint32_t`
   // Config Var = `tile_size`
+  @DiamondHidden
+  @CliFlag("tile-size")
   @get:JsonGetter("tileSize")
   @set:JsonSetter("tileSize")
   var tileSize: UInt
@@ -688,6 +827,8 @@ interface HiddenOptionContainer {
   // Default = `25.0`
   // Type = `double`
   // Config Var = `short_query_ungapped_bitscore`
+  @DiamondHidden
+  @CliFlag("short-query-ungapped-bitscore")
   @get:JsonGetter("shortQueryUngappedBitScore")
   @set:JsonSetter("shortQueryUngappedBitScore")
   var shortQueryUngappedBitScore: Double
@@ -697,6 +838,8 @@ interface HiddenOptionContainer {
   // Default = `60`
   // Type = `int`
   // Config Var = `short_query_max_len`
+  @DiamondHidden
+  @CliFlag("short-query-max-len")
   @get:JsonGetter("shortQueryMaxLen")
   @set:JsonSetter("shortQueryMaxLen")
   var shortQueryMaxLen: Int
@@ -706,6 +849,8 @@ interface HiddenOptionContainer {
   // Default = `2000.0`
   // Type = `double`
   // Config Var = `gapped_filter_evalue1`
+  @DiamondHidden
+  @CliFlag("gapped-filter-evalue1")
   @get:JsonGetter("gappedFilterEValue1")
   @set:JsonSetter("gappedFilterEValue1")
   var gappedFilterEValue1: Double
@@ -715,6 +860,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `ext_min_yield`
+  @DiamondHidden
+  @CliFlag("ext-yield")
   @get:JsonGetter("extYield")
   @set:JsonSetter("extYield")
   var extYield: Double
@@ -724,6 +871,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int`
   // Config Var = `full_sw_len`
+  @DiamondHidden
+  @CliFlag("full-sw-len")
   @get:JsonGetter("fullSwLen")
   @set:JsonSetter("fullSwLen")
   var fullSwLen: Int
@@ -733,6 +882,8 @@ interface HiddenOptionContainer {
   // Default = `1.0`
   // Type = `double`
   // Config Var = `relaxed_evalue_factor`
+  @DiamondHidden
+  @CliFlag("relaxed-evalue-factor")
   @get:JsonGetter("relaxedEValueFactor")
   @set:JsonSetter("relaxedEValueFactor")
   var relaxedEValueFactor: Double
@@ -742,6 +893,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `type`
+  @DiamondHidden
+  @CliFlag("type")
   @get:JsonGetter("type")
   @set:JsonSetter("type")
   var type: String // TODO: what is this?
@@ -751,6 +904,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `raw`
+  @DiamondHidden
+  @CliFlag("raw")
   @get:JsonGetter("raw")
   @set:JsonSetter("raw")
   var raw: Boolean
@@ -760,6 +915,8 @@ interface HiddenOptionContainer {
   // Default = `2.0`
   // Type = `double`
   // Config Var = `chaining_len_cap`
+  @DiamondHidden
+  @CliFlag("chaining-len-cap")
   @get:JsonGetter("chainingLenCap")
   @set:JsonSetter("chainingLenCap")
   var chainingLenCap: Double
@@ -769,6 +926,8 @@ interface HiddenOptionContainer {
   // Default = `(size_t)200`
   // Type = `size_t`
   // Config Var = `chaining_min_nodes`
+  @DiamondHidden
+  @CliFlag("chaining-min-nodes")
   @get:JsonGetter("chainingMinNodes")
   @set:JsonSetter("chainingMinNodes")
   var chainingMinNodes: ULong
@@ -778,6 +937,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `fast_tsv`
+  @DiamondHidden
+  @CliFlag("fast-tsv")
   @get:JsonGetter("fastTsv")
   @set:JsonSetter("fastTsv")
   var fastTsv: Boolean
@@ -787,6 +948,8 @@ interface HiddenOptionContainer {
   // Default = `UINT_MAX`  // TODO: unsure if a default should be specified for this in flag form.  In practice, this should always be 4294967295, but this may be system dependent?
   // Type = `unsigned`
   // Config Var = `target_parallel_verbosity`
+  @DiamondHidden
+  @CliFlag("target-parallel-verbosity")
   @get:JsonGetter("targetParallelVerbosity")
   @set:JsonSetter("targetParallelVerbosity")
   var targetParallelVerbosity: UInt
@@ -796,6 +959,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `query_memory`
+  @DiamondHidden
+  @CliFlag("query-memory")
   @get:JsonGetter("queryMemory")
   @set:JsonSetter("queryMemory")
   var queryMemory: Boolean
@@ -805,6 +970,8 @@ interface HiddenOptionContainer {
   // Default = `(size_t)2`
   // Type = `size_t`
   // Config Var = `memory_intervals`
+  @DiamondHidden
+  @CliFlag("memory-intervals")
   @get:JsonGetter("memoryIntervals")
   @set:JsonSetter("memoryIntervals")
   var memoryIntervals: ULong
@@ -814,6 +981,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `size_t`
   // Config Var = `seedhit_density`
+  @DiamondHidden
+  @CliFlag("seed-hit-density")
   @get:JsonGetter("seedHitDensity")
   @set:JsonSetter("seedHitDensity")
   var seedHitDensity: ULong
@@ -823,6 +992,8 @@ interface HiddenOptionContainer {
   // Default = `(size_t)4`
   // Type = `size_t`
   // Config Var = `chunk_size_multiplier`
+  @DiamondHidden
+  @CliFlag("chunk-size-multiplier")
   @get:JsonGetter("chunkSizeMultiplier")
   @set:JsonSetter("chunkSizeMultiplier")
   var chunkSizeMultiplier: ULong
@@ -832,6 +1003,8 @@ interface HiddenOptionContainer {
   // Default = `0.95`
   // Type = `double`
   // Config Var = `ranking_score_drop_factor`
+  @DiamondHidden
+  @CliFlag("score-drop-factor")
   @get:JsonGetter("rankingScoreDropFactor")
   @set:JsonSetter("rankingScoreDropFactor")
   var rankingScoreDropFactor: Double
@@ -841,6 +1014,8 @@ interface HiddenOptionContainer {
   // Default = `32`
   // Type = `int`
   // Config Var = `left_most_interval`
+  @DiamondHidden
+  @CliFlag("left-most-interval")
   @get:JsonGetter("leftMostInterval")
   @set:JsonSetter("leftMostInterval")
   var leftMostInterval: Int
@@ -850,6 +1025,8 @@ interface HiddenOptionContainer {
   // Default = `25.0`
   // Type = `double`
   // Config Var = `ranking_cutoff_bitscore`
+  @DiamondHidden
+  @CliFlag("ranking-cutoff-bitscore")
   @get:JsonGetter("rankingCutoffBitScore")
   @set:JsonSetter("rankingCutoffBitScore")
   var rankingCutoffBitScore: Double
@@ -859,6 +1036,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_forward_fp`
+  @DiamondHidden
+  @CliFlag("no-forward-fp")
   @get:JsonGetter("noForwardFp")
   @set:JsonSetter("noForwardFp")
   var noForwardFp: Boolean
@@ -868,6 +1047,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_ref_masking`
+  @DiamondHidden
+  @CliFlag("no-ref-masking")
   @get:JsonGetter("noRefMasking")
   @set:JsonSetter("noRefMasking")
   var noRefMasking: Boolean
@@ -877,6 +1058,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `target_bias`
+  @DiamondHidden
+  @CliFlag("target-bias")
   @get:JsonGetter("targetBias")
   @set:JsonSetter("targetBias")
   var targetBias: Boolean
@@ -886,6 +1069,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `output_fp`
+  @DiamondHidden
+  @CliFlag("output-fp")
   @get:JsonGetter("outputFp")
   @set:JsonSetter("outputFp")
   var outputFp: Boolean
@@ -895,6 +1080,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int`
   // Config Var = `family_cap`
+  @DiamondHidden
+  @CliFlag("family-cap")
   @get:JsonGetter("familyCap")
   @set:JsonSetter("familyCap")
   var familyCap: Int
@@ -904,6 +1091,8 @@ interface HiddenOptionContainer {
   // Default = `1`
   // Type = `int`
   // Config Var = `cbs_matrix_scale`
+  @DiamondHidden
+  @CliFlag("cbs-matrix-scale")
   @get:JsonGetter("cbsMatrixScale")
   @set:JsonSetter("cbsMatrixScale")
   var cbsMatrixScale: Int
@@ -913,6 +1102,8 @@ interface HiddenOptionContainer {
   // Default = `(size_t)1`
   // Type = `size_t`
   // Config Var = `query_count`
+  @DiamondHidden
+  @CliFlag("query-count")
   @get:JsonGetter("queryCount")
   @set:JsonSetter("queryCount")
   var queryCount: ULong
@@ -922,6 +1113,8 @@ interface HiddenOptionContainer {
   // Default = `-1.0`
   // Type = `double`
   // Config Var = `cbs_angle`
+  @DiamondHidden
+  @CliFlag("cbs-angle")
   @get:JsonGetter("cbsAngle")
   @set:JsonSetter("cbsAngle")
   var cbsAngle: Double
@@ -931,6 +1124,8 @@ interface HiddenOptionContainer {
   // Default = `0.00000001`
   // Type = `double`
   // Config Var = `cbs_err_tolerance`
+  @DiamondHidden
+  @CliFlag("cbs-err-tolerance")
   @get:JsonGetter("cbsErrTolerance")
   @set:JsonSetter("cbsErrTolerance")
   var cbsErrTolerance: Double
@@ -940,6 +1135,8 @@ interface HiddenOptionContainer {
   // Default = `2000`
   // Type = `int`
   // Config Var = `cbs_it_limit`
+  @DiamondHidden
+  @CliFlag("cbs-it-limit")
   @get:JsonGetter("cbsItLimit")
   @set:JsonSetter("cbsItLimit")
   var cbsItLimit: Int
@@ -949,6 +1146,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `hash_join_swap`
+  @DiamondHidden
+  @CliFlag("hash_join_swap")
   @get:JsonGetter("hashJoinSwap")
   @set:JsonSetter("hashJoinSwap")
   var hashJoinSwap: Boolean
@@ -958,6 +1157,8 @@ interface HiddenOptionContainer {
   // Default = `(size_t)524288`
   // Type = `size_t`
   // Config Var = `deque_bucket_size`
+  @DiamondHidden
+  @CliFlag("deque_bucket_size")
   @get:JsonGetter("dequeBucketSize")
   @set:JsonSetter("dequeBucketSize")
   var dequeBucketSize: ULong
@@ -967,6 +1168,8 @@ interface HiddenOptionContainer {
   // Default = `-1.0`
   // Type = `double`
   // Config Var = `query_match_distance_threshold`
+  @DiamondHidden
+  @CliFlag("query-match-distance-threshold")
   @get:JsonGetter("queryMatchDistanceThreshold")
   @set:JsonSetter("queryMatchDistanceThreshold")
   var queryMatchDistanceThreshold: Double
@@ -976,6 +1179,8 @@ interface HiddenOptionContainer {
   // Default = `-1.0`
   // Type = `double`
   // Config Var = `length_ratio_threshold`
+  @DiamondHidden
+  @CliFlag("length-ratio-threshold")
   @get:JsonGetter("lengthRatioThreshold")
   @set:JsonSetter("lengthRatioThreshold")
   var lengthRatioThreshold: Double
@@ -985,6 +1190,8 @@ interface HiddenOptionContainer {
   // Default = `(int64_t)1000000`
   // Type = `int64_t`
   // Config Var = `max_swipe_dp`
+  @DiamondHidden
+  @CliFlag("max-swipe-dp")
   @get:JsonGetter("maxSwipeDp")
   @set:JsonSetter("maxSwipeDp")
   var maxSwipeDp: Long
@@ -994,6 +1201,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `short_seqids`
+  @DiamondHidden
+  @CliFlag("short-seqids")
   @get:JsonGetter("shortSeqIDs")
   @set:JsonSetter("shortSeqIDs")
   var shortSeqIDs: Boolean
@@ -1003,6 +1212,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_reextend`
+  @DiamondHidden
+  @CliFlag("no-reextend")
   @get:JsonGetter("noReextend")
   @set:JsonSetter("noReextend")
   var noReextend: Boolean
@@ -1012,6 +1223,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_reorder`
+  @DiamondHidden
+  @CliFlag("no-reorder")
   @get:JsonGetter("noReorder")
   @set:JsonSetter("noReorder")
   var noReorder: Boolean
@@ -1021,6 +1234,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `file1`
+  @DiamondHidden
+  @CliFlag("file1")
   @get:JsonGetter("file1")
   @set:JsonSetter("file1")
   var file1: String // TODO: me thinks this might need to be Path
@@ -1030,6 +1245,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `file2`
+  @DiamondHidden
+  @CliFlag("file2")
   @get:JsonGetter("file2")
   @set:JsonSetter("file2")
   var file2: String // TODO: me thinks this might need to be Path
@@ -1039,6 +1256,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `size_t`
   // Config Var = `key2`
+  @DiamondHidden
+  @CliFlag("key2")
   @get:JsonGetter("key2")
   @set:JsonSetter("key2")
   var key2: ULong
@@ -1048,6 +1267,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `motif_mask_file`
+  @DiamondHidden
+  @CliFlag("motif-mask-file")
   @get:JsonGetter("motifMaskFile")
   @set:JsonSetter("motifMaskFile")
   var motifMaskFile: String // TODO: me thinks this might need to be Path
@@ -1057,6 +1278,8 @@ interface HiddenOptionContainer {
   // Default = `30`
   // Type = `Loc -> int32_t`
   // Config Var = `max_motif_len`
+  @DiamondHidden
+  @CliFlag("max-motif-len")
   @get:JsonGetter("maxMotifLen")
   @set:JsonSetter("maxMotifLen")
   var maxMotifLen: Int
@@ -1066,6 +1289,8 @@ interface HiddenOptionContainer {
   // Default = `0.5`
   // Type = `double`
   // Config Var = `chaining_stacked_hsp_ratio`
+  @DiamondHidden
+  @CliFlag("chaining-stacked-hsp-ratio")
   @get:JsonGetter("chainingStackedHSPRatio")
   @set:JsonSetter("chainingStackedHSPRatio")
   var chainingStackedHSPRatio: Double
@@ -1075,6 +1300,8 @@ interface HiddenOptionContainer {
   // Default = `(int64_t)100000000`
   // Type = `int64_t`
   // Config Var = `swipe_task_size`
+  @DiamondHidden
+  @CliFlag("swipe-task-size")
   @get:JsonGetter("swipeTaskSize")
   @set:JsonSetter("swipeTaskSize")
   var swipeTaskSize: Long
@@ -1084,6 +1311,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `Loc -> int32_t`
   // Config Var = `minimizer_window_`
+  @DiamondHidden
+  @CliFlag("minimizer-window")
   @get:JsonGetter("minimizerWindow")
   @set:JsonSetter("minimizerWindow")
   var minimizerWindow: Int
@@ -1093,6 +1322,8 @@ interface HiddenOptionContainer {
   // Default = `(int64_t)1024`
   // Type = `int64_t`
   // Config Var = `min_task_trace_pts`
+  @DiamondHidden
+  @CliFlag("min_task_trace_pts")
   @get:JsonGetter("minTaskTracePts")
   @set:JsonSetter("minTaskTracePts")
   var minTaskTracePts: Long
@@ -1102,6 +1333,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `Loc -> int32_t`
   // Config Var = `sketch_size`
+  @DiamondHidden
+  @CliFlag("sketch-size")
   @get:JsonGetter("sketchSize")
   @set:JsonSetter("sketchSize")
   var sketchSize: Int
@@ -1111,6 +1344,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `oid_list`
+  @DiamondHidden
+  @CliFlag("oid-list")
   @get:JsonGetter("oidList")
   @set:JsonSetter("oidList")
   var oidList: String // TODO: what is this
@@ -1120,6 +1355,8 @@ interface HiddenOptionContainer {
   // Default = `(int64_t)1000000`
   // Type = `int64_t`
   // Config Var = `bootstrap_block`
+  @DiamondHidden
+  @CliFlag("bootstrap-block")
   @get:JsonGetter("bootstrapBlock")
   @set:JsonSetter("bootstrapBlock")
   var bootstrapBlock: Long
@@ -1129,6 +1366,8 @@ interface HiddenOptionContainer {
   // Default = `(int64_t)3`
   // Type = `int64_t`
   // Config Var = `centroid_factor`
+  @DiamondHidden
+  @CliFlag("centroid-factor")
   @get:JsonGetter("centroidFactor")
   @set:JsonSetter("centroidFactor")
   var centroidFactor: Long
@@ -1138,6 +1377,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int`
   // Config Var = `timeout`
+  @DiamondHidden
+  @CliFlag("timeout")
   @get:JsonGetter("timeout")
   @set:JsonSetter("timeout")
   var timeout: Int
@@ -1147,6 +1388,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `resume`
+  @DiamondHidden
+  @CliFlag("resume")
   @get:JsonGetter("resume")
   @set:JsonSetter("resume")
   var resume: String // TODO: what is this?
@@ -1156,6 +1399,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int64_t`
   // Config Var = `target_hard_cap`
+  @DiamondHidden
+  @CliFlag("target_hard_cap")
   @get:JsonGetter("targetHardCap")
   @set:JsonSetter("targetHardCap")
   var targetHardCap: Long
@@ -1165,6 +1410,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `mapany`
+  @DiamondHidden
+  @CliFlag("mapany")
   @get:JsonGetter("mapAny")
   @set:JsonSetter("mapAny")
   var mapAny: Boolean
@@ -1174,6 +1421,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `Option<string>`
   // Config Var = `neighbors`
+  @DiamondHidden
+  @CliFlag("neighbors")
   @get:JsonGetter("neighbors")
   @set:JsonSetter("neighbors")
   var neighbors: String // TODO: what is this?
@@ -1183,6 +1432,8 @@ interface HiddenOptionContainer {
   // Default = `0.3`
   // Type = `double`
   // Config Var = `reassign_overlap`
+  @DiamondHidden
+  @CliFlag("reassign-overlap")
   @get:JsonGetter("reassignOverlap")
   @set:JsonSetter("reassignOverlap")
   var reassignOverlap: Double
@@ -1192,6 +1443,8 @@ interface HiddenOptionContainer {
   // Default = `0.5`
   // Type = `double`
   // Config Var = `reassign_ratio`
+  @DiamondHidden
+  @CliFlag("reassign-ratio")
   @get:JsonGetter("reassignRatio")
   @set:JsonSetter("reassignRatio")
   var reassignRatio: Double
@@ -1201,6 +1454,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int64_t`
   // Config Var = `reassign_max`
+  @DiamondHidden
+  @CliFlag("reassign-max")
   @get:JsonGetter("reassignMax")
   @set:JsonSetter("reassignMax")
   var reassignMax: Long
@@ -1210,6 +1465,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `add_self_aln`
+  @DiamondHidden
+  @CliFlag("add-self-aln")
   @get:JsonGetter("addSelfAln")
   @set:JsonSetter("addSelfAln")
   var addSelfAln: Boolean
@@ -1219,6 +1476,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `weighted_gvc`
+  @DiamondHidden
+  @CliFlag("weighted-gvc")
   @get:JsonGetter("weightedGVC")
   @set:JsonSetter("weightedGVC")
   var weightedGVC: Boolean
@@ -1228,6 +1487,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `hamming_ext`
+  @DiamondHidden
+  @CliFlag("hamming-ext")
   @get:JsonGetter("hammingExt")
   @set:JsonSetter("hammingExt")
   var hammingExt: Boolean
@@ -1237,6 +1498,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `diag_filter_id`
+  @DiamondHidden
+  @CliFlag("diag-filter-id")
   @get:JsonGetter("diagFilterID")
   @set:JsonSetter("diagFilterID")
   var diagFilterID: Double
@@ -1246,6 +1509,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `diag_filter_cov`
+  @DiamondHidden
+  @CliFlag("diag-filter-cov")
   @get:JsonGetter("diagFilterCov")
   @set:JsonSetter("diagFilterCov")
   var diagFilterCov: Double
@@ -1255,6 +1520,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `strict_gvc`
+  @DiamondHidden
+  @CliFlag("strict-gvc")
   @get:JsonGetter("strictGVC")
   @set:JsonSetter("strictGVC")
   var strictGVC: Boolean
@@ -1264,6 +1531,8 @@ interface HiddenOptionContainer {
   // Default = `string("prot")`
   // Type = `string`
   // Config Var = `dbstring`
+  @DiamondHidden
+  @CliFlag("dbtype")
   @get:JsonGetter("dbType")
   @set:JsonSetter("dbType")
   var dbType: String // TODO: enum this
@@ -1273,6 +1542,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `Option<string>`
   // Config Var = `cluster_similarity`
+  @DiamondHidden
+  @CliFlag("cluster-similarity")
   @get:JsonGetter("clusterSimilarity")
   @set:JsonSetter("clusterSimilarity")
   var clusterSimilarity: String // TODO: enum this
@@ -1282,6 +1553,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `Option<double>`
   // Config Var = `cluster_threshold`
+  @DiamondHidden
+  @CliFlag("cluster-threshold")
   @get:JsonGetter("clusterThreshold")
   @set:JsonSetter("clusterThreshold")
   var clusterThreshold: Double
@@ -1291,6 +1564,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `cluster_graph_file`
+  @DiamondHidden
+  @CliFlag("cluster-graph-file")
   @get:JsonGetter("clusterGraphFile")
   @set:JsonSetter("clusterGraphFile")
   var clusterGraphFile: Path
@@ -1300,6 +1575,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `cluster_restart`
+  @DiamondHidden
+  @CliFlag("cluster-restart")
   @get:JsonGetter("clusterRestart")
   @set:JsonSetter("clusterRestart")
   var clusterRestart: Boolean
@@ -1309,6 +1586,8 @@ interface HiddenOptionContainer {
   // Default = `(uint32_t)2`
   // Type = `uint32_t`
   // Config Var = `cluster_mcl_expansion`
+  @DiamondHidden
+  @CliFlag("mcl-expansion")
   @get:JsonGetter("mclExpansion")
   @set:JsonSetter("mclExpansion")
   var mclExpansion: UInt
@@ -1318,6 +1597,8 @@ interface HiddenOptionContainer {
   // Default = `2.0`
   // Type = `double`
   // Config Var = `cluster_mcl_inflation`
+  @DiamondHidden
+  @CliFlag("mcl-inflation")
   @get:JsonGetter("mclInflation")
   @set:JsonSetter("mclInflation")
   var mclInflation: Double
@@ -1327,6 +1608,8 @@ interface HiddenOptionContainer {
   // Default = `(uint32_t)1`
   // Type = `uint32_t`
   // Config Var = `cluster_mcl_chunk_size`
+  @DiamondHidden
+  @CliFlag("mcl-chunk-size")
   @get:JsonGetter("mclChunkSize")
   @set:JsonSetter("mclChunkSize")
   var mclChunkSize: UInt
@@ -1336,6 +1619,8 @@ interface HiddenOptionContainer {
   // Default = `(uint32_t)100`
   // Type = `uint32_t`
   // Config Var = `cluster_mcl_max_iter`
+  @DiamondHidden
+  @CliFlag("mcl-max-iterations")
   @get:JsonGetter("mclMaxIterations")
   @set:JsonSetter("mclMaxIterations")
   var mclMaxIterations: UInt
@@ -1345,6 +1630,8 @@ interface HiddenOptionContainer {
   // Default = `0.8`
   // Type = `double`
   // Config Var = `cluster_mcl_sparsity_switch`
+  @DiamondHidden
+  @CliFlag("mcl-sparsity-switch")
   @get:JsonGetter("mclSparsitySwitch")
   @set:JsonSetter("mclSparsitySwitch")
   var mclSparsitySwitch: Double
@@ -1354,6 +1641,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `cluster_mcl_nonsymmetric`
+  @DiamondHidden
+  @CliFlag("mcl-nonsymmetric")
   @get:JsonGetter("mclNonSymmetric")
   @set:JsonSetter("mclNonSymmetric")
   var mclNonSymmetric: Boolean
@@ -1363,6 +1652,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `cluster_mcl_stats`
+  @DiamondHidden
+  @CliFlag("mcl-stats")
   @get:JsonGetter("mclStats")
   @set:JsonSetter("mclStats")
   var mclStats: Boolean
@@ -1372,6 +1663,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `Option<string>`
   // Config Var = `cluster_algo`
+  @DiamondHidden
+  @CliFlag("cluster-algo")
   @get:JsonGetter("clusterAlgo")
   @set:JsonSetter("clusterAlgo")
   var clusterAlgo: String // TODO: enum this
@@ -1381,6 +1674,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `approx_backtrace`
+  @DiamondHidden
+  @CliFlag("approx-backtrace")
   @get:JsonGetter("approxBacktrace")
   @set:JsonSetter("approxBacktrace")
   var approxBacktrace: Boolean
@@ -1390,6 +1685,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `prefix_scan`
+  @DiamondHidden
+  @CliFlag("prefix-scan")
   @get:JsonGetter("prefixScan")
   @set:JsonSetter("prefixScan")
   var prefixScan: Boolean
@@ -1399,6 +1696,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `narrow_band_cov`
+  @DiamondHidden
+  @CliFlag("narrow-band-cov")
   @get:JsonGetter("narrowBandCov")
   @set:JsonSetter("narrowBandCov")
   var narrowBandCov: Double
@@ -1408,6 +1707,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `narrow_band_factor`
+  @DiamondHidden
+  @CliFlag("narrow-band-factor")
   @get:JsonGetter("narrowBandFactor")
   @set:JsonSetter("narrowBandFactor")
   var narrowBandFactor: Double
@@ -1417,6 +1718,8 @@ interface HiddenOptionContainer {
   // Default = `12`
   // Type = `Loc -> int32_t`
   // Config Var = `anchor_window`
+  @DiamondHidden
+  @CliFlag("anchor-window")
   @get:JsonGetter("anchorWindow")
   @set:JsonSetter("anchorWindow")
   var anchorWindow: Int
@@ -1426,6 +1729,8 @@ interface HiddenOptionContainer {
   // Default = `1.0`
   // Type = `double`
   // Config Var = `anchor_score`
+  @DiamondHidden
+  @CliFlag("anchor-score")
   @get:JsonGetter("anchorScore")
   @set:JsonSetter("anchorScore")
   var anchorScore: Double
@@ -1435,6 +1740,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `boolean`
   // Config Var = `classic_band`
+  @DiamondHidden
+  @CliFlag("classic-band")
   @get:JsonGetter("classicBand")
   @set:JsonSetter("classicBand")
   var classicBand: Boolean
@@ -1444,6 +1751,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_8bit_extension`
+  @DiamondHidden
+  @CliFlag("no_8bit_extension")
   @get:JsonGetter("no8BitExtension")
   @set:JsonSetter("no8BitExtension")
   var no8BitExtension: Boolean
@@ -1453,6 +1762,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `anchored_swipe`
+  @DiamondHidden
+  @CliFlag("anchored-swipe")
   @get:JsonGetter("anchoredSwipe")
   @set:JsonSetter("anchoredSwipe")
   var anchoredSwipe: Boolean
@@ -1462,6 +1773,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `no_chaining_merge_hsps`
+  @DiamondHidden
+  @CliFlag("no_chaining_merge_hsps")
   @get:JsonGetter("noChainingMergeHSPs")
   @set:JsonSetter("noChainingMergeHSPs")
   var noChainingMergeHSPs: Boolean
@@ -1471,6 +1784,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `pipeline_short`
+  @DiamondHidden
+  @CliFlag("pipeline-short")
   @get:JsonGetter("pipelineShort")
   @set:JsonSetter("pipelineShort")
   var pipelineShort: Boolean
@@ -1480,6 +1795,8 @@ interface HiddenOptionContainer {
   // Default = `string("gvc")`
   // Type = `string`
   // Config Var = `graph_algo`
+  @DiamondHidden
+  @CliFlag("graph-algo")
   @get:JsonGetter("graphAlgo")
   @set:JsonSetter("graphAlgo")
   var graphAlgo: String // TODO: enum this
@@ -1489,6 +1806,8 @@ interface HiddenOptionContainer {
   // Default = `int64_t(GIGABYTES)` // 1073741824
   // Type = `int64_t`
   // Config Var = `tsv_read_size`
+  @DiamondHidden
+  @CliFlag("tsv-read-size")
   @get:JsonGetter("tsvReadSize")
   @set:JsonSetter("tsvReadSize")
   var tsvReadSize: Long
@@ -1498,6 +1817,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `double`
   // Config Var = `min_length_ratio`
+  @DiamondHidden
+  @CliFlag("min-len-ratio")
   @get:JsonGetter("minLenRatio")
   @set:JsonSetter("minLenRatio")
   var minLenRatio: Double
@@ -1507,6 +1828,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `int`
   // Config Var = `max_indirection`
+  @DiamondHidden
+  @CliFlag("max-indirection")
   @get:JsonGetter("maxIndirection")
   @set:JsonSetter("maxIndirection")
   var maxIndirection: Int
@@ -1516,6 +1839,8 @@ interface HiddenOptionContainer {
   // Default = ``
   // Type = `string`
   // Config Var = `aln_out`
+  @DiamondHidden
+  @CliFlag("aln-out")
   @get:JsonGetter("alnOut")
   @set:JsonSetter("alnOut")
   var alnOut: String // TODO: what is this?

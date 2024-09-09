@@ -18,91 +18,162 @@
 package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 // TODO: Most of these options should be condensed to an enum, they are mutually
 //       exclusive and configure the same setting to different values.  The only
 //       field in here that _isn't_ part of the enum is [shapes]
 interface AlignerSensitivityOptionContainer {
+
+  @get:JsonGetter("faster")
+  @set:JsonSetter("faster")
+  var sensitivity: Sensitivity
+
   // enable faster mode
   // `--faster`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_faster`
-  @get:JsonGetter("faster")
-  @set:JsonSetter("faster")
+  @CliFlag("faster")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var faster: Boolean
+    get() = sensitivity == Sensitivity.Faster
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.Faster
+      else if (sensitivity == Sensitivity.Faster)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable fast mode
   // `--fast`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_fast`
-  @get:JsonGetter("fast")
-  @set:JsonSetter("fast")
+  @CliFlag("fast")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var fast: Boolean
+    get() = sensitivity == Sensitivity.Fast
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.Fast
+      else if (sensitivity == Sensitivity.Fast)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable mid-sensitive mode
   // `--mid-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_mid_sensitive`
-  @get:JsonGetter("midSensitive")
-  @set:JsonSetter("midSensitive")
+  @CliFlag("mid-sensitive")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var midSensitive: Boolean
+    get() = sensitivity == Sensitivity.MidSensitive
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.MidSensitive
+      else if (sensitivity == Sensitivity.MidSensitive)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable mode using 30 seed shapes of weight 10
   // `--shapes-30x10`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_shapes30x10`
-  @get:JsonGetter("shapes30x10")
-  @set:JsonSetter("shapes30x10")
+  @CliFlag("shapes-30x10")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var shapes30x10: Boolean
+    get() = sensitivity == Sensitivity.Shapes30x10
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.Shapes30x10
+      else if (sensitivity == Sensitivity.Shapes30x10)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable sensitive mode)
   // `--sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_sensitive`
-  @get:JsonGetter("sensitive")
-  @set:JsonSetter("sensitive")
+  @CliFlag("sensitive")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var sensitive: Boolean
+    get() = sensitivity == Sensitivity.Sensitive
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.Sensitive
+      else if (sensitivity == Sensitivity.Sensitive)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable more sensitive mode
   // `--more-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_more_sensitive`
-  @get:JsonGetter("moreSensitive")
-  @set:JsonSetter("moreSensitive")
+  @CliFlag("more-sensitive")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var moreSensitive: Boolean
+    get() = sensitivity == Sensitivity.MoreSensitive
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.MoreSensitive
+      else if (sensitivity == Sensitivity.MoreSensitive)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable very sensitive mode
   // `--very-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_very_sensitive`
-  @get:JsonGetter("verySensitive")
-  @set:JsonSetter("verySensitive")
+  @CliFlag("very-sensitive")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var verySensitive: Boolean
+    get() = sensitivity == Sensitivity.VerySensitive
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.VerySensitive
+      else if (sensitivity == Sensitivity.VerySensitive)
+        sensitivity = Sensitivity.Default
+    }
 
   // enable ultra sensitive mode
   // `--ultra-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_ultra_sensitive`
-  @get:JsonGetter("ultraSensitive")
-  @set:JsonSetter("ultraSensitive")
+  @CliFlag("ultra-sensitive")
+  @get:JsonIgnore
+  @set:JsonIgnore
   var ultraSensitive: Boolean
+    get() = sensitivity == Sensitivity.UltraSensitive
+    set(value) {
+      if (value)
+        sensitivity = Sensitivity.UltraSensitive
+      else if (sensitivity == Sensitivity.UltraSensitive)
+        sensitivity = Sensitivity.Default
+    }
 
   // number of seed shapes (default=all available)
   // `--shapes` | `-s`
   // Default = ``
   // Type = `unsigned`
   // Config Var = `shapes`
+  @CliFlag("shapes", 's')
   @get:JsonGetter("shapes")
   @set:JsonSetter("shapes")
   var shapes: UInt
-
 }

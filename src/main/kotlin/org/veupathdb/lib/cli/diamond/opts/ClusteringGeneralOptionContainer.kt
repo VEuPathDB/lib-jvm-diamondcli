@@ -19,6 +19,7 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 
 interface ClusteringGeneralOptionContainer {
   // Clustering steps
@@ -26,6 +27,7 @@ interface ClusteringGeneralOptionContainer {
   // Default = ``
   // Type = `string_vector`
   // Config Var = `cluster_steps`
+  @CliFlag("cluster-steps")
   @get:JsonGetter("clusterSteps")
   @set:JsonSetter("clusterSteps")
   var clusterSteps: List<String> // TODO: what is this
@@ -35,6 +37,7 @@ interface ClusteringGeneralOptionContainer {
   // Default = ``
   // Type = `bool`
   // Config Var = `kmer_ranking`
+  @CliFlag("kmer-ranking")
   @get:JsonGetter("kmerRanking")
   @set:JsonSetter("kmerRanking")
   var kmerRanking: Boolean
@@ -44,6 +47,7 @@ interface ClusteringGeneralOptionContainer {
   // Default = ``
   // Type = `std::vector<string>`
   // Config Var = `round_coverage`
+  @CliFlag("round-coverage")
   @get:JsonGetter("roundCoverage")
   @set:JsonSetter("roundCoverage")
   var roundCoverage: List<String> // TODO: what is this
@@ -53,6 +57,7 @@ interface ClusteringGeneralOptionContainer {
   // Default = ``
   // Type = `string_vector`
   // Config Var = `round_approx_id`
+  @CliFlag("round-approx-id")
   @get:JsonGetter("roundApproxID")
   @set:JsonSetter("roundApproxID")
   var roundApproxID: List<String>
