@@ -17,7 +17,10 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
@@ -30,10 +33,13 @@ interface GetSeq
   , GeneralOutputOptionContainer
   , HiddenOptionContainer
 {
-  // Space-separated list of sequence numbers to display.
-  // `--seq`
-  // Default = ``
-  // Type = `string_vector`
-  // Config Var = `seq_no`
-  var seq: List<String> // should this be a list of numbers?
+  /**
+   * Space-separated list of sequence numbers to display.
+   *
+   * Flag: `--seq`
+   */
+  @CliFlag("seq")
+  @get:JsonGetter("seq")
+  @set:JsonSetter("seq")
+  var seq: List<String> // TODO: should this be a list of numbers?
 }

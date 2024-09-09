@@ -20,6 +20,7 @@ package org.veupathdb.lib.cli.diamond.commands
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.*
 import java.nio.file.Path
 
@@ -32,57 +33,64 @@ interface GreedyVortexCover
   , ClusteringReassignOptionContainer
   , HiddenOptionContainer
 {
-  // Output file for centroids
-  // `--centroid-out`
-  // Default = ``
-  // Type = `string`
-  // Config Var = `centroid_out`
+  /**
+   * Output file for centroids
+   *
+   * Flag: `--centroid-out`
+   */
+  @CliFlag("centroid-out")
   @get:JsonGetter("centroidOut")
   @set:JsonSetter("centroidOut")
   var centroidOut: Path
 
-  // Input file for greedy vertex cover
-  // `--edges`
-  // Default = ``
-  // Type = `string`
-  // Config Var = `edges`
+  /**
+   * Input file for greedy vertex cover
+   *
+   * Flag: `--edges`
+   */
+  @CliFlag("edges")
   @get:JsonGetter("edges")
   @set:JsonSetter("edges")
   var edges: Path
 
-  // Edge format for greedy vertex cover (default/triplet)
-  // `--edge-format`
-  // Default = ``
-  // Type = `string`
-  // Config Var = `edge_format`
+  /**
+   * Edge format for greedy vertex cover.
+   *
+   * Flag: `--edge-format`
+   */
+  @CliFlag("edge-format")
   @get:JsonGetter("edgeFormat")
   @set:JsonSetter("edgeFormat")
-  var edgeFormat: String // TODO enum this
+  var edgeFormat: EdgeFormat
 
-  // Edges are symmetric
-  // `--symmetric`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `symmetric`
+  /**
+   * Edges are symmetric
+   *
+   * Flag: `--symmetric`
+   */
+  @CliFlag("symmetric")
   @get:JsonGetter("symmetric")
   @set:JsonSetter("symmetric")
   var symmetric: Boolean
 
-  // Do not reassign to closest representative
-  // `--no-reassign`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `no_gvc_reassign`
+  /**
+   * Do not reassign to the closest representative.
+   *
+   * Flag: `--no-reassign`
+   */
+  @CliFlag("no-reassign")
   @get:JsonGetter("noReassign")
   @set:JsonSetter("noReassign")
   var noReassign: Boolean
 
-  // Depth to cluster connected components
-  // `--connected-component-depth`
-  // Default = ``
-  // Type = `string_vector`
-  // Config Var = `connected_component_depth`
+  /**
+   * Depth to cluster connected components.
+   *
+   * Flag: `--connected-component-depth`
+   */
+  @CliFlag("connected-component-depth")
   @get:JsonGetter("connectedComponentDepth")
   @set:JsonSetter("connectedComponentDepth")
   var connectedComponentDepth: List<String>
 }
+

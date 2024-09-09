@@ -15,7 +15,7 @@
  *
  */
 
-package org.veupathdb.lib.cli.diamond
+package org.veupathdb.lib.cli.diamond.opts
 
 // TODO: flesh this out
 enum class HeaderOption {

@@ -1,7 +1,7 @@
 package org.veupathdb.lib.cli.diamond.opts.impl
 
 import io.foxcapades.lib.cli.wrapper.flag
-import org.veupathdb.lib.cli.diamond.HeaderOption
+import org.veupathdb.lib.cli.diamond.opts.HeaderOption
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputHeaderOptionContainer
 
 class GeneralOutputHeaderOptionContainerImpl : GeneralOutputHeaderOptionContainer {
