@@ -17,7 +17,10 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.*
 import java.nio.file.Path
 
@@ -32,12 +35,18 @@ interface View
   , ViewAlignOptionContainer
   , HiddenOptionContainer
 {
+  @CliFlag("in")
+  @get:JsonGetter("inputFile")
+  @set:JsonSetter("inputFile")
   var inputFile: Path
 
-  // only show alignments of forward strand
-  // `--forwardonly` | `-`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `forwardonly`
-  var forwardonly: Boolean
+  /**
+   * Only show alignments of forward strand.
+   *
+   * Flag: `--forwardonly`
+   */
+  @CliFlag("forwardonly")
+  @get:JsonGetter("forwardOnly")
+  @set:JsonSetter("forwardOnly")
+  var forwardOnly: Boolean
 }
