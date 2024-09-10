@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
 import org.veupathdb.lib.cli.diamond.util.CliEnum
-import org.veupathdb.lib.cli.diamond.util.JsonEnumParser
 import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class Compression(override val cliValue: String) : CliEnum {
@@ -16,10 +15,10 @@ enum class Compression(override val cliValue: String) : CliEnum {
   @JsonValue
   override fun toString() = name.lowercase()
 
-  companion object : JsonEnumParser<Compression> {
+  companion object {
     @JvmStatic
     @JsonCreator
-    override fun fromJson(json: JsonNode) = when {
+    fun fromJson(json: JsonNode) = when {
       json.isTextual        -> fromString(json.textValue())
       json.isIntegralNumber -> fromInt(json.intValue())
       else                  -> invalid(json)

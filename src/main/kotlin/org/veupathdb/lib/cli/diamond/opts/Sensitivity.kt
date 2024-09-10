@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
 import org.veupathdb.lib.cli.diamond.util.CliEnum
-import org.veupathdb.lib.cli.diamond.util.JsonEnumParser
+import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class Sensitivity(
   @get:JsonValue
@@ -23,16 +23,16 @@ enum class Sensitivity(
 
   override fun toString() = cliValue
 
-  companion object : JsonEnumParser<Sensitivity> {
+  companion object {
     @JvmStatic
     @JsonCreator
-    override fun fromJson(json: JsonNode) = when {
+    fun fromJson(json: JsonNode) = when {
       json.isTextual -> fromString(json.textValue())
       else           -> invalid(json)
     }
 
     @JvmStatic
-    override fun fromString(value: String) =
+    fun fromString(value: String) =
       value.lowercase().let { target -> entries.find { it.cliValue == target } }
         ?: invalid(value)
   }

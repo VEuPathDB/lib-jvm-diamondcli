@@ -1,6 +1,5 @@
 package org.veupathdb.lib.cli.diamond.util
 
-import com.fasterxml.jackson.databind.JsonNode
 import io.foxcapades.lib.cli.wrapper.FlagOptions
 import io.foxcapades.lib.cli.wrapper.flag
 import io.foxcapades.lib.cli.wrapper.serial.CliArgumentAppender
@@ -22,15 +21,6 @@ internal fun <T : CliEnum> enumFormatter(): ArgumentFormatter<T> =
 
 interface CliEnum {
   val cliValue: String
-}
-
-interface JsonEnumParser<T : Enum<T>> {
-  fun fromJson(json: JsonNode): T
-
-  fun fromString(value: String): T
-
-  fun invalid(value: Any): T =
-    throw IllegalArgumentException("Invalid ${this::class.simpleName} value: $value")
 }
 
 internal inline fun <reified E : CliEnum> enumFlag(noinline action: FlagOptions<E>.() -> Unit = {}) =

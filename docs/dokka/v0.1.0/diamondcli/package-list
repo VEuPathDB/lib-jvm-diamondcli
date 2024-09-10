@@ -1094,10 +1094,6 @@ $dokka.location:org.veupathdb.lib.cli.diamond.opts/ViewAlignOptionContainer/daa/
 $dokka.location:org.veupathdb.lib.cli.diamond.util////PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/index.html
 $dokka.location:org.veupathdb.lib.cli.diamond.util/CliEnum///PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/-cli-enum/index.html
 $dokka.location:org.veupathdb.lib.cli.diamond.util/CliEnum/cliValue/#/PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/-cli-enum/cli-value.html
-$dokka.location:org.veupathdb.lib.cli.diamond.util/JsonEnumParser///PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/-json-enum-parser/index.html
-$dokka.location:org.veupathdb.lib.cli.diamond.util/JsonEnumParser/fromJson/#com.fasterxml.jackson.databind.JsonNode/PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/-json-enum-parser/from-json.html
-$dokka.location:org.veupathdb.lib.cli.diamond.util/JsonEnumParser/fromString/#kotlin.String/PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/-json-enum-parser/from-string.html
-$dokka.location:org.veupathdb.lib.cli.diamond.util/JsonEnumParser/invalid/#kotlin.Any/PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond.util/-json-enum-parser/invalid.html
 $dokka.location:org.veupathdb.lib.cli.diamond////PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond/index.html
 $dokka.location:org.veupathdb.lib.cli.diamond/Diamond///PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond/-diamond/index.html
 $dokka.location:org.veupathdb.lib.cli.diamond/Diamond/blastN/#/PointingToDeclaration/diamondcli/org.veupathdb.lib.cli.diamond/-diamond/blast-n.html
