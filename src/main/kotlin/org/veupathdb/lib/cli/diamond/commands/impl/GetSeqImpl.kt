@@ -23,5 +23,5 @@ internal class GetSeqImpl(
   , GeneralOutputOptionContainer by generalOutputOptions
   , HiddenOptionContainer by hiddenOptions
 {
-  override var seq by flag<List<String>> { argument.shouldQuote = false }
+  override var seq by flag<List<Int>> { argument.shouldQuote = false }
 }

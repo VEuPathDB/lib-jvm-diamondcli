@@ -41,5 +41,5 @@ interface GetSeq
   @CliFlag("seq")
   @get:JsonGetter("seq")
   @set:JsonSetter("seq")
-  var seq: List<String> // TODO: should this be a list of numbers?
+  var seq: List<Int>
 }
