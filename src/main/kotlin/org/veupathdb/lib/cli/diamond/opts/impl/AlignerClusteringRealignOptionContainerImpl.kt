@@ -5,7 +5,7 @@ import io.foxcapades.lib.cli.wrapper.flag.toggleFlag
 import org.veupathdb.lib.cli.diamond.opts.*
 import org.veupathdb.lib.cli.diamond.util.enumFormatter
 
-class AlignerClusteringRealignOptionContainerImpl : AlignerClusteringRealignOptionContainer {
+internal class AlignerClusteringRealignOptionContainerImpl : AlignerClusteringRealignOptionContainer {
   override var compBasedStats by flag<CompositionBasedStats> {
     default = CompositionBasedStats.Hauser
     argument.formatter = enumFormatter()

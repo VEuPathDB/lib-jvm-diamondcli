@@ -4,6 +4,6 @@ import io.foxcapades.lib.cli.wrapper.flag
 import org.veupathdb.lib.cli.diamond.opts.HeaderOption
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputHeaderOptionContainer
 
-class GeneralOutputHeaderOptionContainerImpl : GeneralOutputHeaderOptionContainer {
+internal class GeneralOutputHeaderOptionContainerImpl : GeneralOutputHeaderOptionContainer {
   override var header by flag<HeaderOption>() // TODO: custom implementation for optional arg var
 }

@@ -5,7 +5,7 @@ import org.veupathdb.lib.cli.diamond.DiamondHidden
 import org.veupathdb.lib.cli.diamond.opts.*
 import org.veupathdb.lib.cli.diamond.util.enumFlag
 
-class HiddenOptionContainerImpl : HiddenOptionContainer {
+internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   @DiamondHidden
   override var maximumSeedFrequency by doubleFlag()
 

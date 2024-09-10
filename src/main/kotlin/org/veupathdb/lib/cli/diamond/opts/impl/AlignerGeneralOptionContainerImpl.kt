@@ -8,7 +8,7 @@ import org.veupathdb.lib.cli.diamond.util.enumFlag
 import org.veupathdb.lib.cli.diamond.util.listFlag
 import java.nio.file.Path
 
-class AlignerGeneralOptionContainerImpl : AlignerGeneralOptionContainer {
+internal class AlignerGeneralOptionContainerImpl : AlignerGeneralOptionContainer {
   override var query by listFlag<Path>()
   override var strand by enumFlag<QueryStrand>()
   override var unalignedFile by pathFlag()

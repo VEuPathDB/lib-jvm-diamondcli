@@ -11,5 +11,6 @@ package org.veupathdb.lib.cli.diamond
     "with extras enabled."
 )
 @Retention(AnnotationRetention.BINARY)
+@MustBeDocumented
 annotation class DiamondExtras
 
