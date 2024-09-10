@@ -27,7 +27,7 @@ import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.MergeDAA)
-interface MergeDAA : GeneralOptionContainer, GeneralOutputOptionContainer, HiddenOptionContainer {
+interface MergeDAA : DiamondCommandConfig, GeneralOptionContainer, GeneralOutputOptionContainer, HiddenOptionContainer {
   @CliFlag("in")
   @get:JsonGetter("inputFiles")
   @set:JsonSetter("inputFiles")

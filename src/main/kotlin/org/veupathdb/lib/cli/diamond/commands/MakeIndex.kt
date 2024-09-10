@@ -25,7 +25,8 @@ import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.MakeIndex)
 interface MakeIndex
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , AlignerSensitivityOptionContainer
   , HiddenOptionContainer

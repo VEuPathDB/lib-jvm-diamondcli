@@ -23,7 +23,8 @@ import org.veupathdb.lib.cli.diamond.opts.*
 // CLUSTER_REASSIGN
 @CliCommand(Command, SubCommands.ReassignClusters)
 interface ReassignClusters
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer

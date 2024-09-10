@@ -20,6 +20,8 @@ package org.veupathdb.lib.cli.diamond
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node.TextNode
+import org.veupathdb.lib.cli.diamond.commands.SubCommands
+import org.veupathdb.lib.cli.diamond.util.invalid
 import kotlin.jvm.Throws
 
 /**
@@ -31,48 +33,48 @@ import kotlin.jvm.Throws
  *
  * @since v1.0.0
  */
-enum class DiamondCommand(val cliString: String) {
+enum class DiamondCommand(val command: String) {
   /**
    * Create a DIAMOND formatted reference database from a FASTA input file.
    */
-  MakeDB("makedb"),
+  MakeDB(SubCommands.MakeDB),
 
   /**
    * Prepare BLAST database for use with Diamond. This call requires the path
    * to the BLAST database (option `-d`) and will write a number of small
    * auxiliary files into the database directory.
    */
-  PrepDB("prepdb"),
+  PrepDB(SubCommands.PrepDB),
 
   /**
    * Align protein query sequences against a protein reference database.
    */
-  BlastP("blastp"),
+  BlastP(SubCommands.BlastP),
 
   /**
    * Align translated DNA query sequences against a protein reference database.
    */
-  BlastX("blastx"),
+  BlastX(SubCommands.BlastX),
 
   /**
    * Generate formatted output from DAA files.
    */
-  View("view"),
+  View(SubCommands.View),
 
   /**
    * Print information about a database file.
    */
-  DBInfo("dbinfo"),
+  DBInfo(SubCommands.DBInfo),
 
   /**
    * Print version information.
    */
-  Version("version"),
+  Version(SubCommands.Version),
 
   /**
    * Print help message.
    */
-  Help("help"),
+  Help(SubCommands.Help),
 
   /**
    * Run a series of test cases and verify the output against reference hashes.
@@ -83,86 +85,256 @@ enum class DiamondCommand(val cliString: String) {
    * Running this command requires write access to the current working
    * directory.
    */
-  Test("test"),
-
-  // Undocumented!
-  /*
-  cluster: Cluster protein sequences
-  linclust: Cluster protein sequences in linear time
-  realign: Realign clustered sequences against their centroids
-  recluster: Recompute clustering to fix errors
-  reassign: Reassign clustered sequences to the closest centroid
-  merge-daa: Merge DAA files
-  getseq: Retrieve sequences from a DIAMOND database file
-  makeidx: Make database index
-  greedy-vertex-cover: Compute greedy vertex cover
-  roc: ???
-  benchmark: ???
-  deepclust: ???
-  */
-
-  // Undocumented and possibly not present depending on compile options!
-  /*
-  random-seqs: ???
-  sort: ???
-  dbstat: ???
-  mask: ???
-  fastq2fasta: ???
-  read-sim: ???
-  info: ???
-  seed-stat: ???
-  smith-waterman: ???
-  translate: ???
-  filter-blasttab: ???
-  show-cbs: ???
-  simulate-seqs: ???
-  split: ???
-  upgma: ???
-  upgmamc: ???
-  reverse: ???
-  compute-medoids: ???
-  mutate: ???
-  roc-id: ???
-  find-shapes: ???
-  composition: ???
-  join: ???
-  hashseqs: ???
-  listseeds: ???
-  index-fasta: ???
-  fetch-seq: ???
-  blastn: Align DNA query sequences against a DNA reference database
-  length-sort: ???
-  wc: ???
-  cut: ???
-  model-seqs: ???
-  */
-  ;
+  Test(SubCommands.Test),
 
   /**
-   * Indicates whether the current [DiamondCommand] is one that is used for
-   * making queries.
+   * Cluster protein sequences
    */
-  val isQueryCommand
-    get() = this == BlastP || this == BlastX
+  Cluster(SubCommands.Cluster),
+
+  /**
+   * Cluster protein sequences in linear time
+   */
+  LinearCluster(SubCommands.LinearCluster),
+
+  /**
+   * Realign clustered sequences against their centroids
+   */
+  ClusterRealign(SubCommands.ClusterRealign),
+
+  /**
+   * Recompute clustering to fix errors
+   */
+  RecomputeClustering(SubCommands.RecomputeClustering),
+
+  /**
+   * Reassign clustered sequences to the closest centroid
+   */
+  ReassignClusters(SubCommands.ReassignClusters),
+
+  /**
+   * Merge DAA files
+   */
+  MergeDAA(SubCommands.MergeDAA),
+
+  /**
+   * Retrieve sequences from a DIAMOND database file
+   */
+  GetSeq(SubCommands.GetSeq),
+
+  /**
+   * Make database index
+   */
+  MakeIndex(SubCommands.MakeIndex),
+
+  /**
+   * Compute greedy vertex cover
+   */
+  GreedyVortexCover(SubCommands.GreedyVortexCover),
+
+  /**
+   * ???
+   */
+  ROC(SubCommands.ROC),
+
+  /**
+   * ???
+   */
+  Benchmark(SubCommands.Benchmark),
+
+  /**
+   * ???
+   */
+  DeepClustering(SubCommands.DeepClustering),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  RandomSeqs(SubCommands.RandomSeqs),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Sort(SubCommands.Sort),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  DBStats(SubCommands.DBStats),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Mask(SubCommands.Mask),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  FastQ2FastA(SubCommands.FastQ2FastA),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  ReadSim(SubCommands.ReadSim),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  SeedStat(SubCommands.SeedStat),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  SmithWaterman(SubCommands.SmithWaterman),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Translate(SubCommands.Translate),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  FilterBlastTab(SubCommands.FilterBlastTab),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  ShowCBS(SubCommands.ShowCBS),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  SimulateSeqs(SubCommands.SimulateSeqs),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Split(SubCommands.Split),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  UpGMA(SubCommands.UpGMA),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  UpGMAMC(SubCommands.UpGMAMC),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Reverse(SubCommands.Reverse),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  ComputeMedoids(SubCommands.ComputeMedoids),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Mutate(SubCommands.Mutate),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  ROCID(SubCommands.ROCID),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  FindShapes(SubCommands.FindShapes),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Composition(SubCommands.Composition),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Join(SubCommands.Join),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  HashSeqs(SubCommands.HashSeqs),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  ListSeeds(SubCommands.ListSeeds),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  IndexFastA(SubCommands.IndexFastA),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  FetchSeq(SubCommands.FetchSeq),
+
+  /**
+   * Align DNA query sequences against a DNA reference database.
+   */
+  @DiamondExtras
+  BlastN(SubCommands.BlastN),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  LengthSort(SubCommands.LengthSort),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  WC(SubCommands.WC),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  Cut(SubCommands.Cut),
+
+  /**
+   * ???
+   */
+  @DiamondExtras
+  ModelSeqs(SubCommands.ModelSeqs),
+  ;
 
   companion object {
-    /**
-     * Attempts to parse a [DiamondCommand] instance from the given [JsonNode],
-     * returning `null` if the given [json] was not a string, or did not contain
-     * a valid `DiamondCommand` value.
-     *
-     * @param json `JsonNode` to parse.
-     *
-     * @return A [DiamondCommand] value matching the given input, or `null` if
-     * the input did not match any `DiamondCommand` value.
-     */
-    @JvmStatic
-    fun fromJsonOrNull(json: JsonNode) =
-      when (json) {
-        is TextNode -> fromStringOrNull(json.textValue())
-        else -> null
-      }
-
     /**
      * Attempts to parse a [DiamondCommand] instance from the given [JsonNode],
      * throwing an [IllegalArgumentException] if the given [json] was not a
@@ -181,7 +353,7 @@ enum class DiamondCommand(val cliString: String) {
     fun fromJson(json: JsonNode) =
       when (json) {
         is TextNode -> fromString(json.textValue())
-        else -> throw IllegalArgumentException("could not parse non-text JSON value as a diamond tool name")
+        else        -> invalid(json)
       }
 
     /**
@@ -196,7 +368,7 @@ enum class DiamondCommand(val cliString: String) {
      */
     @JvmStatic
     fun fromStringOrNull(value: String) =
-      value.lowercase().let { raw -> entries.find { it.cliString == raw } }
+      value.lowercase().let { raw -> entries.find { it.command == raw } }
 
     /**
      * Attempts to parse a [DiamondCommand] instance from the given [String],
@@ -213,6 +385,6 @@ enum class DiamondCommand(val cliString: String) {
     @JvmStatic
     @Throws(IllegalArgumentException::class)
     fun fromString(value: String) =
-      fromStringOrNull(value) ?: throw IllegalArgumentException("unrecognized diamond tool value: \"$value\"")
+      fromStringOrNull(value) ?: invalid(value)
   }
 }

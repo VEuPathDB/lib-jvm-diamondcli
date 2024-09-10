@@ -22,7 +22,8 @@ import org.veupathdb.lib.cli.diamond.opts.*
 
 @CliCommand(Command, SubCommands.Cluster)
 interface Cluster
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer

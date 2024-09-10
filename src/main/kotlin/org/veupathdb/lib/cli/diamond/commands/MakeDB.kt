@@ -29,7 +29,8 @@ import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.MakeDB)
 interface MakeDB
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , AdvancedGeneralOptionContainer
   , HiddenOptionContainer

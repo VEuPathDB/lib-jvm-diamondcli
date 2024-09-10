@@ -26,7 +26,8 @@ import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.View)
 interface View
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer

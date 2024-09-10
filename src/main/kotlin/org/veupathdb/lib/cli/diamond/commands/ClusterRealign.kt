@@ -23,7 +23,8 @@ import org.veupathdb.lib.cli.diamond.opts.*
 // CLUSTER_REALIGN
 @CliCommand(Command, SubCommands.ClusterRealign)
 interface ClusterRealign
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer

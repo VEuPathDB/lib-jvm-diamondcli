@@ -17,7 +17,7 @@
 
 package org.veupathdb.lib.cli.diamond
 
-import java.nio.file.Path
+import org.veupathdb.lib.cli.diamond.commands.DiamondCommandConfig
 import kotlin.jvm.Throws
 
 /**
@@ -41,17 +41,12 @@ import kotlin.jvm.Throws
  * * `greedy-vertex-cover`
  * * `deepclust`
  */
-interface DiamondConfig {
+interface DiamondConfig<out T : DiamondCommandConfig> {
+
   /**
-   * Command that will be executed.
+   * Diamond CLI tool-specific options.
    *
-   * **NOTE**: Subtypes of [DiamondConfig] place restrictions on what values
-   * are permitted for this property.
-   *
-   * Attempting to set this property to a value that is not supported by the
-   * implementing subtype will result in an [IllegalArgumentException] being
-   * thrown.
+   * The type of this value may be determined by use of the [tool] property.
    */
-  @set:Throws(IllegalArgumentException::class)
-  var tool: DiamondCommand
+  val options: T
 }

@@ -23,4 +23,4 @@ import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.DBInfo)
-interface DBInfo : GeneralOptionContainer, GeneralDBOptionContainer, HiddenOptionContainer
+interface DBInfo : DiamondCommandConfig, GeneralOptionContainer, GeneralDBOptionContainer, HiddenOptionContainer

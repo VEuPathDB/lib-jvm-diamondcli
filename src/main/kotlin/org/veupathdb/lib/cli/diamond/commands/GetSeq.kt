@@ -28,7 +28,8 @@ import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.GetSeq)
 interface GetSeq
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputOptionContainer
   , HiddenOptionContainer

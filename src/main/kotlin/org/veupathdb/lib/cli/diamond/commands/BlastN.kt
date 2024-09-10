@@ -25,7 +25,8 @@ import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.BlastN)
 interface BlastN
-  : AdvancedGeneralOptionContainer
+  : DiamondCommand
+  , AdvancedGeneralOptionContainer
   , AdvancedClusteringAlignmentOptionContainer
   , AdvancedQueryOptionContainer
   , HiddenOptionContainer

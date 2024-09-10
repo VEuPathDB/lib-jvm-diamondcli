@@ -22,7 +22,8 @@ import org.veupathdb.lib.cli.diamond.opts.*
 
 @CliCommand(Command, SubCommands.DeepClustering)
 interface DeepClustering
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer

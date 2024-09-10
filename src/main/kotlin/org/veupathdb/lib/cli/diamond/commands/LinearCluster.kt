@@ -23,7 +23,8 @@ import org.veupathdb.lib.cli.diamond.opts.*
 // LINCLUST
 @CliCommand(Command, SubCommands.LinearCluster)
 interface LinearCluster
-  : GeneralOptionContainer
+  : DiamondCommandConfig
+  , GeneralOptionContainer
   , GeneralDBOptionContainer
   , GeneralOutputHeaderOptionContainer
   , GeneralOutputOptionContainer
