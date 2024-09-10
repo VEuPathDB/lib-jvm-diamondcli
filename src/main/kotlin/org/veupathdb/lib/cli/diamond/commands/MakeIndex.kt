@@ -18,6 +18,7 @@
 package org.veupathdb.lib.cli.diamond.commands
 
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.AlignerSensitivityOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
@@ -30,3 +31,7 @@ interface MakeIndex
   , GeneralDBOptionContainer
   , AlignerSensitivityOptionContainer
   , HiddenOptionContainer
+{
+  override val tool: DiamondCommand
+    get() = DiamondCommand.MakeIndex
+}

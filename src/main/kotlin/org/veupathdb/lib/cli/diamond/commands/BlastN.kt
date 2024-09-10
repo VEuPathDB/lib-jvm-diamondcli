@@ -18,15 +18,22 @@
 package org.veupathdb.lib.cli.diamond.commands
 
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.DiamondExtras
 import org.veupathdb.lib.cli.diamond.opts.AdvancedClusteringAlignmentOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.AdvancedQueryOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
+@DiamondExtras
 @CliCommand(Command, SubCommands.BlastN)
 interface BlastN
-  : DiamondCommand
+  : DiamondCommandConfig
   , AdvancedGeneralOptionContainer
   , AdvancedClusteringAlignmentOptionContainer
   , AdvancedQueryOptionContainer
   , HiddenOptionContainer
+{
+  override val tool: DiamondCommand
+    get() = DiamondCommand.BlastN
+}

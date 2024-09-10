@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.DiamondExtras
 import org.veupathdb.lib.cli.diamond.commands.BlastN
 import org.veupathdb.lib.cli.diamond.opts.AdvancedClusteringAlignmentOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
@@ -11,6 +11,7 @@ import org.veupathdb.lib.cli.diamond.opts.impl.AdvancedGeneralOptionContainerImp
 import org.veupathdb.lib.cli.diamond.opts.impl.AdvancedQueryOptionContainerImpl
 import org.veupathdb.lib.cli.diamond.opts.impl.HiddenOptionContainerImpl
 
+@DiamondExtras
 internal class BlastNImpl(
   private val advancedGeneral: AdvancedGeneralOptionContainer = AdvancedGeneralOptionContainerImpl(),
   private val advancedClustering: AdvancedClusteringAlignmentOptionContainer = AdvancedClusteringAlignmentOptionContainerImpl(),
@@ -22,7 +23,3 @@ internal class BlastNImpl(
   , AdvancedClusteringAlignmentOptionContainer by advancedClustering
   , AdvancedQueryOptionContainer by advancedQuery
   , HiddenOptionContainer by hidden
-{
-  override val tool: DiamondCommand
-    get() = DiamondCommand.BlastN
-}

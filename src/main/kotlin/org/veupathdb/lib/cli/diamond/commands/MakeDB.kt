@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
@@ -95,4 +96,7 @@ interface MakeDB
   @get:JsonGetter("taxonNames")
   @set:JsonSetter("taxonNames")
   var taxonNamesFile: Path
+
+  override val tool: DiamondCommand
+    get() = DiamondCommand.MakeDB
 }

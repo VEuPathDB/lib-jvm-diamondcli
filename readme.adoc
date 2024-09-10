@@ -1,13 +1,17 @@
 = DIAMOND CLI Config
 :url-gh: https://github.com
 :url-diamond: {url-gh}/bbuchfink/diamond
-:version-actual: 1.0.0
-:version-feature: 1.0.0
+:version-actual: 0.1.0
+:version-feature: 0.1.0
 
-This library provides an API for constructing CLI calls to the
-link:{url-diamond}[DIAMOND] sequence aligner tool using type safe parameters
-allowing for syntactic validation of a call before it is executed or submitted
-to an external worker.
+Provides an API for constructing CLI calls to the link:{url-diamond}[DIAMOND]
+sequence aligner tool using type safe parameters, allowing for syntactic
+validation of a call before it is executed or submitted to an external worker.
+
+image:https://img.shields.io/github/license/veupathdb/lib-jvm-diamondcli[]
+image:https://img.shields.io/badge/version-{version-actual}-blue[Version]
+image:https://img.shields.io/badge/jvm-21-rebeccapurple[Required JVM Version]
+image:https://img.shields.io/badge/api-docs-%23D2122E[API Docs, link="https://veupathdb.github.io/lib-jvm-diamondcli/v{version-feature}"]
 
 == Usage
 

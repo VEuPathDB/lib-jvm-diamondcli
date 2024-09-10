@@ -1,9 +1,20 @@
+import org.jetbrains.dokka.versioning.VersioningPlugin
+import org.jetbrains.dokka.versioning.VersioningConfiguration
+
 plugins {
   kotlin("jvm") version "2.0.20"
+  id("org.jetbrains.dokka") version "1.9.20"
+  `maven-publish`
 }
 
 group = "org.veupathdb.lib"
-version = "1.0-SNAPSHOT"
+version = "0.1.0"
+
+buildscript {
+  dependencies {
+    classpath("org.jetbrains.dokka:versioning-plugin:1.9.20")
+  }
+}
 
 repositories {
   mavenCentral()
@@ -21,6 +32,8 @@ dependencies {
   api("org.veupathdb.lib:jackson-singleton:3.2.0")
   implementation("io.foxcapades.kt:cli-builder:0.4.0")
 
+  dokkaHtmlPlugin("org.jetbrains.dokka:versioning-plugin:1.9.20")
+
   testImplementation(kotlin("test"))
 }
 
@@ -32,5 +45,53 @@ kotlin {
   jvmToolchain {
     languageVersion.set(JavaLanguageVersion.of(21))
     vendor.set(JvmVendorSpec.AMAZON)
+  }
+}
+
+tasks.dokkaHtml {
+  val featVersion = (version as String).substring(0, (version as String).lastIndexOf('.')) + ".0"
+  outputDirectory.set(file("docs/dokka/v$featVersion"))
+
+  pluginConfiguration<VersioningPlugin, VersioningConfiguration> {
+    version = "v$featVersion"
+    olderVersionsDir = file("docs/dokka")
+  }
+}
+
+publishing {
+  repositories {
+    maven {
+      name = "GitHub"
+      url  = uri("https://maven.pkg.github.com/veupathdb/lib-jvm-diamondcli")
+      credentials {
+        username = project.findProperty("gpr.user") as String? ?: System.getenv("USERNAME")
+        password = project.findProperty("gpr.key") as String? ?: System.getenv("TOKEN")
+      }
+    }
+  }
+
+  publications {
+    create<MavenPublication>("gpr") {
+      from(components["java"])
+      pom {
+        name.set("JaxRS Container Core Library")
+        description.set("Provides base methods, endpoints, server setup, and utilities for use in containerized VEuPathDB JaxRS based applications.")
+        url.set("https://github.com/VEuPathDB/lib-jvm-diamondcli")
+        developers {
+          developer {
+            id.set("epharper")
+            name.set("Elizabeth Paige Harper")
+            email.set("foxcapades.io@gmail.com")
+            url.set("https://github.com/foxcapades")
+            organization.set("VEuPathDB")
+          }
+        }
+        scm {
+          connection.set("scm:git:git://github.com/VEuPathDB/lib-jvm-diamondcli.git")
+          developerConnection.set("scm:git:ssh://github.com/VEuPathDB/lib-jvm-diamondcli.git")
+          url.set("https://github.com/VEuPathDB/lib-jvm-diamondcli")
+        }
+      }
+    }
   }
 }

@@ -18,6 +18,7 @@
 package org.veupathdb.lib.cli.diamond.commands
 
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 
 // CLUSTER_REALIGN
@@ -32,3 +33,7 @@ interface ClusterRealign
   , OutputFormatOptionContainer
   , ClusteringInputOptionContainer
   , HiddenOptionContainer
+{
+  override val tool: DiamondCommand
+    get() = DiamondCommand.ClusterRealign
+}

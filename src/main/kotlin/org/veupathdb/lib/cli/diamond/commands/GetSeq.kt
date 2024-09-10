@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
@@ -43,4 +44,7 @@ interface GetSeq
   @get:JsonGetter("seq")
   @set:JsonSetter("seq")
   var seq: List<Int>
+
+  override val tool: DiamondCommand
+    get() = DiamondCommand.GetSeq
 }

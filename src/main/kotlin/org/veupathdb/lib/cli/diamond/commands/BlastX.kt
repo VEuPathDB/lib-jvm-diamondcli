@@ -18,6 +18,7 @@
 package org.veupathdb.lib.cli.diamond.commands
 
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 
 @CliCommand(Command, SubCommands.BlastX)
@@ -38,3 +39,7 @@ interface BlastX
   , AdvancedQueryOptionContainer
   , ViewAlignOptionContainer
   , HiddenOptionContainer
+{
+  override val tool: DiamondCommand
+    get() = DiamondCommand.BlastX
+}

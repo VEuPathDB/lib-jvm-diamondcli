@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 import java.nio.file.Path
 
@@ -93,5 +94,7 @@ interface GreedyVortexCover
   @get:JsonGetter("connectedComponentDepth")
   @set:JsonSetter("connectedComponentDepth")
   var connectedComponentDepth: List<String>
-}
 
+  override val tool: DiamondCommand
+    get() = DiamondCommand.GreedyVortexCover
+}

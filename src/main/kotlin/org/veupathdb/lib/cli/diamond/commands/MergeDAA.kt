@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
 import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
@@ -32,4 +33,7 @@ interface MergeDAA : DiamondCommandConfig, GeneralOptionContainer, GeneralOutput
   @get:JsonGetter("inputFiles")
   @set:JsonSetter("inputFiles")
   var inputFiles: List<Path>
+
+  override val tool: DiamondCommand
+    get() = DiamondCommand.MergeDAA
 }
