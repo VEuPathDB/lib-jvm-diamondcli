@@ -17,7 +17,10 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
@@ -25,5 +28,8 @@ import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.MergeDAA)
 interface MergeDAA : GeneralOptionContainer, GeneralOutputOptionContainer, HiddenOptionContainer {
+  @CliFlag("in")
+  @get:JsonGetter("inputFiles")
+  @set:JsonSetter("inputFiles")
   var inputFiles: List<Path>
 }

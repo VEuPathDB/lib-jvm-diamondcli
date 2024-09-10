@@ -17,7 +17,10 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
@@ -37,8 +40,11 @@ interface MakeDB
    *
    * If this parameter is omitted, the input will be read from stdin.
    *
-   * > `--in <file>`
+   * Flag: `--in`
    */
+  @CliFlag("in", required = true)
+  @get:JsonGetter("inputFile")
+  @set:JsonSetter("inputFile")
   var inputFile: Path
 
   /**
@@ -52,9 +58,12 @@ interface MakeDB
    * format may be supplied here. Note that the first line of this file is
    * assumed to contain headings and will be ignored.
    *
-   * > `--taxonmap <file>`
+   * Flag: `--taxonmap`
    */
-  var taxonMapFile: Path?
+  @CliFlag("taxonmap")
+  @get:JsonGetter("taxonMap")
+  @set:JsonSetter("taxonMap")
+  var taxonMapFile: Path
 
   /**
    * Path to the `nodes.dmp` file from the NCBI taxonomy.
@@ -64,9 +73,12 @@ interface MakeDB
    *
    * The file is contained within this archive downloadable at NCBI.
    *
-   * > `--taxonnodes <file>`
+   * Flag: `--taxonnodes`
    */
-  var taxonNodesFile: Path?
+  @CliFlag("taxonnodes")
+  @get:JsonGetter("taxonNodes")
+  @set:JsonSetter("taxonNodes")
+  var taxonNodesFile: Path
 
   /**
    * Path to the `names.dmp` file from the NCBI taxonomy.
@@ -76,7 +88,10 @@ interface MakeDB
    *
    * The file is contained within this archive downloadable at NCBI.
    *
-   * > `--taxonnames <file>`
+   * Flag: `--taxonnames`
    */
-  var taxonNamesFile: Path?
+  @CliFlag("taxonnames")
+  @get:JsonGetter("taxonNames")
+  @set:JsonSetter("taxonNames")
+  var taxonNamesFile: Path
 }
