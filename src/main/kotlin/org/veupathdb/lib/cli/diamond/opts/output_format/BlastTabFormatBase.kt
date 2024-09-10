@@ -1,5 +1,6 @@
 package org.veupathdb.lib.cli.diamond.opts.output_format
 
+// TODO: need a custom renderer for this
 sealed class BlastTabFormatBase<T : Iterable<BlastTabFormatField>>(override val formatType: OutputFormat)
   : OutputFormatOptions
 {
