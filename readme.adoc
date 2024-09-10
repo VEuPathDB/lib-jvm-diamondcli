@@ -25,23 +25,6 @@ implementation("org.veupathdb.lib:diamond-cli:{version-actual}")
 
 TODO
 
-=== Development
-
-==== Helpful RegExs
-
-.convert c-code flag defs to kotlin interface props
-[source]
-----
-( +)\("([\w-]+)", *(?:0|'(.)') *, *"([^"]*)", *(\w+)(?:, *(.+))?\);?
-$1// $4\n$1// `--$2` | `-$3`\n$1// Default = `$6`\n$1// Type = ``\n$1// Config Var = `$5`\n$1var $2: Any\n
-----
-
-.bulk add Jackson property annotations to interface
-[source]
-----
-( +)var (\w+):
-$1@get:JsonGetter("$2")\n$1@set:JsonSetter("$2")\n$1var $2:
-----
 
 == License
 
