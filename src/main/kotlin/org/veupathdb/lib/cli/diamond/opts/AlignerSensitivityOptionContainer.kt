@@ -27,15 +27,17 @@ import io.foxcapades.lib.cli.wrapper.meta.CliFlag
 //       field in here that _isn't_ part of the enum is [shapes]
 interface AlignerSensitivityOptionContainer {
 
-  @get:JsonGetter("faster")
-  @set:JsonSetter("faster")
+  @get:JsonGetter("sensitivity")
+  @set:JsonSetter("sensitivity")
   var sensitivity: Sensitivity
 
-  // enable faster mode
-  // `--faster`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_faster`
+  /**
+   * Enable faster mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--faster`
+   */
   @CliFlag("faster")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -48,11 +50,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
-  // enable fast mode
-  // `--fast`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_fast`
+  /**
+   * Enable fast mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--fast`
+   */
   @CliFlag("fast")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -65,11 +69,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
-  // enable mid-sensitive mode
-  // `--mid-sensitive`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_mid_sensitive`
+  /**
+   * Enable mid-sensitive mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--mid-sensitive`
+   */
   @CliFlag("mid-sensitive")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -82,11 +88,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
+  /**
   // enable mode using 30 seed shapes of weight 10
   // `--shapes-30x10`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_shapes30x10`
+   */
   @CliFlag("shapes-30x10")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -99,11 +107,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
+  /**
   // enable sensitive mode)
   // `--sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_sensitive`
+   */
   @CliFlag("sensitive")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -116,11 +126,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
+  /**
   // enable more sensitive mode
   // `--more-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_more_sensitive`
+   */
   @CliFlag("more-sensitive")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -133,11 +145,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
+  /**
   // enable very sensitive mode
   // `--very-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_very_sensitive`
+   */
   @CliFlag("very-sensitive")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -150,11 +164,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
+  /**
   // enable ultra sensitive mode
   // `--ultra-sensitive`
   // Default = ``
   // Type = `bool`
   // Config Var = `mode_ultra_sensitive`
+   */
   @CliFlag("ultra-sensitive")
   @get:JsonIgnore
   @set:JsonIgnore
@@ -167,11 +183,13 @@ interface AlignerSensitivityOptionContainer {
         sensitivity = Sensitivity.Default
     }
 
+  /**
   // number of seed shapes (default=all available)
   // `--shapes` | `-s`
   // Default = ``
   // Type = `unsigned`
   // Config Var = `shapes`
+   */
   @CliFlag("shapes", 's')
   @get:JsonGetter("shapes")
   @set:JsonSetter("shapes")

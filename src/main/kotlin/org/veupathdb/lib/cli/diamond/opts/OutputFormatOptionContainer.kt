@@ -24,7 +24,7 @@ import org.veupathdb.lib.cli.diamond.opts.output_format.OutputFormatOptions
 
 interface OutputFormatOptionContainer {
   /**
-   * Flag = `--outfmt` | `-f`
+   * Flag: `--outfmt` | `-f`
    */
   @CliFlag("outfmt", 'f')
   @get:JsonGetter("outputFormat")

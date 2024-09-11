@@ -5,43 +5,88 @@ import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
 import org.veupathdb.lib.cli.diamond.DiamondExtras
 import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class CompositionBasedStats(
+  val rawCliValue: Int,
+
   @get:JsonValue
   val jsonName: String
 ) : CliEnum {
-  Disabled("disabled"),
-  Hauser("hauser"),
-  Deprecated1("deprecated-1"),
-  HauserAndMatrixAdjust("hauser-and-matrix-adjust"),
-  MatrixAdjust("matrix-adjust"),
+  /**
+   * 0 -> DISABLED
+   */
+  Disabled(0, "disabled"),
 
-  @DiamondExtras
-  CompBasedStats("comp-based-stats"),
+  /**
+   * 1 -> HAUSER
+   */
+  Hauser(1, "hauser"),
 
-  @DiamondExtras
-  CompBasedStatsAndMatrixAdjust("comp-based-stats-and-matrix-adjust"),
+  /**
+   * 2 -> DEPRECATED1
+   */
+  Deprecated1(2, "deprecated-1"),
 
+  /**
+   * 2 -> HAUSER_AND_AVG_MATRIX_ADJUST
+   */
+  @Deprecated("renamed to \"DEPRECATED1\" as of DIAMOND v2.1.0")
+  HauserAndAverageMatrixAdjust(2, "hauser-and-avg-matrix-adjust"),
+
+  /**
+   * 3 -> HAUSER_AND_MATRIX_ADJUST
+   */
+  HauserAndMatrixAdjust(3, "hauser-and-matrix-adjust"),
+
+  /**
+   * 4 -> MATRIX_ADJUST
+   */
+  MatrixAdjust(4, "matrix-adjust"),
+
+  /**
+   * 5 -> COMP_BASED_STATS
+   */
   @DiamondExtras
-  HauserGlobal("hauser-global"),
+  CompBasedStats(5, "comp-based-stats"),
+
+  /**
+   * 6 -> COMP_BASED_STATS_AND_MATRIX_ADJUST
+   */
+  @DiamondExtras
+  CompBasedStatsAndMatrixAdjust(6, "comp-based-stats-and-matrix-adjust"),
+
+  /**
+   * 7 -> HAUSER_GLOBAL
+   */
+  @DiamondExtras
+  HauserGlobal(7, "hauser-global"),
   ;
 
-  @get:JsonValue
-  val value
-    get() = ordinal
+  override val cliValue: String
+    get() = rawCliValue.toString()
 
-  override val cliValue
-    get() = toString()
-
-  override fun toString() = ordinal.toString()
+  override fun toString() =
+    jsonName
 
   companion object {
     @JvmStatic
     @JsonCreator
     fun fromJson(json: JsonNode) =
       when {
-        json.isIntegralNumber && json.intValue() in entries.indices -> entries[json.intValue()]
-        else -> throw IllegalArgumentException("Invalid CompBasedStats value: $json")
+        json.isIntegralNumber -> fromInt(json.intValue())
+        json.isTextual        -> fromString(json.textValue())
+        else                  -> invalid(json)
       }
+
+    @JvmStatic
+    fun fromInt(value: Int) =
+      entries.find { it.rawCliValue == value }
+        ?: invalid(value)
+
+    @JvmStatic
+    fun fromString(value: String) =
+      value.lowercase().let { target -> entries.find { it.jsonName == target } }
+        ?: invalid(value)
   }
 }

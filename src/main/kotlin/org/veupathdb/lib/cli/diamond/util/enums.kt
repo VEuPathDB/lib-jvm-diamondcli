@@ -5,7 +5,7 @@ import io.foxcapades.lib.cli.wrapper.flag
 import io.foxcapades.lib.cli.wrapper.serial.CliArgumentAppender
 import io.foxcapades.lib.cli.wrapper.serial.values.ArgumentFormatter
 
-internal inline fun <reified T : Enum<T>> invalid(value: Any): T =
+internal inline fun <reified T : Any> invalid(value: Any): T =
   throw IllegalArgumentException("Invalid ${T::class.simpleName} value: $value")
 
 

@@ -26,7 +26,7 @@ interface AlignerClusteringRealignOptionContainer {
    * Composition based statistics mode (0-4)
    *
    * Flag = `--comp-based-stats`
-   * Default = [CompBasedStats.Hauser]
+   * Default = [CompositionBasedStats.Hauser]
    */
   @CliFlag("comp-based-stats")
   @get:JsonGetter("compBasedStats")

@@ -9,18 +9,29 @@ value class SimpleOutputFormat private constructor(override val formatType: Outp
     @JvmStatic
     val XML by lazy { SimpleOutputFormat(OutputFormat.XML) }
 
-    // DiamondAlignmentArchiveFormat
     @JvmStatic
-    val DAA by lazy { SimpleOutputFormat(OutputFormat.DiamondAlignmentArchive) }
+    val DiamondAlignmentArchive by lazy { SimpleOutputFormat(OutputFormat.DiamondAlignmentArchive) }
 
     @JvmStatic
-    val SAM by lazy { SimpleOutputFormat(OutputFormat.SAM) }
+    inline val DAA
+      get() = DiamondAlignmentArchive
+
+    @JvmStatic
+    val SequenceAlignmentMap by lazy { SimpleOutputFormat(OutputFormat.SequenceAlignmentMap) }
+
+    @JvmStatic
+    inline val SAM
+      get() = SequenceAlignmentMap
 
     @JvmStatic
     val TaxonomicClassification by lazy { SimpleOutputFormat(OutputFormat.Taxon) }
 
     @JvmStatic
-    val PAF by lazy { SimpleOutputFormat(OutputFormat.PAF) }
+    val PairwiseMappingFormat by lazy { SimpleOutputFormat(OutputFormat.PairwiseMappingFormat) }
+
+    @JvmStatic
+    inline val PAF
+      get() = PairwiseMappingFormat
 
     @JvmStatic
     val Null by lazy { SimpleOutputFormat(OutputFormat.Null) }
