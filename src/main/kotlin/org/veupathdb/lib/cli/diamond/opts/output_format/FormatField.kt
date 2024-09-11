@@ -181,7 +181,8 @@ enum class FormatField(
 
     @JvmStatic
     fun fromString(string: String) =
-      string.lowercase().let { key -> entries.find { it.jsonValue == key } }
+      formatFieldCache()?.let { it[string.lowercase()] ?: invalid(string) }
+        ?: string.lowercase().let { key -> entries.find { it.jsonValue == key || it.key == key } }
         ?: invalid(string)
   }
 }

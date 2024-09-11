@@ -5,6 +5,8 @@ import io.foxcapades.lib.cli.wrapper.flag
 import io.foxcapades.lib.cli.wrapper.serial.CliArgumentAppender
 import io.foxcapades.lib.cli.wrapper.serial.values.ArgumentFormatter
 
+// TODO: restrict this back to enum types, there should be different error
+//       messages for complex types.
 internal inline fun <reified T : Any> invalid(value: Any): T =
   throw IllegalArgumentException("Invalid ${T::class.simpleName} value: $value")
 
