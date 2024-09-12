@@ -1,10 +1,10 @@
 package org.veupathdb.lib.cli.diamond.opts.output_format
 
 import com.fasterxml.jackson.databind.JsonNode
+import com.fasterxml.jackson.databind.node.ArrayNode
 import com.fasterxml.jackson.databind.node.ObjectNode
+import com.fasterxml.jackson.module.kotlin.contains
 import org.veupathdb.lib.cli.diamond.util.invalid
-import org.veupathdb.lib.cli.diamond.util.logger
-import org.veupathdb.lib.cli.diamond.util.truncate
 
 fun OutputFormatOptions(json: JsonNode) =
   when {
@@ -30,24 +30,56 @@ fun OutputFormatOptions(value: String) =
   }
 
 fun OutputFormatOptions(json: ObjectNode): OutputFormatOptions {
-  val log = logger<OutputFormatOptions>()
+  val format = if (BlastTabFormatBase.JsonKey.Format in json)
+    OutputFormat.fromJson(json[BlastTabFormatBase.JsonKey.Format])
+  else
+    invalid(json)
 
-  var format: OutputFormat? = null
-  var fields: List<FormatField>? = null
+  val fields = if (BlastTabFormatBase.JsonKey.Fields in json)
+    formatFields(json[BlastTabFormatBase.JsonKey.Fields])
+  else
+    emptyList()
 
-  for ((k, v) in json.fields()) {
-    when (k.lowercase()) {
-      "format" -> format = OutputFormat.fromJson(v)
-      "fields" -> fields = formatFields(v)
-      else     -> log.info("ignoring unknown format fields json key \"{}\"", k.truncate(16))
-    }
+  when (format) {
+    OutputFormat.BlastTab -> return BlastTabFormat(fields)
+    OutputFormat.JsonFlat -> return JsonFlatFormat(fields)
+    else -> {}
+  }
+
+  if (fields.isNotEmpty()) {
+    throw IllegalArgumentException("cannot specify report fields for output format ${format.jsonValue}")
+  }
+
+  return when (format) {
+    OutputFormat.Pairwise -> SimpleOutputFormat.Pairwise
+    OutputFormat.XML -> SimpleOutputFormat.XML
+    OutputFormat.DiamondAlignmentArchive -> SimpleOutputFormat.DiamondAlignmentArchive
+    OutputFormat.SequenceAlignmentMap -> SimpleOutputFormat.SequenceAlignmentMap
+    OutputFormat.Taxon -> SimpleOutputFormat.TaxonomicClassification
+    OutputFormat.PairwiseMappingFormat -> SimpleOutputFormat.PairwiseMappingFormat
+    OutputFormat.Null -> SimpleOutputFormat.Null
+    OutputFormat.Bin1 -> SimpleOutputFormat.Bin1
+    OutputFormat.Clustering -> SimpleOutputFormat.Clustering
+    OutputFormat.Edge -> SimpleOutputFormat.Edge
+
+    else -> throw IllegalStateException()
   }
 }
 
-private fun formatFields(json: JsonNode): List<FormatField>? {
+private fun formatFields(json: JsonNode): List<FormatField> {
   if (!json.isArray)
     return invalid(json)
 
+  json as ArrayNode
 
+  if (json.isEmpty)
+    return emptyList()
 
+  val out = ArrayList<FormatField>(json.size())
+
+  for (entry in json) {
+    out.add(FormatField.fromJson(entry))
+  }
+
+  return out
 }

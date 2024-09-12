@@ -1,7 +1,7 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.wrapper.flag.pathFlag
-import io.foxcapades.lib.cli.wrapper.flag.toggleFlag
+import io.foxcapades.lib.cli.builder.flag.pathFlag
+import io.foxcapades.lib.cli.builder.flag.toggleFlag
 import org.veupathdb.lib.cli.diamond.commands.View
 import org.veupathdb.lib.cli.diamond.opts.*
 import org.veupathdb.lib.cli.diamond.opts.impl.*

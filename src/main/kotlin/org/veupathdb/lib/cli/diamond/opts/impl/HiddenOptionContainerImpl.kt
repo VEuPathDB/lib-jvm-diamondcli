@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.opts.impl
 
-import io.foxcapades.lib.cli.wrapper.flag.*
+import io.foxcapades.lib.cli.builder.flag.*
 import org.veupathdb.lib.cli.diamond.DiamondHidden
 import org.veupathdb.lib.cli.diamond.opts.*
 import org.veupathdb.lib.cli.diamond.util.enumFlag

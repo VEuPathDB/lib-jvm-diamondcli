@@ -11,5 +11,10 @@ sealed class BlastTabFormatBase<T : Iterable<FormatField>>(override val formatTy
       .append(formatType.toString())
       .apply { formatFields.forEach { append(' ').append(it.toString()) } }
       .toString()
+
+  internal object JsonKey {
+    const val Format = "format"
+    const val Fields = "fields"
+  }
 }
 

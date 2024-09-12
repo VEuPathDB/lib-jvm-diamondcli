@@ -1,7 +1,19 @@
 package org.veupathdb.lib.cli.diamond.opts.output_format
 
+import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonValue
+import com.fasterxml.jackson.databind.JsonNode
+import org.veupathdb.lib.cli.diamond.util.invalid
+
 @JvmInline
 value class SimpleOutputFormat private constructor(override val formatType: OutputFormat) : OutputFormatOptions {
+
+  @get:JsonValue
+  val jsonValue
+    get() = formatType.jsonValue
+
+  override fun toString() = formatType.toString()
+
   companion object {
     @JvmStatic
     val Pairwise by lazy { SimpleOutputFormat(OutputFormat.Pairwise) }
@@ -44,7 +56,26 @@ value class SimpleOutputFormat private constructor(override val formatType: Outp
 
     @JvmStatic
     val Edge by lazy { SimpleOutputFormat(OutputFormat.Edge) }
-  }
 
-  override fun toString() = formatType.toString()
+    @JvmStatic
+    @JsonCreator
+    fun fromJson(json: JsonNode) =
+      OutputFormat.fromJson(json)
+        .takeIf { !it.acceptsFormatParams }
+        ?.let { SimpleOutputFormat(it) }
+        ?: invalid(json)
+
+    @JvmStatic
+    fun fromString(value: String) =
+      OutputFormat.fromString(value)
+        .takeIf { !it.acceptsFormatParams }
+        ?.let { SimpleOutputFormat(it) }
+        ?: invalid(value)
+
+    @JvmStatic
+    fun fromStringOrNull(value: String) =
+      OutputFormat.fromStringOrNull(value)
+        ?.takeIf { !it.acceptsFormatParams }
+        ?.let { SimpleOutputFormat(it) }
+  }
 }

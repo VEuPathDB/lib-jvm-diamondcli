@@ -1,7 +1,7 @@
 package org.veupathdb.lib.cli.diamond.opts.impl
 
-import io.foxcapades.lib.cli.wrapper.flag.toggleFlag
-import io.foxcapades.lib.cli.wrapper.flag.ulongFlag
+import io.foxcapades.lib.cli.builder.flag.toggleFlag
+import io.foxcapades.lib.cli.builder.flag.ulongFlag
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 
 internal class AdvancedGeneralOptionContainerImpl : AdvancedGeneralOptionContainer {

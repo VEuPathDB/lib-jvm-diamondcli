@@ -17,7 +17,7 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
-import io.foxcapades.lib.cli.wrapper.meta.CliCommand
+import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer

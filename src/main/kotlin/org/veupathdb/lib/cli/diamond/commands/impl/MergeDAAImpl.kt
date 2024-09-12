@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.wrapper.flag
+import io.foxcapades.lib.cli.builder.flag
 import org.veupathdb.lib.cli.diamond.commands.MergeDAA
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer

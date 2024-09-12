@@ -1,8 +1,7 @@
 package org.veupathdb.lib.cli.diamond.opts.impl
 
-import io.foxcapades.lib.cli.wrapper.flag
-import io.foxcapades.lib.cli.wrapper.flag.*
-import io.foxcapades.lib.cli.wrapper.serial.values.ArgumentFormatter
+import io.foxcapades.lib.cli.builder.arg.format.ArgumentFormatter
+import io.foxcapades.lib.cli.builder.flag.*
 import org.veupathdb.lib.cli.diamond.opts.*
 import org.veupathdb.lib.cli.diamond.util.enumFlag
 import org.veupathdb.lib.cli.diamond.util.listFlag
@@ -40,10 +39,10 @@ internal class AlignerGeneralOptionContainerImpl : AlignerGeneralOptionContainer
   override var includeAllSubjectIDs by toggleFlag()
   override var noSelfHits by toggleFlag()
   override var taxonList by flag<List<String>> {
-    argument.formatter = ArgumentFormatter.simple { it.joinToString(",") }
+    argument.formatter = ArgumentFormatter { it.joinToString(",") }
   }
   override var taxonExclude by flag<List<String>> {
-    argument.formatter = ArgumentFormatter.simple { it.joinToString(",") }
+    argument.formatter = ArgumentFormatter { it.joinToString(",") }
   }
   override var seqIdList by pathFlag()
   override var skipMissingSeqIDs by toggleFlag()

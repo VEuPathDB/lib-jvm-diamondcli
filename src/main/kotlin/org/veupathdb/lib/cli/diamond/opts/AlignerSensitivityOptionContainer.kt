@@ -20,7 +20,7 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonSetter
-import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import io.foxcapades.lib.cli.builder.flag.CliFlag
 
 // TODO: Most of these options should be condensed to an enum, they are mutually
 //       exclusive and configure the same setting to different values.  The only

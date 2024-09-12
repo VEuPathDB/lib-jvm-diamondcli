@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.wrapper.flag.pathFlag
+import io.foxcapades.lib.cli.builder.flag.pathFlag
 import org.veupathdb.lib.cli.diamond.commands.MakeDB
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer

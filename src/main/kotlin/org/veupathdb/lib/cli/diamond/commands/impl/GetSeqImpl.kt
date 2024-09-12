@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.wrapper.flag
+import io.foxcapades.lib.cli.builder.flag
 import org.veupathdb.lib.cli.diamond.commands.GetSeq
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer

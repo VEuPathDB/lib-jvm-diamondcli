@@ -1,7 +1,6 @@
 package org.veupathdb.lib.cli.diamond.opts.impl
 
-import io.foxcapades.lib.cli.wrapper.flag
-import io.foxcapades.lib.cli.wrapper.flag.*
+import io.foxcapades.lib.cli.builder.flag.*
 import org.veupathdb.lib.cli.diamond.opts.AdvancedQueryOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.DNAExtensionAlgorithm
 import org.veupathdb.lib.cli.diamond.util.enumFormatter
@@ -18,7 +17,7 @@ internal class AdvancedQueryOptionContainerImpl : AdvancedQueryOptionContainer {
   override var xDrop by doubleFlag()
   override var gappedFilterEValue by doubleFlag()
   override var band by intFlag()
-  override var shapeMask by flag<List<String>> { argument.shouldQuote = false }
+  override var shapeMask by flag<List<String>> { shouldQuote = false }
   override var multiprocessing by toggleFlag()
   override var mpInit by toggleFlag()
   override var mpRecover by toggleFlag()
@@ -43,7 +42,7 @@ internal class AdvancedQueryOptionContainerImpl : AdvancedQueryOptionContainer {
   override var mpSelf by toggleFlag()
   override var zDrop by intFlag { default = 40 }
   override var repetitionCutoff by doubleFlag { default = 0.0002 }
-  override var extension by flag<DNAExtensionAlgorithm> { argument.formatter = enumFormatter() }
+  override var extension by flag<DNAExtensionAlgorithm> { formatter = enumFormatter() }
   override var chainingOut by toggleFlag()
   override var alignLongReads by toggleFlag()
   override var chainPenGapScale by doubleFlag { default = 0.8 }

@@ -1,9 +1,9 @@
 package org.veupathdb.lib.cli.diamond.opts.impl
 
-import io.foxcapades.lib.cli.wrapper.flag.doubleFlag
-import io.foxcapades.lib.cli.wrapper.flag.toggleFlag
-import io.foxcapades.lib.cli.wrapper.flag.uintFlag
-import io.foxcapades.lib.cli.wrapper.flag.ulongFlag
+import io.foxcapades.lib.cli.builder.flag.doubleFlag
+import io.foxcapades.lib.cli.builder.flag.toggleFlag
+import io.foxcapades.lib.cli.builder.flag.uintFlag
+import io.foxcapades.lib.cli.builder.flag.ulongFlag
 import org.veupathdb.lib.cli.diamond.opts.AdvancedClusteringAlignmentOptionContainer
 
 internal class AdvancedClusteringAlignmentOptionContainerImpl : AdvancedClusteringAlignmentOptionContainer {

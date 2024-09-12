@@ -19,8 +19,8 @@ package org.veupathdb.lib.cli.diamond.commands
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
-import io.foxcapades.lib.cli.wrapper.meta.CliCommand
-import io.foxcapades.lib.cli.wrapper.meta.CliFlag
+import io.foxcapades.lib.cli.builder.command.CliCommand
+import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
@@ -44,7 +44,7 @@ interface MakeDB
    *
    * Flag: `--in`
    */
-  @CliFlag("in", required = true)
+  @CliFlag("in", required = CliFlag.Toggle.Yes)
   @get:JsonGetter("inputFile")
   @set:JsonSetter("inputFile")
   var inputFile: Path
