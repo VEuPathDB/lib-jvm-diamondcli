@@ -3,14 +3,15 @@ package org.veupathdb.lib.cli.diamond.opts.output_format
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class FormatField(
-  val key: String,
+  override val cliValue: String,
 
   @get:JsonValue
   val jsonValue: String,
-) {
+) : CliSerializable {
   // 0 means Query Seq - id
   QuerySequenceID("qseqid", "query-sequence-id"),
   // 1 means Query GI
@@ -168,7 +169,7 @@ enum class FormatField(
   ;
 
   @JsonValue
-  override fun toString() = key
+  override fun toString() = cliValue
 
   companion object {
     @JvmStatic
@@ -182,7 +183,7 @@ enum class FormatField(
     @JvmStatic
     fun fromString(string: String) =
       formatFieldCache()?.let { it[string.lowercase()] ?: invalid(string) }
-        ?: string.lowercase().let { key -> entries.find { it.jsonValue == key || it.key == key } }
+        ?: string.lowercase().let { key -> entries.find { it.jsonValue == key || it.cliValue == key } }
         ?: invalid(string)
   }
 }

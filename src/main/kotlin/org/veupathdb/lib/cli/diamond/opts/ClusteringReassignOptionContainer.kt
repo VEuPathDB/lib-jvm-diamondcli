@@ -25,8 +25,9 @@ interface ClusteringReassignOptionContainer {
   /**
    * Memory limit in GB
    *
-   * Flag = `--memory-limit` | `-M`
-   * Default = `"16G"`
+   * Flag: `--memory-limit` | `-M`
+   *
+   * Default: `"16G"`
    */
   @CliFlag("memory-limit", 'M')
   @get:JsonGetter("memoryLimit")
@@ -36,8 +37,9 @@ interface ClusteringReassignOptionContainer {
   /**
    * Minimum coverage percentage of the cluster member sequence.
    *
-   * Flag = `--member-cover`
-   * Default = `80.0`
+   * Flag: `--member-cover`
+   *
+   * Default: `80.0`
    */
   @CliFlag("member-cover")
   @get:JsonGetter("memberCover")
@@ -48,7 +50,7 @@ interface ClusteringReassignOptionContainer {
    * Minimum mutual coverage percentage of the cluster member and representative
    * sequence.
    *
-   * Flag = `--mutual-cover`
+   * Flag: `--mutual-cover`
    */
   @CliFlag("mutual-cover")
   @get:JsonGetter("mutualCover")

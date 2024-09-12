@@ -25,7 +25,7 @@ interface ClusteringGeneralOptionContainer {
   /**
    * Clustering steps.
    *
-   * Flag = `--cluster-steps`
+   * Flag: `--cluster-steps`
    */
   @CliFlag("cluster-steps")
   @get:JsonGetter("clusterSteps")
@@ -35,10 +35,7 @@ interface ClusteringGeneralOptionContainer {
   /**
    * Rank sequences based on kmer frequency in linear stage.
    *
-   * Flag = `--kmer-ranking`
-   * Default = ``
-   * Type = `bool`
-   * Config Var = `kmer_ranking`
+   * Flag: `--kmer-ranking`
    */
   @CliFlag("kmer-ranking")
   @get:JsonGetter("kmerRanking")
@@ -48,7 +45,7 @@ interface ClusteringGeneralOptionContainer {
   /**
    * Per-round coverage cutoffs for cascaded clustering.
    *
-   * Flag = `--round-coverage`
+   * Flag: `--round-coverage`
    */
   @CliFlag("round-coverage")
   @get:JsonGetter("roundCoverage")
@@ -58,7 +55,7 @@ interface ClusteringGeneralOptionContainer {
   /**
    * Per-round approx-id cutoffs for cascaded clustering.
    *
-   * Flag = `--round-approx-id`
+   * Flag: `--round-approx-id`
    */
   @CliFlag("round-approx-id")
   @get:JsonGetter("roundApproxID")

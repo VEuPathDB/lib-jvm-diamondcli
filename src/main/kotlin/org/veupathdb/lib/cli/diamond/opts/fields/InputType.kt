@@ -1,17 +1,17 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
-enum class DistributionType(
+enum class InputType(
   @get:JsonValue
   override val cliValue: String
-) : CliEnum {
-  BitScore("bitscore"),
-  ExpectValue("evalue"),
+) : CliSerializable {
+  Binary("bin"),
+  Other("other"),
   ;
 
   override fun toString() = name.lowercase()
@@ -26,7 +26,10 @@ enum class DistributionType(
 
     @JvmStatic
     fun fromString(value: String) =
+      fromStringOrNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromStringOrNull(value: String) =
       value.uppercase().let { target -> entries.find { it.cliValue == target } }
-        ?: invalid(value)
   }
 }

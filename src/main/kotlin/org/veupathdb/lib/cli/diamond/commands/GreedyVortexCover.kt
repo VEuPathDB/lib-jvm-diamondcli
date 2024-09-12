@@ -23,6 +23,7 @@ import io.foxcapades.lib.cli.builder.command.CliCommand
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.*
+import org.veupathdb.lib.cli.diamond.opts.fields.EdgeFormat
 import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.GreedyVortexCover)

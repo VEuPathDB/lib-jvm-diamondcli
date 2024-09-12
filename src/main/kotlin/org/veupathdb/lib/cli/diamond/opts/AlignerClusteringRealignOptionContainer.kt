@@ -20,13 +20,17 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
+import org.veupathdb.lib.cli.diamond.opts.fields.CompositionBasedStats
+import org.veupathdb.lib.cli.diamond.opts.fields.MaskingMode
+import org.veupathdb.lib.cli.diamond.opts.fields.SoftMaskingAlgorithm
 
 interface AlignerClusteringRealignOptionContainer {
   /**
    * Composition based statistics mode (0-4)
    *
-   * Flag = `--comp-based-stats`
-   * Default = [CompositionBasedStats.Hauser]
+   * Flag: `--comp-based-stats`
+   *
+   * Default: [CompositionBasedStats.Hauser]
    */
   @CliFlag("comp-based-stats")
   @get:JsonGetter("compBasedStats")
@@ -36,8 +40,9 @@ interface AlignerClusteringRealignOptionContainer {
   /**
    * Masking algorithm.
    *
-   * Flag = `--masking`
-   * Default = [MaskingMode.Tantan]
+   * Flag: `--masking`
+   *
+   * Default: [MaskingMode.Tantan]
    */
   @CliFlag("masking")
   @get:JsonGetter("masking")
@@ -49,7 +54,7 @@ interface AlignerClusteringRealignOptionContainer {
    *
    * Default value is subcommand dependent.
    *
-   * Flag = `--soft-masking`
+   * Flag: `--soft-masking`
    */
   @CliFlag("soft-masking")
   @get:JsonGetter("softMasking")
@@ -57,9 +62,7 @@ interface AlignerClusteringRealignOptionContainer {
   var softMasking: SoftMaskingAlgorithm
 
   /**
-   * TODO: document this
-   *
-   * Key = `--mmseqs-compat`
+   * Key: `--mmseqs-compat`
    */
   @CliFlag("mmseqs-compat")
   @get:JsonGetter("mmseqsCompat")
@@ -67,9 +70,7 @@ interface AlignerClusteringRealignOptionContainer {
   var mmseqsCompat: Boolean
 
   /**
-   * TODO: document this
-   *
-   * Key = `--no-block-size-limit`
+   * Key: `--no-block-size-limit`
    */
   @CliFlag("no-block-size-limit")
   @get:JsonGetter("noBlockSizeLimit")

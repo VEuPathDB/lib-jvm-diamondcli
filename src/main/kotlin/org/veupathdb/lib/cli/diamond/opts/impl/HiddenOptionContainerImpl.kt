@@ -3,7 +3,8 @@ package org.veupathdb.lib.cli.diamond.opts.impl
 import io.foxcapades.lib.cli.builder.flag.*
 import org.veupathdb.lib.cli.diamond.DiamondHidden
 import org.veupathdb.lib.cli.diamond.opts.*
-import org.veupathdb.lib.cli.diamond.util.enumFlag
+import org.veupathdb.lib.cli.diamond.opts.fields.*
+import org.veupathdb.lib.cli.diamond.util.customFlag
 
 internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   @DiamondHidden
@@ -112,7 +113,7 @@ internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   override var joinSplitKeyLen by uintFlag()
 
   @DiamondHidden
-  override var radixBits by uintFlag()
+  override var radixBits by customFlag<RadixBits>()
 
   @DiamondHidden
   override var joinHTFactor by doubleFlag()
@@ -151,10 +152,10 @@ internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   override var tree by pathFlag()
 
   @DiamondHidden
-  override var upGmaDist by enumFlag<DistributionType>()
+  override var upGmaDist by customFlag<DistributionType>()
 
   @DiamondHidden
-  override var upGmaInput by enumFlag<InputType>()
+  override var upGmaInput by customFlag<InputType>()
 
   @DiamondHidden
   override var logExtend by toggleFlag()
@@ -241,7 +242,7 @@ internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   override var relaxedEValueFactor by doubleFlag()
 
   @DiamondHidden
-  override var type by enumFlag<BenchmarkType>()
+  override var type by customFlag<BenchmarkType>()
 
   @DiamondHidden
   override var raw by toggleFlag()
@@ -415,7 +416,7 @@ internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   override var strictGVC by toggleFlag()
 
   @DiamondHidden
-  override var dbType by enumFlag<SequenceType>()
+  override var dbType by customFlag<SequenceType>()
 
   @DiamondHidden
   override var clusterSimilarity by stringFlag()
@@ -487,7 +488,7 @@ internal class HiddenOptionContainerImpl : HiddenOptionContainer {
   override var pipelineShort by toggleFlag()
 
   @DiamondHidden
-  override var graphAlgo by enumFlag<GraphAlgorithm>()
+  override var graphAlgo by customFlag<GraphAlgorithm>()
 
   @DiamondHidden
   override var tsvReadSize by longFlag()

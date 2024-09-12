@@ -1,20 +1,27 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
-enum class GraphAlgorithm(
-  @get:JsonValue
-  override val cliValue: String
-) : CliEnum {
-  GreedyVortexCover("gvc"),
-  LengthSorted("len"),
+enum class ScoreMatrix : CliSerializable {
+  BLOSUM45,
+  BLOSUM62,
+  BLOSUM50,
+  BLOSUM80,
+  BLOSUM90,
+  PAM250,
+  PAM30,
+  PAM70,
   ;
 
-  override fun toString() = name.lowercase()
+  @get:JsonValue
+  override val cliValue: String
+    get() = name.lowercase()
+
+  override fun toString() = cliValue
 
   companion object {
     @JvmStatic
@@ -26,7 +33,10 @@ enum class GraphAlgorithm(
 
     @JvmStatic
     fun fromString(value: String) =
-      value.uppercase().let { target -> entries.find { it.cliValue == target } }
-        ?: invalid(value)
+      fromStringOrNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromStringOrNull(value: String) =
+      value.uppercase().let { target -> entries.find { it.name == target } }
   }
 }

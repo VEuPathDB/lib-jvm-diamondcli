@@ -1,16 +1,16 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class MaskingMode(
   @get:JsonValue
   val value: String,
   val alt: String? = null
-) : CliEnum {
+) : CliSerializable {
   None("0", "none"),
   Tantan("1", "tantan"),
   BlastSeg("seg"),
@@ -33,15 +33,18 @@ enum class MaskingMode(
 
     @JvmStatic
     fun fromInt(value: Int) =
-      when (value) {
-        0    -> None
-        1    -> Tantan
-        else -> invalid(value)
-      }
+      fromIntOrNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromIntOrNull(value: Int) =
+      when (value) { 0 -> None; 1 -> Tantan; else -> null }
 
     @JvmStatic
     fun fromString(value: String) =
+      fromStringOrNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromStringOrNull(value: String) =
       entries.find { it.value == value || it.alt == value }
-        ?: invalid(value)
   }
 }

@@ -1,12 +1,12 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
-enum class MotifMaskingAlgorithm : CliEnum {
+enum class MotifMaskingAlgorithm : CliSerializable {
   None,
   Motif,
   ;
@@ -32,18 +32,24 @@ enum class MotifMaskingAlgorithm : CliEnum {
     }
 
     @JvmStatic
-    fun fromInt(value: Int) = when(value) {
-      0    -> None
-      1    -> Motif
-      else -> invalid(value)
-    }
+    fun fromInt(value: Int) =
+      fromIntOrNull(value) ?: invalid(value)
 
     @JvmStatic
-    fun fromString(value: String) = when(value.lowercase()) {
-      "none",  "0" -> None
-      "motif", "1" -> Motif
-      else         -> invalid(value)
-    }
+    fun fromIntOrNull(value: Int) =
+      when(value) { 0 -> None ; 1 -> Motif ; else -> null }
+
+    @JvmStatic
+    fun fromString(value: String) =
+      fromStringOfNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromStringOfNull(value: String) =
+      when(value.lowercase()) {
+        "none",  "0" -> None
+        "motif", "1" -> Motif
+        else         -> null
+      }
   }
 }
 

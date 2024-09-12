@@ -21,10 +21,8 @@ import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
+import org.veupathdb.lib.cli.diamond.opts.fields.Sensitivity
 
-// TODO: Most of these options should be condensed to an enum, they are mutually
-//       exclusive and configure the same setting to different values.  The only
-//       field in here that _isn't_ part of the enum is [shapes]
 interface AlignerSensitivityOptionContainer {
 
   @get:JsonGetter("sensitivity")

@@ -20,6 +20,7 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
+import org.veupathdb.lib.cli.diamond.opts.fields.*
 import java.nio.file.Path
 
 interface AlignerGeneralOptionContainer {
@@ -94,7 +95,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("unal")
   @get:JsonGetter("unal")
   @set:JsonSetter("unal")
-  var unal: Boolean // TODO: FAKE ENUM 0 or 1 when set!
+  var reportUnalignedQueries: Boolean
 
   /**
    * Maximum number of HSPs per target sequence to report for each query.
@@ -347,8 +348,6 @@ interface AlignerGeneralOptionContainer {
 
   /**
    * Exclude list of taxon ids.
-   *
-   * TODO: comma separated list on serialization!
    *
    * Flag = `--taxon-exclude`
    */

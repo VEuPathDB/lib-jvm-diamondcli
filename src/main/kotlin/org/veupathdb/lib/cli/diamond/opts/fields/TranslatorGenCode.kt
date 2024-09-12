@@ -1,15 +1,15 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class TranslatorGenCode(
   @get:JsonValue
   val code: UByte
-) : CliEnum {
+) : CliSerializable {
   // skip 0
   Standard(1u),
   VertebrateMitochondrial(2u),
@@ -64,15 +64,19 @@ enum class TranslatorGenCode(
   companion object {
     @JvmStatic
     @JsonCreator
-    fun fromJson(json: JsonNode) = when {
-      json.isIntegralNumber -> fromInt(json.intValue())
-      else                  -> invalid(json)
-    }
+    fun fromJson(json: JsonNode) =
+      json.takeIf { json.isIntegralNumber }
+        ?.let { fromIntOrNull(json.intValue()) }
+        ?: invalid(json)
 
     @JvmStatic
-    fun fromInt(value: Int) = when {
-      value in 1..33 -> value.toUByte().let { code -> entries.find { it.code == code } }
-      else               -> null
-    } ?: invalid(value)
+    fun fromInt(value: Int) =
+      fromIntOrNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromIntOrNull(value: Int) =
+      value.takeIf { it in 1..33 }
+        ?.toUByte()
+        ?.let { code -> entries.find { it.code == code } }
   }
 }

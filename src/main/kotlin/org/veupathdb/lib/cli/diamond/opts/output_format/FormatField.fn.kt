@@ -7,7 +7,7 @@ internal fun cacheFormatFields() {
     val tmp = HashMap<String, FormatField>(FormatField.entries.size*2)
 
     FormatField.entries.forEach {
-      tmp[it.key] = it
+      tmp[it.cliValue] = it
       tmp[it.jsonValue] = it
     }
 

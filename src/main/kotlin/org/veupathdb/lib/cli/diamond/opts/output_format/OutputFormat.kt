@@ -3,7 +3,7 @@ package org.veupathdb.lib.cli.diamond.opts.output_format
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class OutputFormat(
@@ -12,7 +12,7 @@ enum class OutputFormat(
 
   @get:JsonValue
   val jsonValue: String,
-) : CliEnum {
+) : CliSerializable {
   Pairwise(0, "pairwise"),
   XML(5, "xml", "xml"),
   BlastTab(6, "tab", "blast-tab"),

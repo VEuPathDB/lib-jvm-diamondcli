@@ -5,8 +5,9 @@ import io.foxcapades.lib.cli.builder.flag.pathFlag
 import io.foxcapades.lib.cli.builder.flag.toggleFlag
 import org.veupathdb.lib.cli.diamond.commands.GreedyVortexCover
 import org.veupathdb.lib.cli.diamond.opts.*
+import org.veupathdb.lib.cli.diamond.opts.fields.EdgeFormat
 import org.veupathdb.lib.cli.diamond.opts.impl.*
-import org.veupathdb.lib.cli.diamond.util.enumFlag
+import org.veupathdb.lib.cli.diamond.util.customFlag
 
 internal class GreedyVortexCoverImpl(
   private val generalOptions: GeneralOptionContainer = GeneralOptionContainerImpl(),
@@ -26,7 +27,7 @@ internal class GreedyVortexCoverImpl(
 {
   override var centroidOut by pathFlag()
   override var edges by pathFlag()
-  override var edgeFormat by enumFlag<EdgeFormat>()
+  override var edgeFormat by customFlag<EdgeFormat>()
   override var symmetric by toggleFlag()
   override var noReassign by toggleFlag()
   override var connectedComponentDepth by flag<List<String>> { shouldQuote = false }

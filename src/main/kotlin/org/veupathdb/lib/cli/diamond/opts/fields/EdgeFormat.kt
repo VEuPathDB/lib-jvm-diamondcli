@@ -1,12 +1,12 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
-enum class EdgeFormat : CliEnum {
+enum class EdgeFormat : CliSerializable {
   Triplet,
   Default,
   ;
@@ -27,7 +27,10 @@ enum class EdgeFormat : CliEnum {
 
     @JvmStatic
     fun fromString(string: String) =
+      fromStringOrNull(string) ?: invalid(string)
+
+    @JvmStatic
+    fun fromStringOrNull(string: String) =
       string.lowercase().let { target -> entries.find { it.cliValue == target } }
-        ?: invalid(string)
   }
 }

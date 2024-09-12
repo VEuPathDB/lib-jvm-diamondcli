@@ -1,15 +1,15 @@
-package org.veupathdb.lib.cli.diamond.opts
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
-import org.veupathdb.lib.cli.diamond.util.CliEnum
+import org.veupathdb.lib.cli.diamond.util.CliSerializable
 import org.veupathdb.lib.cli.diamond.util.invalid
 
 enum class Sensitivity(
   @get:JsonValue
   override val cliValue: String
-) : CliEnum {
+) : CliSerializable {
   Faster("faster"),
   Fast("fast"),
   Default("default"),
@@ -33,7 +33,10 @@ enum class Sensitivity(
 
     @JvmStatic
     fun fromString(value: String) =
+      fromStringOrNull(value) ?: invalid(value)
+
+    @JvmStatic
+    fun fromStringOrNull(value: String) =
       value.lowercase().let { target -> entries.find { it.cliValue == target } }
-        ?: invalid(value)
   }
 }

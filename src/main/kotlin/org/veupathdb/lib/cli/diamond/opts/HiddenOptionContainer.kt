@@ -21,6 +21,7 @@ import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondHidden
+import org.veupathdb.lib.cli.diamond.opts.fields.*
 import java.nio.file.Path
 
 // THIS IS ONLY USED WHEN COMPILED WITH 'EXTRA' AND IT IS UNCLEAR WHAT FLAG GOES
@@ -400,7 +401,7 @@ interface HiddenOptionContainer {
   @CliFlag("radix-bits")
   @get:JsonGetter("radixBits")
   @set:JsonSetter("radixBits")
-  var radixBits: UInt // TODO: should this be capped/enum'd?
+  var radixBits: RadixBits
 
   /**
    * Flag: `--join-ht-factor`
@@ -525,7 +526,7 @@ interface HiddenOptionContainer {
   @CliFlag("upgma-dist")
   @get:JsonGetter("upGmaDist")
   @set:JsonSetter("upGmaDist")
-  var upGmaDist: DistributionType // TODO: what is this?
+  var upGmaDist: DistributionType
 
   /**
    * Flag: `--upgma-input`
@@ -534,7 +535,7 @@ interface HiddenOptionContainer {
   @CliFlag("upgma-input")
   @get:JsonGetter("upGmaInput")
   @set:JsonSetter("upGmaInput")
-  var upGmaInput: InputType // TODO: what is this?
+  var upGmaInput: InputType
 
   /**
    * Flag: `--log-extend`

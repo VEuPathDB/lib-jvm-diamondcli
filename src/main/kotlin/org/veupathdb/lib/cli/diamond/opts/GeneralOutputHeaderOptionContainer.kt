@@ -20,12 +20,14 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
+import org.veupathdb.lib.cli.diamond.opts.fields.HeaderOption
 
 interface GeneralOutputHeaderOptionContainer {
   /**
    * Use header lines in tabular output format.
    *
    * * Flag: `--header`
+   *
    * * Default: [HeaderOption.None]
    */
   @CliFlag("header")
