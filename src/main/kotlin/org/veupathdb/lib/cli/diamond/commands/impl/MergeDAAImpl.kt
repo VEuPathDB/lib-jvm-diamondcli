@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.builder.flag
+import io.foxcapades.lib.cli.builder.flag.flag
 import org.veupathdb.lib.cli.diamond.commands.MergeDAA
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
@@ -20,5 +20,5 @@ internal class MergeDAAImpl(
   , GeneralOutputOptionContainer by generalOutputOptions
   , HiddenOptionContainer by hiddenOptions
 {
-  override var inputFiles by flag<List<Path>> { argument.shouldQuote = false }
+  override var inputFiles by flag<List<Path>> { shouldQuote = false }
 }

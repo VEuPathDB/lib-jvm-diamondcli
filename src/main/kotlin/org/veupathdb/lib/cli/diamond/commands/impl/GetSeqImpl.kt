@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.builder.flag
+import io.foxcapades.lib.cli.builder.flag.flag
 import org.veupathdb.lib.cli.diamond.commands.GetSeq
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
@@ -23,5 +23,5 @@ internal class GetSeqImpl(
   , GeneralOutputOptionContainer by generalOutputOptions
   , HiddenOptionContainer by hiddenOptions
 {
-  override var seq by flag<List<Int>> { argument.shouldQuote = false }
+  override var seq by flag<List<Int>> { shouldQuote = false }
 }

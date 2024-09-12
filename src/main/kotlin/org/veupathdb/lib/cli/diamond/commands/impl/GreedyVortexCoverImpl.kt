@@ -1,6 +1,6 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
-import io.foxcapades.lib.cli.builder.flag
+import io.foxcapades.lib.cli.builder.flag.flag
 import io.foxcapades.lib.cli.builder.flag.pathFlag
 import io.foxcapades.lib.cli.builder.flag.toggleFlag
 import org.veupathdb.lib.cli.diamond.commands.GreedyVortexCover
@@ -29,5 +29,5 @@ internal class GreedyVortexCoverImpl(
   override var edgeFormat by enumFlag<EdgeFormat>()
   override var symmetric by toggleFlag()
   override var noReassign by toggleFlag()
-  override var connectedComponentDepth by flag<List<String>> { argument.shouldQuote = false }
+  override var connectedComponentDepth by flag<List<String>> { shouldQuote = false }
 }
