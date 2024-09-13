@@ -1,4 +1,4 @@
-package org.veupathdb.lib.cli.diamond.opts.output_format
+package org.veupathdb.lib.cli.diamond.opts.fields
 
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.databind.JsonNode
@@ -11,10 +11,10 @@ import java.text.DecimalFormat
 data class MemoryLimit(val value: ULong) : CliSerializable {
   override val cliValue: String by lazy {
     when {
-      value > 1000000000000uL -> format.format((BigInteger(value.toString()).toBigDecimal() / BigDecimal("1e12")).toDouble()) + "T"
-      value > 1000000000uL    -> format.format(value.toDouble() / 1e9) + "G"
-      value > 1000000uL       -> format.format(value.toDouble() / 1e6) + "M"
-      else                    -> format.format(value.toDouble() / 1e3) + "K"
+      value >= 1000000000000uL -> format.format((BigInteger(value.toString()).toBigDecimal() / BigDecimal("1e12")).toDouble()) + "T"
+      value >= 1000000000uL    -> format.format(value.toDouble() / 1e9) + "G"
+      value >= 1000000uL       -> format.format(value.toDouble() / 1e6) + "M"
+      else                     -> format.format(value.toDouble() / 1e3) + "K"
     }
   }
 

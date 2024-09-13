@@ -1,3 +1,4 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
 import org.jetbrains.dokka.versioning.VersioningPlugin
 import org.jetbrains.dokka.versioning.VersioningConfiguration
 
@@ -36,11 +37,22 @@ dependencies {
 
   dokkaHtmlPlugin("org.jetbrains.dokka:versioning-plugin:1.9.20")
 
+  testImplementation("org.mockito:mockito-junit-jupiter:5.13.0")
+  testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
+  testImplementation("org.mockito:mockito-core:5.13.0")
   testImplementation(kotlin("test"))
 }
 
 tasks.test {
   useJUnitPlatform()
+
+  testLogging {
+    events(
+      TestLogEvent.PASSED,
+      TestLogEvent.FAILED,
+      TestLogEvent.SKIPPED,
+    )
+  }
 }
 
 kotlin {
