@@ -33,7 +33,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("algo")
   @get:JsonGetter("algo")
   @set:JsonSetter("algo")
-  var algo: SeedSearchAlgorithm
+  var algo: SeedSearchAlgorithm?
 
   /**
    * Ignore translated sequences without an open reading frame of at least this
@@ -44,7 +44,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("min-orf", 'l')
   @get:JsonGetter("minOrf")
   @set:JsonSetter("minOrf")
-  var minOrf: UInt
+  var minOrf: UInt?
 
   /**
    * Cutoff for seed complexity.
@@ -54,7 +54,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("seed-cut")
   @get:JsonGetter("seedCut")
   @set:JsonSetter("seedCut")
-  var seedCut: Double
+  var seedCut: Double?
 
   /**
    * Mask seeds based on frequency
@@ -64,7 +64,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("freq-masking")
   @get:JsonGetter("freqMasking")
   @set:JsonSetter("freqMasking")
-  var freqMasking: Boolean
+  var freqMasking: Boolean?
 
   /**
    * Number of standard deviations for ignoring frequent seeds.
@@ -76,7 +76,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("freq-sd")
   @get:JsonGetter("freqStandardDeviation")
   @set:JsonSetter("freqStandardDeviation")
-  var freqStandardDeviation: Double
+  var freqStandardDeviation: Double?
 
   /**
    * Minimum number of identities for stage 1 hit.
@@ -86,7 +86,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("id2")
   @get:JsonGetter("id2")
   @set:JsonSetter("id2")
-  var id2: UInt
+  var id2: UInt?
 
   /**
    * Only consider seed hits against longest target for identical seeds.
@@ -96,7 +96,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("linsearch")
   @get:JsonGetter("linsearch")
   @set:JsonSetter("linsearch")
-  var linsearch: Boolean
+  var linsearch: Boolean?
 
   /**
    * Only consider seed hits against longest query for identical seeds.
@@ -106,7 +106,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("lin-stage1")
   @get:JsonGetter("linStage1")
   @set:JsonSetter("linStage1")
-  var linStage1: Boolean
+  var linStage1: Boolean?
 
   /**
    * xDrop for ungapped alignment.
@@ -118,7 +118,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("xdrop", 'x')
   @get:JsonGetter("xDrop")
   @set:JsonSetter("xDrop")
-  var xDrop: Double
+  var xDrop: Double?
 
   /**
    * E-value threshold for gapped filter (auto)
@@ -130,7 +130,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("gapped-filter-evalue")
   @get:JsonGetter("gappedFilterEValue")
   @set:JsonSetter("gappedFilterEValue")
-  var gappedFilterEValue: Double
+  var gappedFilterEValue: Double?
 
   /**
    * Band for dynamic programming computation
@@ -140,7 +140,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("band")
   @get:JsonGetter("band")
   @set:JsonSetter("band")
-  var band: Int
+  var band: Int?
 
   /**
    * Seed shapes
@@ -150,7 +150,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("shape-mask")
   @get:JsonGetter("shapeMask")
   @set:JsonSetter("shapeMask")
-  var shapeMask: List<String>
+  var shapeMask: List<String>?
 
   /**
    * enable distributed-memory parallel processing
@@ -160,7 +160,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("multiprocessing")
   @get:JsonGetter("multiprocessing")
   @set:JsonSetter("multiprocessing")
-  var multiprocessing: Boolean
+  var multiprocessing: Boolean?
 
   /**
    * Initialize multiprocessing run.
@@ -170,7 +170,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("mp-init")
   @get:JsonGetter("mpInit")
   @set:JsonSetter("mpInit")
-  var mpInit: Boolean
+  var mpInit: Boolean?
 
   /**
    * Enable continuation of interrupted multiprocessing run.
@@ -180,7 +180,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("mp-recover")
   @get:JsonGetter("mpRecover")
   @set:JsonSetter("mpRecover")
-  var mpRecover: Boolean
+  var mpRecover: Boolean?
 
   /**
    * Process only a single query chunk as specified
@@ -192,7 +192,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("mp-query-chunk")
   @get:JsonGetter("mpQueryChunk")
   @set:JsonSetter("mpQueryChunk")
-  var mpQueryChunk: Int
+  var mpQueryChunk: Int?
 
   /**
    * Minimum range overlap with higher scoring hit to delete a hit (default=50%)
@@ -204,7 +204,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("culling-overlap")
   @get:JsonGetter("cullingOverlap")
   @set:JsonSetter("cullingOverlap")
-  var cullingOverlap: Double
+  var cullingOverlap: Double?
 
   /**
    * Maximum number of targets to report per species.
@@ -216,7 +216,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("taxon-k")
   @get:JsonGetter("taxonK")
   @set:JsonSetter("taxonK")
-  var taxonK: ULong
+  var taxonK: ULong?
 
   /**
    * Percentage of query range to be covered for range culling.
@@ -228,7 +228,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("range-cover")
   @get:JsonGetter("rangeCover")
   @set:JsonSetter("rangeCover")
-  var rangeCover: Double
+  var rangeCover: Double?
 
   /**
    * Use gnl|BL_ORD_ID| style format in XML output.
@@ -238,7 +238,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("xml-blord-format")
   @get:JsonGetter("xmlBlOrdFormat")
   @set:JsonSetter("xmlBlOrdFormat")
-  var xmlBlOrdFormat: Boolean
+  var xmlBlOrdFormat: Boolean?
 
   /**
    * Add the query length to the SAM format (tag ZQ).
@@ -248,7 +248,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("sam-query-len")
   @get:JsonGetter("samQueryLen")
   @set:JsonSetter("samQueryLen")
-  var samQueryLen: Boolean
+  var samQueryLen: Boolean?
 
   /**
    * Set the match score of stop codons against each other.
@@ -260,7 +260,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("stop-match-score")
   @get:JsonGetter("stopMatchScore")
   @set:JsonSetter("stopMatchScore")
-  var stopMatchScore: Int
+  var stopMatchScore: Int?
 
   /**
    * Enable target-indexed mode.
@@ -270,7 +270,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("target-indexed")
   @get:JsonGetter("targetIndexed")
   @set:JsonSetter("targetIndexed")
-  var targetIndexed: Boolean
+  var targetIndexed: Boolean?
 
   /**
    * Flag: `--unaligned-targets`
@@ -278,7 +278,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("unaligned-targets")
   @get:JsonGetter("unalignedTargets")
   @set:JsonSetter("unalignedTargets")
-  var unalignedTargets: Path
+  var unalignedTargets: Path?
 
   /**
    * Flag: `--cut-bar`
@@ -286,7 +286,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("cut-bar")
   @get:JsonGetter("cutBar")
   @set:JsonSetter("cutBar")
-  var cutBar: Boolean
+  var cutBar: Boolean?
 
   /**
    * Flag: `--check-multi-target`
@@ -294,7 +294,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("check-multi-target")
   @get:JsonGetter("checkMultiTarget")
   @set:JsonSetter("checkMultiTarget")
-  var checkMultiTarget: Boolean
+  var checkMultiTarget: Boolean?
 
   /**
    * Flag: `--roc-file`
@@ -302,7 +302,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("roc-file")
   @get:JsonGetter("rocFile")
   @set:JsonSetter("rocFile")
-  var rocFile: Path
+  var rocFile: Path?
 
   /**
    * Flag: `--family-map`
@@ -310,7 +310,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("family-map")
   @get:JsonGetter("familyMap")
   @set:JsonSetter("familyMap")
-  var familyMap: Path
+  var familyMap: Path?
 
   /**
    * File: `--family-map-query`
@@ -318,7 +318,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("family-map-query")
   @get:JsonGetter("familyMapQuery")
   @set:JsonSetter("familyMapQuery")
-  var familyMapQuery: Path
+  var familyMapQuery: Path?
 
   /**
    * Flag: `--query-parallel-limit`
@@ -328,7 +328,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("query-parallel-limit")
   @get:JsonGetter("queryParallelLimit")
   @set:JsonSetter("queryParallelLimit")
-  var queryParallelLimit: UInt
+  var queryParallelLimit: UInt?
 
   /**
    * Flag: `--log-evalue-scale`
@@ -338,7 +338,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("log-evalue-scale")
   @get:JsonGetter("logEValueScale")
   @set:JsonSetter("logEValueScale")
-  var logEValueScale: Double
+  var logEValueScale: Double?
 
   /**
    * Flag: `--bootstrap`
@@ -346,7 +346,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("bootstrap")
   @get:JsonGetter("bootstrap")
   @set:JsonSetter("bootstrap")
-  var bootstrap: Boolean
+  var bootstrap: Boolean?
 
   /**
    * Flag: `--heartbeat`
@@ -354,7 +354,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("heartbeat")
   @get:JsonGetter("heartbeat")
   @set:JsonSetter("heartbeat")
-  var heartbeat: Boolean
+  var heartbeat: Boolean?
 
   /**
    * Flag: `--mp-self`
@@ -362,7 +362,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("mp-self")
   @get:JsonGetter("mpSelf")
   @set:JsonSetter("mpSelf")
-  var mpSelf: Boolean
+  var mpSelf: Boolean?
 
   /**
    * zDrop for gapped dna alignment
@@ -374,7 +374,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("zdrop", 'z')
   @get:JsonGetter("zDrop")
   @set:JsonSetter("zDrop")
-  var zDrop: Int
+  var zDrop: Int?
 
   /**
    * Filter out top FLOAT fraction of repetitive minimizers.
@@ -386,7 +386,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("repetition-cutoff")
   @get:JsonGetter("repetitionCutoff")
   @set:JsonSetter("repetitionCutoff")
-  var repetitionCutoff: Double
+  var repetitionCutoff: Double?
 
   /**
    * Extension algorithm (wfa, ksw=default)
@@ -398,7 +398,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("extension")
   @get:JsonGetter("extension")
   @set:JsonSetter("extension")
-  var extension: DNAExtensionAlgorithm
+  var extension: DNAExtensionAlgorithm?
 
   /**
    * Use chaining without extension
@@ -408,7 +408,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("chaining-out")
   @get:JsonGetter("chainingOut")
   @set:JsonSetter("chainingOut")
-  var chainingOut: Boolean
+  var chainingOut: Boolean?
 
   /**
    * Use chaining with extension.
@@ -418,7 +418,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("align-long-reads")
   @get:JsonGetter("alignLongReads")
   @set:JsonSetter("alignLongReads")
-  var alignLongReads: Boolean
+  var alignLongReads: Boolean?
 
   /**
    * Scaling factor for the chaining gap penalty.
@@ -430,7 +430,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("chain-pen-gap-scale")
   @get:JsonGetter("chainPenGapScale")
   @set:JsonSetter("chainPenGapScale")
-  var chainPenGapScale: Double
+  var chainPenGapScale: Double?
 
   /**
    * Scaling factor for the chaining skip penalty.
@@ -444,7 +444,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("chain-pen-skip-scalee") // TYPO "scalee" EXISTS IN THE DIAMOND SOURCE CODE!
   @get:JsonGetter("chainPenSkipScale")
   @set:JsonSetter("chainPenSkipScale")
-  var chainPenSkipScale: Double
+  var chainPenSkipScale: Double?
 
   /**
    * BlastN mismatch penalty
@@ -456,7 +456,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("penalty")
   @get:JsonGetter("penalty")
   @set:JsonSetter("penalty")
-  var penalty: Int
+  var penalty: Int?
 
   /**
    * BlastN match reward
@@ -468,7 +468,7 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("reward")
   @get:JsonGetter("reward")
   @set:JsonSetter("reward")
-  var reward: Int
+  var reward: Int?
 
   /**
    * Flag: `--query-or-subject-cover`
@@ -476,5 +476,5 @@ interface AdvancedQueryOptionContainer {
   @CliFlag("query-or-subject-cover")
   @get:JsonGetter("queryOrSubjectCover")
   @set:JsonSetter("queryOrSubjectCover")
-  var queryOrSubjectCover: Double
+  var queryOrSubjectCover: Double?
 }

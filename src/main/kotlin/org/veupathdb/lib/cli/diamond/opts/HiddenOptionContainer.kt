@@ -42,7 +42,7 @@ interface HiddenOptionContainer {
   @CliFlag("seed-freq")
   @get:JsonGetter("maximumSeedFrequency")
   @set:JsonSetter("maximumSeedFrequency")
-  var maximumSeedFrequency: Double
+  var maximumSeedFrequency: Double?
 
   /**
    * Flag: `--space-penalty`
@@ -53,7 +53,7 @@ interface HiddenOptionContainer {
   @CliFlag("space-penalty")
   @get:JsonGetter("spacePenalty")
   @set:JsonSetter("spacePenalty")
-  var spacePenalty: Double
+  var spacePenalty: Double?
 
   /**
    * Flag: `--reverse`
@@ -62,7 +62,7 @@ interface HiddenOptionContainer {
   @CliFlag("reverse")
   @get:JsonGetter("reverse")
   @set:JsonSetter("reverse")
-  var reverse: Boolean
+  var reverse: Boolean?
 
   /**
    * Flag: `--neighborhood-score`
@@ -71,7 +71,7 @@ interface HiddenOptionContainer {
   @CliFlag("neighborhood-score")
   @get:JsonGetter("neighborhoodScore")
   @set:JsonSetter("neighborhoodScore")
-  var neighborhoodScore: Int
+  var neighborhoodScore: Int?
 
   /**
    * Flag: `--seed-weight` | `-w`
@@ -82,7 +82,7 @@ interface HiddenOptionContainer {
   @CliFlag("seed-weight", 'w')
   @get:JsonGetter("seedWeight")
   @set:JsonSetter("seedWeight")
-  var seedWeight: UInt
+  var seedWeight: UInt?
 
   /**
    * Flag: `--idl`
@@ -91,7 +91,7 @@ interface HiddenOptionContainer {
   @CliFlag("idl")
   @get:JsonGetter("idLeft")
   @set:JsonSetter("idLeft")
-  var idLeft: UInt
+  var idLeft: UInt?
 
   /**
    * Flag: `--idr`
@@ -100,7 +100,7 @@ interface HiddenOptionContainer {
   @CliFlag("idr")
   @get:JsonGetter("idRight")
   @set:JsonSetter("idRight")
-  var idRight: UInt
+  var idRight: UInt?
 
   /**
    * Flag: `--idn`
@@ -109,7 +109,7 @@ interface HiddenOptionContainer {
   @CliFlag("idn")
   @get:JsonGetter("idN")
   @set:JsonSetter("idN")
-  var idN: UInt
+  var idN: UInt?
 
   /**
    * Flag: `--bmatch`
@@ -118,7 +118,7 @@ interface HiddenOptionContainer {
   @CliFlag("bmatch")
   @get:JsonGetter("bMatch")
   @set:JsonSetter("bMatch")
-  var bMatch: Int
+  var bMatch: Int?
 
   /**
    * Flag: `--bmismatch`
@@ -127,7 +127,7 @@ interface HiddenOptionContainer {
   @CliFlag("bmismatch")
   @get:JsonGetter("bMismatch")
   @set:JsonSetter("bMismatch")
-  var bMismatch: Int
+  var bMismatch: Int?
 
   /**
    * Flag: `--bcutoff`
@@ -136,7 +136,7 @@ interface HiddenOptionContainer {
   @CliFlag("cutoff")
   @get:JsonGetter("bCutoff")
   @set:JsonSetter("bCutoff")
-  var bCutoff: Int
+  var bCutoff: Int?
 
   /**
    * Flag: `--ants`
@@ -147,7 +147,7 @@ interface HiddenOptionContainer {
   @CliFlag("ants")
   @get:JsonGetter("ants")
   @set:JsonSetter("ants")
-  var ants: ULong
+  var ants: ULong?
 
   /**
    * Flag: `--rho`
@@ -158,7 +158,7 @@ interface HiddenOptionContainer {
   @CliFlag("rho")
   @get:JsonGetter("rho")
   @set:JsonSetter("rho")
-  var rho: Double
+  var rho: Double?
 
   /**
    * Flag: `--p_best`
@@ -169,7 +169,7 @@ interface HiddenOptionContainer {
   @CliFlag("p_best")
   @get:JsonGetter("pBest")
   @set:JsonSetter("pBest")
-  var pBest: Double
+  var pBest: Double?
 
   /**
    * Flag: `--d_exp`
@@ -180,7 +180,7 @@ interface HiddenOptionContainer {
   @CliFlag("d_exp")
   @get:JsonGetter("dExp")
   @set:JsonSetter("dExp")
-  var dExp: Double
+  var dExp: Double?
 
   /**
    * Flag: `--d_new`
@@ -191,7 +191,7 @@ interface HiddenOptionContainer {
   @CliFlag("d_new")
   @get:JsonGetter("dNew")
   @set:JsonSetter("dNew")
-  var dNew: Double
+  var dNew: Double?
 
   /**
    * Flag: `--score-estimate-factor`
@@ -202,7 +202,7 @@ interface HiddenOptionContainer {
   @CliFlag("score-estimate-factor")
   @get:JsonGetter("scoreEstimateFactor")
   @set:JsonSetter("scoreEstimateFactor")
-  var scoreEstimateFactor: Double
+  var scoreEstimateFactor: Double?
 
   /**
    * Flag: `--diag-min-estimate`
@@ -213,7 +213,7 @@ interface HiddenOptionContainer {
   @CliFlag("diag-min-estimate")
   @get:JsonGetter("diagMinEstimate")
   @set:JsonSetter("diagMinEstimate")
-  var diagMinEstimate: Int
+  var diagMinEstimate: Int?
 
   /**
    * Flag: `--path-cutoff`
@@ -224,7 +224,7 @@ interface HiddenOptionContainer {
   @CliFlag("path-cutoff")
   @get:JsonGetter("pathCutoff")
   @set:JsonSetter("pathCutoff")
-  var pathCutoff: Double
+  var pathCutoff: Double?
 
   /**
    * Flag: `--sw`
@@ -233,7 +233,7 @@ interface HiddenOptionContainer {
   @CliFlag("sw")
   @get:JsonGetter("useSmithWaterman")
   @set:JsonSetter("useSmithWaterman")
-  var useSmithWaterman: Boolean
+  var useSmithWaterman: Boolean?
 
   /**
    * Flag: `--superblock`
@@ -244,7 +244,7 @@ interface HiddenOptionContainer {
   @CliFlag("superblock")
   @get:JsonGetter("superblock")
   @set:JsonSetter("superblock")
-  var superblock: Int
+  var superblock: Int?
 
   /**
    * Flag: `--max-cells`
@@ -255,7 +255,7 @@ interface HiddenOptionContainer {
   @CliFlag("max-cells")
   @get:JsonGetter("maxCells")
   @set:JsonSetter("maxCells")
-  var maxCells: UInt
+  var maxCells: UInt?
 
   /**
    * Flag: `--load-balancing`
@@ -264,7 +264,7 @@ interface HiddenOptionContainer {
   @CliFlag("load-balancing")
   @get:JsonGetter("loadBalancing")
   @set:JsonSetter("loadBalancing")
-  var loadBalancing: UInt
+  var loadBalancing: UInt?
 
   /**
    * Flag: `--log-query`
@@ -273,7 +273,7 @@ interface HiddenOptionContainer {
   @CliFlag("log-query")
   @get:JsonGetter("logQuery")
   @set:JsonSetter("logQuery")
-  var logQuery: Boolean
+  var logQuery: Boolean?
 
   /**
    * Flag: `--log-subject`
@@ -282,7 +282,7 @@ interface HiddenOptionContainer {
   @CliFlag("log-subject")
   @get:JsonGetter("logSubject")
   @set:JsonSetter("logSubject")
-  var logSubject: Boolean
+  var logSubject: Boolean?
 
   /**
    * Flag: `--palign`
@@ -291,7 +291,7 @@ interface HiddenOptionContainer {
   @CliFlag("palign")
   @get:JsonGetter("pAlign")
   @set:JsonSetter("pAlign")
-  var pAlign: UInt
+  var pAlign: UInt?
 
   /**
    * Flag: `--score-ratio`
@@ -302,7 +302,7 @@ interface HiddenOptionContainer {
   @CliFlag("score-ratio")
   @get:JsonGetter("scoreRatio")
   @set:JsonSetter("scoreRatio")
-  var scoreRatio: Double
+  var scoreRatio: Double?
 
   /**
    * Trace point fetch size.
@@ -315,7 +315,7 @@ interface HiddenOptionContainer {
   @CliFlag("fetch-size")
   @get:JsonGetter("fetchSize")
   @set:JsonSetter("fetchSize")
-  var fetchSize: UInt
+  var fetchSize: UInt?
 
   /**
    * Number of target sequences to fetch for seed extension.
@@ -328,7 +328,7 @@ interface HiddenOptionContainer {
   @CliFlag("target-fetch-size")
   @get:JsonGetter("targetFetchSize")
   @set:JsonSetter("targetFetchSize")
-  var targetFetchSize: UInt
+  var targetFetchSize: UInt?
 
   /**
    * Flag: `--rank-factor`
@@ -339,7 +339,7 @@ interface HiddenOptionContainer {
   @CliFlag("rank-factor")
   @get:JsonGetter("rankFactor")
   @set:JsonSetter("rankFactor")
-  var rankFactor: Double
+  var rankFactor: Double?
 
   /**
    * Flag: `--transcript-len-estimate`
@@ -350,7 +350,7 @@ interface HiddenOptionContainer {
   @CliFlag("transcript-len-estimate")
   @get:JsonGetter("transcriptLenEstimate")
   @set:JsonSetter("transcriptLenEstimate")
-  var transcriptLenEstimate: Double
+  var transcriptLenEstimate: Double?
 
   /**
    * Flag: `--family-counts`
@@ -359,7 +359,7 @@ interface HiddenOptionContainer {
   @CliFlag("family-counts")
   @get:JsonGetter("familyCountsFile")
   @set:JsonSetter("familyCountsFile")
-  var familyCountsFile: Path
+  var familyCountsFile: Path?
 
   /**
    * Flag: `--radix-cluster-buffered`
@@ -368,7 +368,7 @@ interface HiddenOptionContainer {
   @CliFlag("radix-cluster-buffered")
   @get:JsonGetter("radixClusterBuffered")
   @set:JsonSetter("radixClusterBuffered")
-  var radixClusterBuffered: Boolean
+  var radixClusterBuffered: Boolean?
 
   /**
    * Flag: `--join-split-size`
@@ -379,7 +379,7 @@ interface HiddenOptionContainer {
   @CliFlag("join-split-size")
   @get:JsonGetter("joinSplitSize")
   @set:JsonSetter("joinSplitSize")
-  var joinSplitSize: UInt
+  var joinSplitSize: UInt?
 
   /**
    * Flag: `--join-split-key-len`
@@ -390,7 +390,7 @@ interface HiddenOptionContainer {
   @CliFlag("join-split-key-len")
   @get:JsonGetter("joinSplitKeyLen")
   @set:JsonSetter("joinSplitKeyLen")
-  var joinSplitKeyLen: UInt
+  var joinSplitKeyLen: UInt?
 
   /**
    * Flag: `--radix-bits`
@@ -401,7 +401,7 @@ interface HiddenOptionContainer {
   @CliFlag("radix-bits")
   @get:JsonGetter("radixBits")
   @set:JsonSetter("radixBits")
-  var radixBits: RadixBits
+  var radixBits: RadixBits?
 
   /**
    * Flag: `--join-ht-factor`
@@ -412,7 +412,7 @@ interface HiddenOptionContainer {
   @CliFlag("join-ht-factor")
   @get:JsonGetter("joinHTFactor")
   @set:JsonSetter("joinHTFactor")
-  var joinHTFactor: Double
+  var joinHTFactor: Double?
 
   /**
    * Flag: `--sort-join`
@@ -421,7 +421,7 @@ interface HiddenOptionContainer {
   @CliFlag("sort-join")
   @get:JsonGetter("sortJoin")
   @set:JsonSetter("sortJoin")
-  var sortJoin: Boolean
+  var sortJoin: Boolean?
 
   /**
    * Flag: `--simple-freq`
@@ -430,7 +430,7 @@ interface HiddenOptionContainer {
   @CliFlag("simple-freq")
   @get:JsonGetter("simpleFreq")
   @set:JsonSetter("simpleFreq")
-  var simpleFreq: Boolean
+  var simpleFreq: Boolean?
 
   /**
    * Flag: `--freq-treshold` // TYPO: This typo exists in the diamond cli source.
@@ -439,7 +439,7 @@ interface HiddenOptionContainer {
   @CliFlag("freq-treshold") // TYPO: This typo exists in the diamond cli source.
   @get:JsonGetter("freqThreshold")
   @set:JsonSetter("freqThreshold")
-  var freqThreshold: Double
+  var freqThreshold: Double?
 
   /**
    * Flag: `--use-dataset-field`
@@ -448,7 +448,7 @@ interface HiddenOptionContainer {
   @CliFlag("use-dataset-field")
   @get:JsonGetter("useDatasetField")
   @set:JsonSetter("useDatasetField")
-  var useDatasetField: Boolean
+  var useDatasetField: Boolean?
 
   /**
    * Flag: `--store-query-quality`
@@ -457,7 +457,7 @@ interface HiddenOptionContainer {
   @CliFlag("store-query-quality")
   @get:JsonGetter("storeQueryQuality")
   @set:JsonSetter("storeQueryQuality")
-  var storeQueryQuality: Boolean
+  var storeQueryQuality: Boolean?
 
   /**
    * Flag: `--swipe-chunk-size`
@@ -468,7 +468,7 @@ interface HiddenOptionContainer {
   @CliFlag("swipe-chunk-size")
   @get:JsonGetter("swipeChunkSize")
   @set:JsonSetter("swipeChunkSize")
-  var swipeChunkSize: UInt
+  var swipeChunkSize: UInt?
 
   /**
    * Flag: `--hard-masked`
@@ -477,7 +477,7 @@ interface HiddenOptionContainer {
   @CliFlag("hard-masked")
   @get:JsonGetter("hardMasked")
   @set:JsonSetter("hardMasked")
-  var hardMasked: Boolean
+  var hardMasked: Boolean?
 
   /**
    * Flag: `--cbs-window`
@@ -488,7 +488,7 @@ interface HiddenOptionContainer {
   @CliFlag("cbs-window")
   @get:JsonGetter("cbsWindow")
   @set:JsonSetter("cbsWindow")
-  var cbsWindow: Int
+  var cbsWindow: Int?
 
   /**
    * Flag: `--no-dict`
@@ -497,7 +497,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-dict")
   @get:JsonGetter("noDict")
   @set:JsonSetter("noDict")
-  var noDict: Boolean
+  var noDict: Boolean?
 
   /**
    * Flag: `--upgma-edge-limit`
@@ -508,7 +508,7 @@ interface HiddenOptionContainer {
   @CliFlag("upgma-edge-limit")
   @get:JsonGetter("upGmaEdgeLimit")
   @set:JsonSetter("upGmaEdgeLimit")
-  var upGmaEdgeLimit: ULong
+  var upGmaEdgeLimit: ULong?
 
   /**
    * Flag: `--tree`
@@ -517,7 +517,7 @@ interface HiddenOptionContainer {
   @CliFlag("tree")
   @get:JsonGetter("tree")
   @set:JsonSetter("tree")
-  var tree: Path
+  var tree: Path?
 
   /**
    * Flag: `--upgma-dist`
@@ -526,7 +526,7 @@ interface HiddenOptionContainer {
   @CliFlag("upgma-dist")
   @get:JsonGetter("upGmaDist")
   @set:JsonSetter("upGmaDist")
-  var upGmaDist: DistributionType
+  var upGmaDist: DistributionType?
 
   /**
    * Flag: `--upgma-input`
@@ -535,7 +535,7 @@ interface HiddenOptionContainer {
   @CliFlag("upgma-input")
   @get:JsonGetter("upGmaInput")
   @set:JsonSetter("upGmaInput")
-  var upGmaInput: InputType
+  var upGmaInput: InputType?
 
   /**
    * Flag: `--log-extend`
@@ -544,7 +544,7 @@ interface HiddenOptionContainer {
   @CliFlag("log-extend")
   @get:JsonGetter("logExtend")
   @set:JsonSetter("logExtend")
-  var logExtend: Boolean
+  var logExtend: Boolean?
 
   /**
    * Flag: `--chaining-maxgap`
@@ -555,7 +555,7 @@ interface HiddenOptionContainer {
   @CliFlag("chaining-maxgap")
   @get:JsonGetter("chainingMaxGap")
   @set:JsonSetter("chainingMaxGap")
-  var chainingMaxGap: Int
+  var chainingMaxGap: Int?
 
   /**
    * Maximum tandem repeat period to consider (50)
@@ -568,7 +568,7 @@ interface HiddenOptionContainer {
   @CliFlag("tantan-maxRepeatOffset") // NOTE: Capitalization is present in DIAMOND CLI source code
   @get:JsonGetter("tantanMaxRepeatOffset")
   @set:JsonSetter("tantanMaxRepeatOffset")
-  var tantanMaxRepeatOffset: Int
+  var tantanMaxRepeatOffset: Int?
 
   /**
    * Use tantan masking in ungapped mode
@@ -579,7 +579,7 @@ interface HiddenOptionContainer {
   @CliFlag("tantan-ungapped")
   @get:JsonGetter("tantanUngapped")
   @set:JsonSetter("tantanUngapped")
-  var tantanUngapped: Boolean
+  var tantanUngapped: Boolean?
 
   /**
    * Flag: `--chaining-range-cover`
@@ -590,7 +590,7 @@ interface HiddenOptionContainer {
   @CliFlag("chaining-range-cover")
   @get:JsonGetter("chainingRangeCover")
   @set:JsonSetter("chainingRangeCover")
-  var chainingRangeCover: ULong
+  var chainingRangeCover: ULong?
 
   /**
    * Flag: `--no-swipe-realign`
@@ -599,7 +599,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-swipe-realign")
   @get:JsonGetter("noSwipeRealign")
   @set:JsonSetter("noSwipeRealign")
-  var noSwipeRealign: Boolean
+  var noSwipeRealign: Boolean?
 
   /**
    * Flag: `--chaining-maxnodes`
@@ -608,7 +608,7 @@ interface HiddenOptionContainer {
   @CliFlag("chaining-maxnodes")
   @get:JsonGetter("chainingMaxNodes")
   @set:JsonSetter("chainingMaxNodes")
-  var chainingMaxNodes: ULong
+  var chainingMaxNodes: ULong?
 
   /**
    * Flag: `--cutoff-score-8bit`
@@ -619,7 +619,7 @@ interface HiddenOptionContainer {
   @CliFlag("cutoff-score-8bit")
   @get:JsonGetter("cutoffScore8Bit")
   @set:JsonSetter("cutoffScore8Bit")
-  var cutoffScore8Bit: Int // TODO: is this supposed to be limited to 8 bits?
+  var cutoffScore8Bit: Int?
 
   /**
    * Flag: `--min-band-overlap`
@@ -630,7 +630,7 @@ interface HiddenOptionContainer {
   @CliFlag("min-band-overlap")
   @get:JsonGetter("minBandOverlap")
   @set:JsonSetter("minBandOverlap")
-  var minBandOverlap: Double
+  var minBandOverlap: Double?
 
   /**
    * Flag: `--min-realign-overhang`
@@ -641,7 +641,7 @@ interface HiddenOptionContainer {
   @CliFlag("min-realign-overhang")
   @get:JsonGetter("minRealignOverhang")
   @set:JsonSetter("minRealignOverhang")
-  var minRealignOverhang: Int
+  var minRealignOverhang: Int?
 
   /**
    * Flag: `--ungapped-window`
@@ -652,7 +652,7 @@ interface HiddenOptionContainer {
   @CliFlag("ungapped-window")
   @get:JsonGetter("ungappedWindow")
   @set:JsonSetter("ungappedWindow")
-  var ungappedWindow: Int
+  var ungappedWindow: Int?
 
   /**
    * Flag: `--gapped-filter-diag-score`
@@ -663,7 +663,7 @@ interface HiddenOptionContainer {
   @CliFlag("gapped-filter-diag-score")
   @get:JsonGetter("gappedFilterDiagBitScore")
   @set:JsonSetter("gappedFilterDiagBitScore")
-  var gappedFilterDiagBitScore: Double
+  var gappedFilterDiagBitScore: Double?
 
   /**
    * Flag: `--gapped-filter-window`
@@ -674,7 +674,7 @@ interface HiddenOptionContainer {
   @CliFlag("gapped-filter-window")
   @get:JsonGetter("gappedFilterWindow")
   @set:JsonSetter("gappedFilterWindow")
-  var gappedFilterWindow: Int
+  var gappedFilterWindow: Int?
 
   /**
    * Flag: `--output-hits`
@@ -683,7 +683,7 @@ interface HiddenOptionContainer {
   @CliFlag("output-hits")
   @get:JsonGetter("outputHits")
   @set:JsonSetter("outputHits")
-  var outputHits: Boolean
+  var outputHits: Boolean?
 
   /**
    * Flag: `--ungapped-evalue`
@@ -694,7 +694,7 @@ interface HiddenOptionContainer {
   @CliFlag("ungapped-evalue")
   @get:JsonGetter("ungappedEValue")
   @set:JsonSetter("ungappedEValue")
-  var ungappedEValue: Double
+  var ungappedEValue: Double?
 
   /**
    * Flag: `--ungapped-evalue-short`
@@ -705,7 +705,7 @@ interface HiddenOptionContainer {
   @CliFlag("ungapped-evalue-short")
   @get:JsonGetter("ungappedEValueShort")
   @set:JsonSetter("ungappedEValueShort")
-  var ungappedEValueShort: Double
+  var ungappedEValueShort: Double?
 
   /**
    * Flag: `--no-logfile`
@@ -714,7 +714,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-logfile")
   @get:JsonGetter("noLogFile")
   @set:JsonSetter("noLogFile")
-  var noLogFile: Boolean
+  var noLogFile: Boolean?
 
   /**
    * Flag: `--band-bin`
@@ -725,7 +725,7 @@ interface HiddenOptionContainer {
   @CliFlag("band-bin")
   @get:JsonGetter("bandBin")
   @set:JsonSetter("bandBin")
-  var bandBin: Int
+  var bandBin: Int?
 
   /**
    * Flag: `--col-bin`
@@ -736,7 +736,7 @@ interface HiddenOptionContainer {
   @CliFlag("col-bin")
   @get:JsonGetter("colBin")
   @set:JsonSetter("colBin")
-  var colBin: Int
+  var colBin: Int?
 
   /**
    * Flag: `--self`
@@ -745,7 +745,7 @@ interface HiddenOptionContainer {
   @CliFlag("self")
   @get:JsonGetter("self")
   @set:JsonSetter("self")
-  var self: Boolean
+  var self: Boolean?
 
   /**
    * Flag: `--trace-pt-fetch-size`
@@ -756,7 +756,7 @@ interface HiddenOptionContainer {
   @CliFlag("trace-pt-fetch-size")
   @get:JsonGetter("tracePtFetchSize")
   @set:JsonSetter("tracePtFetchSize")
-  var tracePtFetchSize: Long
+  var tracePtFetchSize: Long?
 
   /**
    * Flag: `--tile-size`
@@ -767,7 +767,7 @@ interface HiddenOptionContainer {
   @CliFlag("tile-size")
   @get:JsonGetter("tileSize")
   @set:JsonSetter("tileSize")
-  var tileSize: UInt
+  var tileSize: UInt?
 
   /**
    * Flag: `--short-query-ungapped-bitscore`
@@ -778,7 +778,7 @@ interface HiddenOptionContainer {
   @CliFlag("short-query-ungapped-bitscore")
   @get:JsonGetter("shortQueryUngappedBitScore")
   @set:JsonSetter("shortQueryUngappedBitScore")
-  var shortQueryUngappedBitScore: Double
+  var shortQueryUngappedBitScore: Double?
 
   /**
    * Flag: `--short-query-max-len`
@@ -789,7 +789,7 @@ interface HiddenOptionContainer {
   @CliFlag("short-query-max-len")
   @get:JsonGetter("shortQueryMaxLen")
   @set:JsonSetter("shortQueryMaxLen")
-  var shortQueryMaxLen: Int
+  var shortQueryMaxLen: Int?
 
   /**
    * Flag: `--gapped-filter-evalue1`
@@ -800,7 +800,7 @@ interface HiddenOptionContainer {
   @CliFlag("gapped-filter-evalue1")
   @get:JsonGetter("gappedFilterEValue1")
   @set:JsonSetter("gappedFilterEValue1")
-  var gappedFilterEValue1: Double
+  var gappedFilterEValue1: Double?
 
   /**
    * Flag: `--ext-yield`
@@ -809,7 +809,7 @@ interface HiddenOptionContainer {
   @CliFlag("ext-yield")
   @get:JsonGetter("extYield")
   @set:JsonSetter("extYield")
-  var extYield: Double
+  var extYield: Double?
 
   /**
    * Flag: `--full-sw-len`
@@ -818,7 +818,7 @@ interface HiddenOptionContainer {
   @CliFlag("full-sw-len")
   @get:JsonGetter("fullSwLen")
   @set:JsonSetter("fullSwLen")
-  var fullSwLen: Int
+  var fullSwLen: Int?
 
   /**
    * Flag: `--relaxed-evalue-factor`
@@ -829,7 +829,7 @@ interface HiddenOptionContainer {
   @CliFlag("relaxed-evalue-factor")
   @get:JsonGetter("relaxedEValueFactor")
   @set:JsonSetter("relaxedEValueFactor")
-  var relaxedEValueFactor: Double
+  var relaxedEValueFactor: Double?
 
   /**
    * TODO: seems to only be used by benchmark?
@@ -840,7 +840,7 @@ interface HiddenOptionContainer {
   @CliFlag("type")
   @get:JsonGetter("type")
   @set:JsonSetter("type")
-  var type: BenchmarkType
+  var type: BenchmarkType?
 
   /**
    * Flag: `--raw`
@@ -849,7 +849,7 @@ interface HiddenOptionContainer {
   @CliFlag("raw")
   @get:JsonGetter("raw")
   @set:JsonSetter("raw")
-  var raw: Boolean
+  var raw: Boolean?
 
   /**
    * Flag: `--chaining-len-cap`
@@ -860,7 +860,7 @@ interface HiddenOptionContainer {
   @CliFlag("chaining-len-cap")
   @get:JsonGetter("chainingLenCap")
   @set:JsonSetter("chainingLenCap")
-  var chainingLenCap: Double
+  var chainingLenCap: Double?
 
   /**
    * Flag: `--chaining-min-nodes`
@@ -871,7 +871,7 @@ interface HiddenOptionContainer {
   @CliFlag("chaining-min-nodes")
   @get:JsonGetter("chainingMinNodes")
   @set:JsonSetter("chainingMinNodes")
-  var chainingMinNodes: ULong
+  var chainingMinNodes: ULong?
 
   /**
    * Flag: `--fast-tsv`
@@ -880,7 +880,7 @@ interface HiddenOptionContainer {
   @CliFlag("fast-tsv")
   @get:JsonGetter("fastTsv")
   @set:JsonSetter("fastTsv")
-  var fastTsv: Boolean
+  var fastTsv: Boolean?
 
   /**
    * Flag: `--target-parallel-verbosity`
@@ -889,7 +889,7 @@ interface HiddenOptionContainer {
   @CliFlag("target-parallel-verbosity")
   @get:JsonGetter("targetParallelVerbosity")
   @set:JsonSetter("targetParallelVerbosity")
-  var targetParallelVerbosity: UInt
+  var targetParallelVerbosity: UInt?
 
   /**
    * Flag: `--query-memory`
@@ -898,7 +898,7 @@ interface HiddenOptionContainer {
   @CliFlag("query-memory")
   @get:JsonGetter("queryMemory")
   @set:JsonSetter("queryMemory")
-  var queryMemory: Boolean
+  var queryMemory: Boolean?
 
   /**
    * Flag: `--memory-intervals`
@@ -909,7 +909,7 @@ interface HiddenOptionContainer {
   @CliFlag("memory-intervals")
   @get:JsonGetter("memoryIntervals")
   @set:JsonSetter("memoryIntervals")
-  var memoryIntervals: ULong
+  var memoryIntervals: ULong?
 
   /**
    * Flag: `--seed-hit-density`
@@ -918,7 +918,7 @@ interface HiddenOptionContainer {
   @CliFlag("seed-hit-density")
   @get:JsonGetter("seedHitDensity")
   @set:JsonSetter("seedHitDensity")
-  var seedHitDensity: ULong
+  var seedHitDensity: ULong?
 
   /**
    * Flag: `--chunk-size-multiplier`
@@ -929,7 +929,7 @@ interface HiddenOptionContainer {
   @CliFlag("chunk-size-multiplier")
   @get:JsonGetter("chunkSizeMultiplier")
   @set:JsonSetter("chunkSizeMultiplier")
-  var chunkSizeMultiplier: ULong
+  var chunkSizeMultiplier: ULong?
 
   /**
    * Flag: `--score-drop-factor`
@@ -940,7 +940,7 @@ interface HiddenOptionContainer {
   @CliFlag("score-drop-factor")
   @get:JsonGetter("rankingScoreDropFactor")
   @set:JsonSetter("rankingScoreDropFactor")
-  var rankingScoreDropFactor: Double
+  var rankingScoreDropFactor: Double?
 
   /**
    * Flag: `--left-most-interval`
@@ -951,7 +951,7 @@ interface HiddenOptionContainer {
   @CliFlag("left-most-interval")
   @get:JsonGetter("leftMostInterval")
   @set:JsonSetter("leftMostInterval")
-  var leftMostInterval: Int
+  var leftMostInterval: Int?
 
   /**
    * Flag: `--ranking-cutoff-bitscore`
@@ -962,7 +962,7 @@ interface HiddenOptionContainer {
   @CliFlag("ranking-cutoff-bitscore")
   @get:JsonGetter("rankingCutoffBitScore")
   @set:JsonSetter("rankingCutoffBitScore")
-  var rankingCutoffBitScore: Double
+  var rankingCutoffBitScore: Double?
 
   /**
    * Flag: `--no-forward-fp`
@@ -971,7 +971,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-forward-fp")
   @get:JsonGetter("noForwardFp")
   @set:JsonSetter("noForwardFp")
-  var noForwardFp: Boolean
+  var noForwardFp: Boolean?
 
   /**
    * Flag: `--no-ref-masking`
@@ -980,7 +980,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-ref-masking")
   @get:JsonGetter("noRefMasking")
   @set:JsonSetter("noRefMasking")
-  var noRefMasking: Boolean
+  var noRefMasking: Boolean?
 
   /**
    * Flag: `--target-bias`
@@ -989,7 +989,7 @@ interface HiddenOptionContainer {
   @CliFlag("target-bias")
   @get:JsonGetter("targetBias")
   @set:JsonSetter("targetBias")
-  var targetBias: Boolean
+  var targetBias: Boolean?
 
   /**
    * Flag: `--output-fp`
@@ -998,7 +998,7 @@ interface HiddenOptionContainer {
   @CliFlag("output-fp")
   @get:JsonGetter("outputFp")
   @set:JsonSetter("outputFp")
-  var outputFp: Boolean
+  var outputFp: Boolean?
 
   /**
    * Flag: `--family-cap`
@@ -1007,7 +1007,7 @@ interface HiddenOptionContainer {
   @CliFlag("family-cap")
   @get:JsonGetter("familyCap")
   @set:JsonSetter("familyCap")
-  var familyCap: Int
+  var familyCap: Int?
 
   /**
    * Flag: `--cbs-matrix-scale`
@@ -1018,7 +1018,7 @@ interface HiddenOptionContainer {
   @CliFlag("cbs-matrix-scale")
   @get:JsonGetter("cbsMatrixScale")
   @set:JsonSetter("cbsMatrixScale")
-  var cbsMatrixScale: Int
+  var cbsMatrixScale: Int?
 
   /**
    * Flag: `--query-count`
@@ -1029,7 +1029,7 @@ interface HiddenOptionContainer {
   @CliFlag("query-count")
   @get:JsonGetter("queryCount")
   @set:JsonSetter("queryCount")
-  var queryCount: ULong
+  var queryCount: ULong?
 
   /**
    * Flag: `--cbs-angle`
@@ -1040,7 +1040,7 @@ interface HiddenOptionContainer {
   @CliFlag("cbs-angle")
   @get:JsonGetter("cbsAngle")
   @set:JsonSetter("cbsAngle")
-  var cbsAngle: Double
+  var cbsAngle: Double?
 
   /**
    * Flag: `--cbs-err-tolerance`
@@ -1051,7 +1051,7 @@ interface HiddenOptionContainer {
   @CliFlag("cbs-err-tolerance")
   @get:JsonGetter("cbsErrTolerance")
   @set:JsonSetter("cbsErrTolerance")
-  var cbsErrTolerance: Double
+  var cbsErrTolerance: Double?
 
   /**
    * Flag: `--cbs-it-limit`
@@ -1062,7 +1062,7 @@ interface HiddenOptionContainer {
   @CliFlag("cbs-it-limit")
   @get:JsonGetter("cbsItLimit")
   @set:JsonSetter("cbsItLimit")
-  var cbsItLimit: Int
+  var cbsItLimit: Int?
 
   /**
    * Flag: `--hash_join_swap`
@@ -1071,7 +1071,7 @@ interface HiddenOptionContainer {
   @CliFlag("hash_join_swap")
   @get:JsonGetter("hashJoinSwap")
   @set:JsonSetter("hashJoinSwap")
-  var hashJoinSwap: Boolean
+  var hashJoinSwap: Boolean?
 
   /**
    * Flag: `--deque_bucket_size`
@@ -1082,7 +1082,7 @@ interface HiddenOptionContainer {
   @CliFlag("deque_bucket_size")
   @get:JsonGetter("dequeBucketSize")
   @set:JsonSetter("dequeBucketSize")
-  var dequeBucketSize: ULong
+  var dequeBucketSize: ULong?
 
   /**
    * Flag: `--query-match-distance-threshold`
@@ -1093,7 +1093,7 @@ interface HiddenOptionContainer {
   @CliFlag("query-match-distance-threshold")
   @get:JsonGetter("queryMatchDistanceThreshold")
   @set:JsonSetter("queryMatchDistanceThreshold")
-  var queryMatchDistanceThreshold: Double
+  var queryMatchDistanceThreshold: Double?
 
   /**
    * Flag: `--length-ratio-threshold`
@@ -1104,7 +1104,7 @@ interface HiddenOptionContainer {
   @CliFlag("length-ratio-threshold")
   @get:JsonGetter("lengthRatioThreshold")
   @set:JsonSetter("lengthRatioThreshold")
-  var lengthRatioThreshold: Double
+  var lengthRatioThreshold: Double?
 
   /**
    * Flag: `--max-swipe-dp`
@@ -1115,7 +1115,7 @@ interface HiddenOptionContainer {
   @CliFlag("max-swipe-dp")
   @get:JsonGetter("maxSwipeDp")
   @set:JsonSetter("maxSwipeDp")
-  var maxSwipeDp: Long
+  var maxSwipeDp: Long?
 
   /**
    * Flag: `--short-seqids`
@@ -1124,7 +1124,7 @@ interface HiddenOptionContainer {
   @CliFlag("short-seqids")
   @get:JsonGetter("shortSeqIDs")
   @set:JsonSetter("shortSeqIDs")
-  var shortSeqIDs: Boolean
+  var shortSeqIDs: Boolean?
 
   /**
    * Flag: `--no-reextend`
@@ -1133,7 +1133,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-reextend")
   @get:JsonGetter("noReextend")
   @set:JsonSetter("noReextend")
-  var noReextend: Boolean
+  var noReextend: Boolean?
 
   /**
    * Flag: `--no-reorder`
@@ -1142,7 +1142,7 @@ interface HiddenOptionContainer {
   @CliFlag("no-reorder")
   @get:JsonGetter("noReorder")
   @set:JsonSetter("noReorder")
-  var noReorder: Boolean
+  var noReorder: Boolean?
 
   /**
    * Flag: `--file1`
@@ -1151,7 +1151,7 @@ interface HiddenOptionContainer {
   @CliFlag("file1")
   @get:JsonGetter("file1")
   @set:JsonSetter("file1")
-  var file1: Path
+  var file1: Path?
 
   /**
    * Flag: `--file2`
@@ -1160,7 +1160,7 @@ interface HiddenOptionContainer {
   @CliFlag("file2")
   @get:JsonGetter("file2")
   @set:JsonSetter("file2")
-  var file2: Path
+  var file2: Path?
 
   /**
    * Flag: `--key2`
@@ -1169,7 +1169,7 @@ interface HiddenOptionContainer {
   @CliFlag("key2")
   @get:JsonGetter("key2")
   @set:JsonSetter("key2")
-  var key2: ULong
+  var key2: ULong?
 
   /**
    * TODO: this flag appears to be unused.
@@ -1180,7 +1180,7 @@ interface HiddenOptionContainer {
   @CliFlag("motif-mask-file")
   @get:JsonGetter("motifMaskFile")
   @set:JsonSetter("motifMaskFile")
-  var motifMaskFile: Path
+  var motifMaskFile: Path?
 
   /**
    * Flag: `--max-motif-len`
@@ -1191,7 +1191,7 @@ interface HiddenOptionContainer {
   @CliFlag("max-motif-len")
   @get:JsonGetter("maxMotifLen")
   @set:JsonSetter("maxMotifLen")
-  var maxMotifLen: Int
+  var maxMotifLen: Int?
 
   /**
    * Flag: `--chaining-stacked-hsp-ratio`
@@ -1202,7 +1202,7 @@ interface HiddenOptionContainer {
   @CliFlag("chaining-stacked-hsp-ratio")
   @get:JsonGetter("chainingStackedHSPRatio")
   @set:JsonSetter("chainingStackedHSPRatio")
-  var chainingStackedHSPRatio: Double
+  var chainingStackedHSPRatio: Double?
 
   /**
    * Flag: `--swipe-task-size`
@@ -1213,7 +1213,7 @@ interface HiddenOptionContainer {
   @CliFlag("swipe-task-size")
   @get:JsonGetter("swipeTaskSize")
   @set:JsonSetter("swipeTaskSize")
-  var swipeTaskSize: Long
+  var swipeTaskSize: Long?
 
   /**
    * Flag: `--minimizer-window`
@@ -1222,7 +1222,7 @@ interface HiddenOptionContainer {
   @CliFlag("minimizer-window")
   @get:JsonGetter("minimizerWindow")
   @set:JsonSetter("minimizerWindow")
-  var minimizerWindow: Int
+  var minimizerWindow: Int?
 
   /**
    * Flag: `--min_task_trace_pts`
@@ -1233,7 +1233,7 @@ interface HiddenOptionContainer {
   @CliFlag("min_task_trace_pts")
   @get:JsonGetter("minTaskTracePts")
   @set:JsonSetter("minTaskTracePts")
-  var minTaskTracePts: Long
+  var minTaskTracePts: Long?
 
   /**
    * Flag: `--sketch-size`
@@ -1242,7 +1242,7 @@ interface HiddenOptionContainer {
   @CliFlag("sketch-size")
   @get:JsonGetter("sketchSize")
   @set:JsonSetter("sketchSize")
-  var sketchSize: Int
+  var sketchSize: Int?
 
   /**
    * Flag: `--oid-list`
@@ -1251,7 +1251,7 @@ interface HiddenOptionContainer {
   @CliFlag("oid-list")
   @get:JsonGetter("oidList")
   @set:JsonSetter("oidList")
-  var oidList: Path
+  var oidList: Path?
 
   /**
    * Flag: `--bootstrap-block`
@@ -1262,7 +1262,7 @@ interface HiddenOptionContainer {
   @CliFlag("bootstrap-block")
   @get:JsonGetter("bootstrapBlock")
   @set:JsonSetter("bootstrapBlock")
-  var bootstrapBlock: Long
+  var bootstrapBlock: Long?
 
   /**
    * Flag: `--centroid-factor`
@@ -1273,7 +1273,7 @@ interface HiddenOptionContainer {
   @CliFlag("centroid-factor")
   @get:JsonGetter("centroidFactor")
   @set:JsonSetter("centroidFactor")
-  var centroidFactor: Long
+  var centroidFactor: Long?
 
   /**
    * Flag: `--timeout`
@@ -1282,7 +1282,7 @@ interface HiddenOptionContainer {
   @CliFlag("timeout")
   @get:JsonGetter("timeout")
   @set:JsonSetter("timeout")
-  var timeout: Int
+  var timeout: Int?
 
   /**
    * TODO: this flag appears to be unused.
@@ -1293,7 +1293,7 @@ interface HiddenOptionContainer {
   @CliFlag("resume")
   @get:JsonGetter("resume")
   @set:JsonSetter("resume")
-  var resume: String
+  var resume: String?
 
   /**
    * Flag: `--target_hard_cap`
@@ -1302,7 +1302,7 @@ interface HiddenOptionContainer {
   @CliFlag("target_hard_cap")
   @get:JsonGetter("targetHardCap")
   @set:JsonSetter("targetHardCap")
-  var targetHardCap: Long
+  var targetHardCap: Long?
 
   /**
    * Flag: `--mapany`
@@ -1311,7 +1311,7 @@ interface HiddenOptionContainer {
   @CliFlag("mapany")
   @get:JsonGetter("mapAny")
   @set:JsonSetter("mapAny")
-  var mapAny: Boolean
+  var mapAny: Boolean?
 
   /**
    * TODO: this flag appears to be unused.
@@ -1322,7 +1322,7 @@ interface HiddenOptionContainer {
   @CliFlag("neighbors")
   @get:JsonGetter("neighbors")
   @set:JsonSetter("neighbors")
-  var neighbors: String
+  var neighbors: String?
 
   /**
    * Flag: `--reassign-overlap`
@@ -1333,7 +1333,7 @@ interface HiddenOptionContainer {
   @CliFlag("reassign-overlap")
   @get:JsonGetter("reassignOverlap")
   @set:JsonSetter("reassignOverlap")
-  var reassignOverlap: Double
+  var reassignOverlap: Double?
 
   /**
    * Flag: `--reassign-ratio`
@@ -1344,7 +1344,7 @@ interface HiddenOptionContainer {
   @CliFlag("reassign-ratio")
   @get:JsonGetter("reassignRatio")
   @set:JsonSetter("reassignRatio")
-  var reassignRatio: Double
+  var reassignRatio: Double?
 
   /**
    * Flag: `--reassign-max`
@@ -1353,7 +1353,7 @@ interface HiddenOptionContainer {
   @CliFlag("reassign-max")
   @get:JsonGetter("reassignMax")
   @set:JsonSetter("reassignMax")
-  var reassignMax: Long
+  var reassignMax: Long?
 
   /**
    * Flag: `--add-self-aln`
@@ -1362,7 +1362,7 @@ interface HiddenOptionContainer {
   @CliFlag("add-self-aln")
   @get:JsonGetter("addSelfAln")
   @set:JsonSetter("addSelfAln")
-  var addSelfAln: Boolean
+  var addSelfAln: Boolean?
 
   /**
    * Flag: `--weighted-gvc`
@@ -1371,7 +1371,7 @@ interface HiddenOptionContainer {
   @CliFlag("weighted-gvc")
   @get:JsonGetter("weightedGVC")
   @set:JsonSetter("weightedGVC")
-  var weightedGVC: Boolean
+  var weightedGVC: Boolean?
 
   /**
    * Flag: `--hamming-ext`
@@ -1380,7 +1380,7 @@ interface HiddenOptionContainer {
   @CliFlag("hamming-ext")
   @get:JsonGetter("hammingExt")
   @set:JsonSetter("hammingExt")
-  var hammingExt: Boolean
+  var hammingExt: Boolean?
 
   /**
    * Flag: `--diag-filter-id`
@@ -1389,7 +1389,7 @@ interface HiddenOptionContainer {
   @CliFlag("diag-filter-id")
   @get:JsonGetter("diagFilterID")
   @set:JsonSetter("diagFilterID")
-  var diagFilterID: Double
+  var diagFilterID: Double?
 
   /**
    * Flag: `--diag-filter-cov`
@@ -1398,7 +1398,7 @@ interface HiddenOptionContainer {
   @CliFlag("diag-filter-cov")
   @get:JsonGetter("diagFilterCov")
   @set:JsonSetter("diagFilterCov")
-  var diagFilterCov: Double
+  var diagFilterCov: Double?
 
   /**
    * Flag: `--strict-gvc`
@@ -1407,7 +1407,7 @@ interface HiddenOptionContainer {
   @CliFlag("strict-gvc")
   @get:JsonGetter("strictGVC")
   @set:JsonSetter("strictGVC")
-  var strictGVC: Boolean
+  var strictGVC: Boolean?
 
   /**
    * Type of sequences in database file (nucl/prot).
@@ -1420,7 +1420,7 @@ interface HiddenOptionContainer {
   @CliFlag("dbtype")
   @get:JsonGetter("dbType")
   @set:JsonSetter("dbType")
-  var dbType: SequenceType
+  var dbType: SequenceType?
 
   /**
    * Clustering similarity measure.
@@ -1437,7 +1437,7 @@ interface HiddenOptionContainer {
   @CliFlag("cluster-similarity")
   @get:JsonGetter("clusterSimilarity")
   @set:JsonSetter("clusterSimilarity")
-  var clusterSimilarity: String
+  var clusterSimilarity: String?
 
   /**
    * Threshold for the similarity measure.
@@ -1450,7 +1450,7 @@ interface HiddenOptionContainer {
   @CliFlag("cluster-threshold")
   @get:JsonGetter("clusterThreshold")
   @set:JsonSetter("clusterThreshold")
-  var clusterThreshold: Double
+  var clusterThreshold: Double?
 
   /**
    * Filename for dumping the graph or reading the graph if cluster-restart.
@@ -1461,7 +1461,7 @@ interface HiddenOptionContainer {
   @CliFlag("cluster-graph-file")
   @get:JsonGetter("clusterGraphFile")
   @set:JsonSetter("clusterGraphFile")
-  var clusterGraphFile: Path
+  var clusterGraphFile: Path?
 
   /**
    * Restart clustering from dumped graph.
@@ -1472,7 +1472,7 @@ interface HiddenOptionContainer {
   @CliFlag("cluster-restart")
   @get:JsonGetter("clusterRestart")
   @set:JsonSetter("clusterRestart")
-  var clusterRestart: Boolean
+  var clusterRestart: Boolean?
 
   /**
    * MCL expansion coefficient.
@@ -1485,7 +1485,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-expansion")
   @get:JsonGetter("mclExpansion")
   @set:JsonSetter("mclExpansion")
-  var mclExpansion: UInt
+  var mclExpansion: UInt?
 
   /**
    * MCL inflation coefficient.
@@ -1498,7 +1498,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-inflation")
   @get:JsonGetter("mclInflation")
   @set:JsonSetter("mclInflation")
-  var mclInflation: Double
+  var mclInflation: Double?
 
   /**
    * MCL chunk size per thread.
@@ -1509,7 +1509,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-chunk-size")
   @get:JsonGetter("mclChunkSize")
   @set:JsonSetter("mclChunkSize")
-  var mclChunkSize: UInt
+  var mclChunkSize: UInt?
 
   /**
    * MCL maximum iterations.
@@ -1522,7 +1522,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-max-iterations")
   @get:JsonGetter("mclMaxIterations")
   @set:JsonSetter("mclMaxIterations")
-  var mclMaxIterations: UInt
+  var mclMaxIterations: UInt?
 
   /**
    * MCL switch to sparse matrix computation.
@@ -1535,7 +1535,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-sparsity-switch")
   @get:JsonGetter("mclSparsitySwitch")
   @set:JsonSetter("mclSparsitySwitch")
-  var mclSparsitySwitch: Double
+  var mclSparsitySwitch: Double?
 
   /**
    * Do not symmetrize the transition matrix before clustering.
@@ -1546,7 +1546,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-nonsymmetric")
   @get:JsonGetter("mclNonSymmetric")
   @set:JsonSetter("mclNonSymmetric")
-  var mclNonSymmetric: Boolean
+  var mclNonSymmetric: Boolean?
 
   /**
    * Some stats about the connected components in MCL.
@@ -1557,7 +1557,7 @@ interface HiddenOptionContainer {
   @CliFlag("mcl-stats")
   @get:JsonGetter("mclStats")
   @set:JsonSetter("mclStats")
-  var mclStats: Boolean
+  var mclStats: Boolean?
 
   /**
    * Clustering algorithm ('mcl')
@@ -1572,7 +1572,7 @@ interface HiddenOptionContainer {
   @CliFlag("cluster-algo")
   @get:JsonGetter("clusterAlgo")
   @set:JsonSetter("clusterAlgo")
-  var clusterAlgo: String
+  var clusterAlgo: String?
 
   /**
    * Flag: `--approx-backtrace`
@@ -1581,7 +1581,7 @@ interface HiddenOptionContainer {
   @CliFlag("approx-backtrace")
   @get:JsonGetter("approxBacktrace")
   @set:JsonSetter("approxBacktrace")
-  var approxBacktrace: Boolean
+  var approxBacktrace: Boolean?
 
   /**
    * Flag: `--prefix-scan`
@@ -1590,7 +1590,7 @@ interface HiddenOptionContainer {
   @CliFlag("prefix-scan")
   @get:JsonGetter("prefixScan")
   @set:JsonSetter("prefixScan")
-  var prefixScan: Boolean
+  var prefixScan: Boolean?
 
   /**
    * Flag: `--narrow-band-cov`
@@ -1599,7 +1599,7 @@ interface HiddenOptionContainer {
   @CliFlag("narrow-band-cov")
   @get:JsonGetter("narrowBandCov")
   @set:JsonSetter("narrowBandCov")
-  var narrowBandCov: Double
+  var narrowBandCov: Double?
 
   /**
    * Flag: `--narrow-band-factor`
@@ -1608,7 +1608,7 @@ interface HiddenOptionContainer {
   @CliFlag("narrow-band-factor")
   @get:JsonGetter("narrowBandFactor")
   @set:JsonSetter("narrowBandFactor")
-  var narrowBandFactor: Double
+  var narrowBandFactor: Double?
 
   /**
    * Flag: `--anchor-window`
@@ -1619,7 +1619,7 @@ interface HiddenOptionContainer {
   @CliFlag("anchor-window")
   @get:JsonGetter("anchorWindow")
   @set:JsonSetter("anchorWindow")
-  var anchorWindow: Int
+  var anchorWindow: Int?
 
   /**
    * Flag: `--anchor-score`
@@ -1630,7 +1630,7 @@ interface HiddenOptionContainer {
   @CliFlag("anchor-score")
   @get:JsonGetter("anchorScore")
   @set:JsonSetter("anchorScore")
-  var anchorScore: Double
+  var anchorScore: Double?
 
   /**
    * Flag: `--classic-band`
@@ -1639,7 +1639,7 @@ interface HiddenOptionContainer {
   @CliFlag("classic-band")
   @get:JsonGetter("classicBand")
   @set:JsonSetter("classicBand")
-  var classicBand: Boolean
+  var classicBand: Boolean?
 
   /**
    * Flag: `--no_8bit_extension`
@@ -1648,7 +1648,7 @@ interface HiddenOptionContainer {
   @CliFlag("no_8bit_extension")
   @get:JsonGetter("no8BitExtension")
   @set:JsonSetter("no8BitExtension")
-  var no8BitExtension: Boolean
+  var no8BitExtension: Boolean?
 
   /**
    * Flag: `--anchored-swipe`
@@ -1657,7 +1657,7 @@ interface HiddenOptionContainer {
   @CliFlag("anchored-swipe")
   @get:JsonGetter("anchoredSwipe")
   @set:JsonSetter("anchoredSwipe")
-  var anchoredSwipe: Boolean
+  var anchoredSwipe: Boolean?
 
   /**
    * Flag: `--no_chaining_merge_hsps`
@@ -1666,7 +1666,7 @@ interface HiddenOptionContainer {
   @CliFlag("no_chaining_merge_hsps")
   @get:JsonGetter("noChainingMergeHSPs")
   @set:JsonSetter("noChainingMergeHSPs")
-  var noChainingMergeHSPs: Boolean
+  var noChainingMergeHSPs: Boolean?
 
   /**
    * Flag: `--pipeline-short`
@@ -1675,7 +1675,7 @@ interface HiddenOptionContainer {
   @CliFlag("pipeline-short")
   @get:JsonGetter("pipelineShort")
   @set:JsonSetter("pipelineShort")
-  var pipelineShort: Boolean
+  var pipelineShort: Boolean?
 
   /**
    * Flag: `--graph-algo`
@@ -1686,7 +1686,7 @@ interface HiddenOptionContainer {
   @CliFlag("graph-algo")
   @get:JsonGetter("graphAlgo")
   @set:JsonSetter("graphAlgo")
-  var graphAlgo: GraphAlgorithm
+  var graphAlgo: GraphAlgorithm?
 
   /**
    * Flag: `--tsv-read-size`
@@ -1697,7 +1697,7 @@ interface HiddenOptionContainer {
   @CliFlag("tsv-read-size")
   @get:JsonGetter("tsvReadSize")
   @set:JsonSetter("tsvReadSize")
-  var tsvReadSize: Long
+  var tsvReadSize: Long?
 
   /**
    * Flag: `--min-len-ratio`
@@ -1706,7 +1706,7 @@ interface HiddenOptionContainer {
   @CliFlag("min-len-ratio")
   @get:JsonGetter("minLenRatio")
   @set:JsonSetter("minLenRatio")
-  var minLenRatio: Double
+  var minLenRatio: Double?
 
   /**
    * Flag: `--max-indirection`
@@ -1715,7 +1715,7 @@ interface HiddenOptionContainer {
   @CliFlag("max-indirection")
   @get:JsonGetter("maxIndirection")
   @set:JsonSetter("maxIndirection")
-  var maxIndirection: Int
+  var maxIndirection: Int?
 
   /**
    * Flag: `--aln-out`
@@ -1724,5 +1724,5 @@ interface HiddenOptionContainer {
   @CliFlag("aln-out")
   @get:JsonGetter("alnOut")
   @set:JsonSetter("alnOut")
-  var alnOut: Path
+  var alnOut: Path?
 }

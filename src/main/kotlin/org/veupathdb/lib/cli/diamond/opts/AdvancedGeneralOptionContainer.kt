@@ -32,7 +32,7 @@ interface AdvancedGeneralOptionContainer {
   @CliFlag("file-buffer-size")
   @get:JsonGetter("fileBufferSize")
   @set:JsonSetter("fileBufferSize")
-  var fileBufferSize: ULong
+  var fileBufferSize: ULong?
 
   /**
    * Do not unlink temporary files.
@@ -42,7 +42,7 @@ interface AdvancedGeneralOptionContainer {
   @CliFlag("no-unlink")
   @get:JsonGetter("noUnlink")
   @set:JsonSetter("noUnlink")
-  var noUnlink: Boolean
+  var noUnlink: Boolean?
 
   /**
    * Ignore warnings
@@ -52,7 +52,7 @@ interface AdvancedGeneralOptionContainer {
   @CliFlag("ignore-warnings")
   @get:JsonGetter("ignoreWarnings")
   @set:JsonSetter("ignoreWarnings")
-  var ignoreWarnings: Boolean
+  var ignoreWarnings: Boolean?
 
   /**
    * Print raw seqids without parsing
@@ -62,5 +62,5 @@ interface AdvancedGeneralOptionContainer {
   @CliFlag("no-parse-seqids")
   @get:JsonGetter("noParseSeqIDs")
   @set:JsonSetter("noParseSeqIDs")
-  var noParseSeqIDs: Boolean
+  var noParseSeqIDs: Boolean?
 }

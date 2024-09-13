@@ -29,7 +29,7 @@ interface OutputFormatOptionContainer {
   @CliFlag("outfmt", 'f')
   @get:JsonGetter("outputFormat")
   @set:JsonSetter("outputFormat")
-  var outputFormat: OutputFormatOptions
+  var outputFormat: OutputFormatOptions?
 
   /**
    * Include lineage in the taxonomic classification format.
@@ -39,5 +39,5 @@ interface OutputFormatOptionContainer {
   @CliFlag("include-lineage")
   @get:JsonGetter("includeLineage")
   @set:JsonSetter("includeLineage")
-  var includeLineage: Boolean
+  var includeLineage: Boolean?
 }

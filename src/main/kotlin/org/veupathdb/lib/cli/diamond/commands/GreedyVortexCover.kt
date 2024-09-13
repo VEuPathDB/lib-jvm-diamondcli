@@ -44,7 +44,7 @@ interface GreedyVortexCover
   @CliFlag("centroid-out")
   @get:JsonGetter("centroidOut")
   @set:JsonSetter("centroidOut")
-  var centroidOut: Path
+  var centroidOut: Path?
 
   /**
    * Input file for greedy vertex cover
@@ -54,7 +54,7 @@ interface GreedyVortexCover
   @CliFlag("edges")
   @get:JsonGetter("edges")
   @set:JsonSetter("edges")
-  var edges: Path
+  var edges: Path?
 
   /**
    * Edge format for greedy vertex cover.
@@ -64,7 +64,7 @@ interface GreedyVortexCover
   @CliFlag("edge-format")
   @get:JsonGetter("edgeFormat")
   @set:JsonSetter("edgeFormat")
-  var edgeFormat: EdgeFormat
+  var edgeFormat: EdgeFormat?
 
   /**
    * Edges are symmetric
@@ -74,7 +74,7 @@ interface GreedyVortexCover
   @CliFlag("symmetric")
   @get:JsonGetter("symmetric")
   @set:JsonSetter("symmetric")
-  var symmetric: Boolean
+  var symmetric: Boolean?
 
   /**
    * Do not reassign to the closest representative.
@@ -84,7 +84,7 @@ interface GreedyVortexCover
   @CliFlag("no-reassign")
   @get:JsonGetter("noReassign")
   @set:JsonSetter("noReassign")
-  var noReassign: Boolean
+  var noReassign: Boolean?
 
   /**
    * Depth to cluster connected components.
@@ -94,7 +94,7 @@ interface GreedyVortexCover
   @CliFlag("connected-component-depth")
   @get:JsonGetter("connectedComponentDepth")
   @set:JsonSetter("connectedComponentDepth")
-  var connectedComponentDepth: List<String>
+  var connectedComponentDepth: List<String>?
 
   override val tool: DiamondCommand
     get() = DiamondCommand.GreedyVortexCover

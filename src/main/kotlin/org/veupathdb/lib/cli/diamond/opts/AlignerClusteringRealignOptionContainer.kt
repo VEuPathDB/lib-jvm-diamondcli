@@ -35,7 +35,7 @@ interface AlignerClusteringRealignOptionContainer {
   @CliFlag("comp-based-stats")
   @get:JsonGetter("compBasedStats")
   @set:JsonSetter("compBasedStats")
-  var compBasedStats: CompositionBasedStats
+  var compBasedStats: CompositionBasedStats?
 
   /**
    * Masking algorithm.
@@ -47,7 +47,7 @@ interface AlignerClusteringRealignOptionContainer {
   @CliFlag("masking")
   @get:JsonGetter("masking")
   @set:JsonSetter("masking")
-  var masking: MaskingMode
+  var masking: MaskingMode?
 
   /**
    * Soft masking.
@@ -59,7 +59,7 @@ interface AlignerClusteringRealignOptionContainer {
   @CliFlag("soft-masking")
   @get:JsonGetter("softMasking")
   @set:JsonSetter("softMasking")
-  var softMasking: SoftMaskingAlgorithm
+  var softMasking: SoftMaskingAlgorithm?
 
   /**
    * Key: `--mmseqs-compat`
@@ -67,7 +67,7 @@ interface AlignerClusteringRealignOptionContainer {
   @CliFlag("mmseqs-compat")
   @get:JsonGetter("mmseqsCompat")
   @set:JsonSetter("mmseqsCompat")
-  var mmseqsCompat: Boolean
+  var mmseqsCompat: Boolean?
 
   /**
    * Key: `--no-block-size-limit`
@@ -75,6 +75,6 @@ interface AlignerClusteringRealignOptionContainer {
   @CliFlag("no-block-size-limit")
   @get:JsonGetter("noBlockSizeLimit")
   @set:JsonSetter("noBlockSizeLimit")
-  var noBlockSizeLimit: Boolean
+  var noBlockSizeLimit: Boolean?
 }
 

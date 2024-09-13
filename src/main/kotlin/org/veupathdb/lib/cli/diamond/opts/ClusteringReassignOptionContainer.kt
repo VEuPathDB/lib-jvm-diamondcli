@@ -33,7 +33,7 @@ interface ClusteringReassignOptionContainer {
   @CliFlag("memory-limit", 'M')
   @get:JsonGetter("memoryLimit")
   @set:JsonSetter("memoryLimit")
-  var memoryLimit: MemoryLimit
+  var memoryLimit: MemoryLimit?
 
   /**
    * Minimum coverage percentage of the cluster member sequence.
@@ -45,7 +45,7 @@ interface ClusteringReassignOptionContainer {
   @CliFlag("member-cover")
   @get:JsonGetter("memberCover")
   @set:JsonSetter("memberCover")
-  var memberCover: Double
+  var memberCover: Double?
 
   /**
    * Minimum mutual coverage percentage of the cluster member and representative
@@ -56,5 +56,5 @@ interface ClusteringReassignOptionContainer {
   @CliFlag("mutual-cover")
   @get:JsonGetter("mutualCover")
   @set:JsonSetter("mutualCover")
-  var mutualCover: Double
+  var mutualCover: Double?
 }

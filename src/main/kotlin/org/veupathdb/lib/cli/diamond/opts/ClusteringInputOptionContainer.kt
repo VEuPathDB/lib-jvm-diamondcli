@@ -32,5 +32,5 @@ interface ClusteringInputOptionContainer {
   @CliFlag("clusters")
   @get:JsonGetter("clusters")
   @set:JsonSetter("clusters")
-  var clustersFile: Path
+  var clustersFile: Path?
 }

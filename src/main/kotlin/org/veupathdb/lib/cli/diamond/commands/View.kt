@@ -40,7 +40,7 @@ interface View
   @CliFlag("in")
   @get:JsonGetter("inputFile")
   @set:JsonSetter("inputFile")
-  var inputFile: Path
+  var inputFile: Path?
 
   /**
    * Only show alignments of forward strand.
@@ -50,7 +50,7 @@ interface View
   @CliFlag("forwardonly")
   @get:JsonGetter("forwardOnly")
   @set:JsonSetter("forwardOnly")
-  var forwardOnly: Boolean
+  var forwardOnly: Boolean?
 
   override val tool: DiamondCommand
     get() = DiamondCommand.View

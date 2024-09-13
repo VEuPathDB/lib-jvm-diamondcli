@@ -2,7 +2,7 @@ package org.veupathdb.lib.cli.diamond.util
 
 import io.foxcapades.lib.cli.builder.arg.Argument
 import io.foxcapades.lib.cli.builder.arg.format.ArgumentFormatter
-import io.foxcapades.lib.cli.builder.flag.Flag
+import io.foxcapades.lib.cli.builder.flag.DelegateFlag
 import io.foxcapades.lib.cli.builder.flag.FlagOptions
 import io.foxcapades.lib.cli.builder.flag.flag
 import io.foxcapades.lib.cli.builder.serial.CliArgumentWriter
@@ -23,4 +23,4 @@ internal inline fun <T> listFlag(action: FlagOptions<List<String>>.() -> Unit = 
   flag(List::class) {
     shouldQuote = false
     formatter = ListFlagFormatter
-  } as Flag<List<T>>
+  } as DelegateFlag<List<T>>

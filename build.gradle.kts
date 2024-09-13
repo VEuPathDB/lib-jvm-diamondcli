@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "org.veupathdb.lib"
-version = "0.3.0"
+version = "0.4.0"
 
 buildscript {
   dependencies {
@@ -27,13 +27,17 @@ repositories {
       password = if (extra.has("gpr.key")) extra["gpr.key"] as String? else System.getenv("GITHUB_TOKEN")
     }
   }
+  maven {
+    name = "Sonatype Releases"
+    url = uri("https://s01.oss.sonatype.org/content/repositories/releases")
+  }
 }
 
 dependencies {
   api("org.veupathdb.lib:jackson-singleton:3.2.0")
   api("org.slf4j:slf4j-api:2.0.16")
 
-  implementation("io.foxcapades.kt:cli-builder:0.6.0")
+  implementation("io.foxcapades.kt:cli-builder:0.7.1")
 
   dokkaHtmlPlugin("org.jetbrains.dokka:versioning-plugin:1.9.20")
 

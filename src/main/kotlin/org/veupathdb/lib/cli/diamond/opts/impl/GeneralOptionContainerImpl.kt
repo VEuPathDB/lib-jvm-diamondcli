@@ -7,7 +7,7 @@ import io.foxcapades.lib.cli.builder.flag.toggleFlag
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 
 internal class GeneralOptionContainerImpl : GeneralOptionContainer {
-  override var threads by intFlag() { argument.filter = ArgumentPredicate { it > 0 } }
+  override var threads by intFlag { argument.filter = ArgumentPredicate { it > 0 } }
   override var verbose by toggleFlag()
   override var log by toggleFlag()
   override var quiet by toggleFlag()

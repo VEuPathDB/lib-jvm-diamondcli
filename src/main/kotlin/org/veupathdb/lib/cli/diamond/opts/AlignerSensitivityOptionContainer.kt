@@ -206,5 +206,5 @@ interface AlignerSensitivityOptionContainer {
   @CliFlag("shapes", 's')
   @get:JsonGetter("shapes")
   @set:JsonSetter("shapes")
-  var shapes: UInt
+  var shapes: UInt?
 }

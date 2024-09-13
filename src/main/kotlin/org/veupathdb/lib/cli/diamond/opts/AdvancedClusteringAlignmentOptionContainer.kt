@@ -30,7 +30,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   @CliFlag("bin")
   @get:JsonGetter("bins")
   @set:JsonSetter("bins")
-  var bins: UInt
+  var bins: UInt?
 
   /**
    * Chunk size for adaptive ranking.
@@ -40,7 +40,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   @CliFlag("ext-chunk-size")
   @get:JsonGetter("extChunkSize")
   @set:JsonSetter("extChunkSize")
-  var extChunkSize: ULong
+  var extChunkSize: ULong?
 
   /**
    * Disable ranking heuristic.
@@ -50,7 +50,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   @CliFlag("no-ranking")
   @get:JsonGetter("noRanking")
   @set:JsonSetter("noRanking")
-  var noRanking: Boolean
+  var noRanking: Boolean?
 
   /**
    * Effective database size (in letters).
@@ -60,7 +60,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   @CliFlag("dbsize")
   @get:JsonGetter("dbSize")
   @set:JsonSetter("dbSize")
-  var dbSize: ULong
+  var dbSize: ULong?
 
   /**
    * Disable auto appending of DAA and DMND file extensions.
@@ -70,7 +70,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   @CliFlag("no-auto-append")
   @get:JsonGetter("noAutoAppend")
   @set:JsonSetter("noAutoAppend")
-  var noAutoAppend: Boolean
+  var noAutoAppend: Boolean?
 
   /**
    * Minimum repeat probability for masking.
@@ -82,5 +82,5 @@ interface AdvancedClusteringAlignmentOptionContainer {
   @CliFlag("tantan-minMaskProb")
   @get:JsonGetter("tantanMinMaskProb")
   @set:JsonSetter("tantanMinMaskProb")
-  var tantanMinMaskProb: Double
+  var tantanMinMaskProb: Double?
 }

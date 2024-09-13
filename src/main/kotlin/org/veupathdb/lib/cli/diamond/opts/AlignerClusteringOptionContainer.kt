@@ -34,7 +34,7 @@ interface AlignerClusteringOptionContainer {
   @CliFlag("evalue", 'e')
   @get:JsonGetter("eValue")
   @set:JsonSetter("eValue")
-  var expectValue: Double
+  var expectValue: Double?
 
   /**
    * Softmask abundant motifs.
@@ -44,7 +44,7 @@ interface AlignerClusteringOptionContainer {
   @CliFlag("motif-masking")
   @get:JsonGetter("motifMasking")
   @set:JsonSetter("motifMasking")
-  var motifMasking: MotifMaskingAlgorithm
+  var motifMasking: MotifMaskingAlgorithm?
 
   /**
    * Minimum approximate identity % to report an alignment/to cluster sequences.
@@ -54,7 +54,7 @@ interface AlignerClusteringOptionContainer {
   @CliFlag("approx-id")
   @get:JsonGetter("approxID")
   @set:JsonSetter("approxID")
-  var approxIdentity: Double
+  var approxIdentity: Double?
 
   /**
    * Extension mode.
@@ -64,5 +64,5 @@ interface AlignerClusteringOptionContainer {
   @CliFlag("ext")
   @get:JsonGetter("ext")
   @set:JsonSetter("ext")
-  var extensionMode: ExtensionMode
+  var extensionMode: ExtensionMode?
 }

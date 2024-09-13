@@ -32,7 +32,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("query", 'q')
   @get:JsonGetter("query")
   @set:JsonSetter("query")
-  var query: List<Path>
+  var query: List<Path>?
 
   /**
    * Query strands to search.
@@ -44,7 +44,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("strand")
   @get:JsonGetter("strand")
   @set:JsonSetter("strand")
-  var strand: QueryStrand
+  var strand: QueryStrand?
 
   /**
    * File for unaligned queries.
@@ -54,7 +54,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("un")
   @get:JsonGetter("unalignedFile")
   @set:JsonSetter("unalignedFile")
-  var unalignedFile: Path
+  var unalignedFile: Path?
 
   /**
    * File or aligned queries
@@ -64,7 +64,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("al")
   @get:JsonGetter("alignedFile")
   @set:JsonSetter("alignedFile")
-  var alignedFile: Path
+  var alignedFile: Path?
 
   /**
    * Format of unaligned query file.
@@ -76,7 +76,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("unfmt")
   @get:JsonGetter("unalignedFileFormat")
   @set:JsonSetter("unalignedFileFormat")
-  var unalignedFileFormat: QueryFileFormat
+  var unalignedFileFormat: QueryFileFormat?
 
   /**
    * Format of aligned query file.
@@ -88,7 +88,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("alfmt")
   @get:JsonGetter("alignedFileFormat")
   @set:JsonSetter("alignedFileFormat")
-  var alignedFileFormat: QueryFileFormat
+  var alignedFileFormat: QueryFileFormat?
 
   /**
    * Report unaligned queries.
@@ -98,7 +98,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("unal")
   @get:JsonGetter("unal")
   @set:JsonSetter("unal")
-  var reportUnalignedQueries: Boolean
+  var reportUnalignedQueries: Boolean?
 
   /**
    * Maximum number of HSPs per target sequence to report for each query.
@@ -110,7 +110,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("max-hsps")
   @get:JsonGetter("maxHSPs")
   @set:JsonSetter("maxHSPs")
-  var maxHSPs: UInt
+  var maxHSPs: UInt?
 
   /**
    * Restrict hit culling to overlapping query ranges.
@@ -120,7 +120,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("range-culling")
   @get:JsonGetter("rangeCulling")
   @set:JsonSetter("rangeCulling")
-  var rangeCulling: Boolean
+  var rangeCulling: Boolean?
 
   /**
    * Compression for output files.
@@ -130,7 +130,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("compress")
   @get:JsonGetter("compress")
   @set:JsonSetter("compress")
-  var compress: Compression
+  var compress: Compression?
 
   /**
    * Minimum bit score to report alignments (overrides e-value setting).
@@ -140,7 +140,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("min-score")
   @get:JsonGetter("minScore")
   @set:JsonSetter("minScore")
-  var minScore: Double
+  var minScore: Double?
 
   /**
    * Minimum identity percentage to report an alignment.
@@ -150,7 +150,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("id")
   @get:JsonGetter("minimumIdentityPercentage")
   @set:JsonSetter("minimumIdentityPercentage")
-  var minimumIdentityPercentage: Double
+  var minimumIdentityPercentage: Double?
 
   /**
    * Minimum query cover percentage to report an alignment.
@@ -160,7 +160,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("query-cover")
   @get:JsonGetter("minimumQueryCoverPercentage")
   @set:JsonSetter("minimumQueryCoverPercentage")
-  var minimumQueryCoverPercentage: Double
+  var minimumQueryCoverPercentage: Double?
 
   /**
    * Minimum subject cover percentage to report an alignment.
@@ -170,7 +170,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("subject-cover")
   @get:JsonGetter("minimumSubjectCoverPercentage")
   @set:JsonSetter("minimumSubjectCoverPercentage")
-  var minimumSubjectCoverPercentage: Double
+  var minimumSubjectCoverPercentage: Double?
 
   /**
    * Exhaustive alignment against all database sequences.
@@ -180,7 +180,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("swipe")
   @get:JsonGetter("swipe")
   @set:JsonSetter("swipe")
-  var swipe: Boolean
+  var swipe: Boolean?
 
   /**
    * Iterated search with increasing sensitivity.
@@ -190,7 +190,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("iterate")
   @get:JsonGetter("iterate")
   @set:JsonSetter("iterate")
-  var iterate: List<Sensitivity>
+  var iterate: List<Sensitivity>?
 
   /**
    * Number of targets for global ranking.
@@ -200,7 +200,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("global-ranking", 'g')
   @get:JsonGetter("globalRanking")
   @set:JsonSetter("globalRanking")
-  var globalRanking: Long
+  var globalRanking: Long?
 
   /**
    * Sequence block size in billions of letters.
@@ -211,7 +211,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("block-size", 'b')
   @get:JsonGetter("blockSize")
   @set:JsonSetter("blockSize")
-  var blockSize: Double
+  var blockSize: Double?
 
   /**
    * Number of chunks for index processing.
@@ -223,7 +223,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("index-chunks", 'c')
   @get:JsonGetter("indexChunks")
   @set:JsonSetter("indexChunks")
-  var indexChunks: UInt
+  var indexChunks: UInt?
 
   /**
    * Directory for temporary files used by multiprocessing.
@@ -233,7 +233,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("parallel-tmpdir")
   @get:JsonGetter("parallelTmpDir")
   @set:JsonSetter("parallelTmpDir")
-  var parallelTmpDir: Path
+  var parallelTmpDir: Path?
 
   /**
    * Gap open penalty.
@@ -245,7 +245,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("gapopen")
   @get:JsonGetter("gapopen")
   @set:JsonSetter("gapopen")
-  var gapOpenPenalty: Int
+  var gapOpenPenalty: Int?
 
   /**
    * Gap extension penalty.
@@ -257,7 +257,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("gapextend")
   @get:JsonGetter("gapextend")
   @set:JsonSetter("gapextend")
-  var gapExtendPenalty: Int
+  var gapExtendPenalty: Int?
 
   /**
    * Score matrix for protein alignment.
@@ -269,7 +269,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("matrix")
   @get:JsonGetter("matrix")
   @set:JsonSetter("matrix")
-  var matrix: ScoreMatrix
+  var matrix: ScoreMatrix?
 
   /**
    * File containing custom scoring matrix.
@@ -279,7 +279,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("custom-matrix")
   @get:JsonGetter("customMatrix")
   @set:JsonSetter("customMatrix")
-  var customMatrix: Path
+  var customMatrix: Path?
 
   /**
    * Frame shift penalty (default=disabled)
@@ -289,7 +289,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("frameshift", 'F')
   @get:JsonGetter("frameshift")
   @set:JsonSetter("frameshift")
-  var frameShiftPenalty: Int
+  var frameShiftPenalty: Int?
 
   /**
    * Short for `--range-culling --top 10 -F 15`.
@@ -301,7 +301,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("long-reads")
   @get:JsonGetter("longReads")
   @set:JsonSetter("longReads")
-  var longReads: Boolean
+  var longReads: Boolean?
 
   /**
    * Genetic code to use to translate query.
@@ -312,7 +312,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("query-gencode")
   @get:JsonGetter("queryGenCode")
   @set:JsonSetter("queryGenCode")
-  var queryGenCode: TranslatorGenCode
+  var queryGenCode: TranslatorGenCode?
 
   /**
    * Include full subject titles in DAA file.
@@ -322,7 +322,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("salltitles")
   @get:JsonGetter("includeFullSubjectTitles")
   @set:JsonSetter("includeFullSubjectTitles")
-  var includeFullSubjectTitles: Boolean
+  var includeFullSubjectTitles: Boolean?
 
   /**
    * Include all subject ids in DAA file
@@ -332,7 +332,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("sallseqid")
   @get:JsonGetter("includeAllSubjectIDs")
   @set:JsonSetter("includeAllSubjectIDs")
-  var includeAllSubjectIDs: Boolean
+  var includeAllSubjectIDs: Boolean?
 
   /**
    * Suppress reporting of identical self hits.
@@ -342,7 +342,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("no-self-hits")
   @get:JsonGetter("noSelfHits")
   @set:JsonSetter("noSelfHits")
-  var noSelfHits: Boolean
+  var noSelfHits: Boolean?
 
   /**
    * Restrict search to list of taxon ids.
@@ -352,7 +352,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("taxonlist")
   @get:JsonGetter("taxonList")
   @set:JsonSetter("taxonList")
-  var taxonList: List<String>
+  var taxonList: List<String>?
 
   /**
    * Exclude list of taxon ids.
@@ -362,7 +362,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("taxon-exclude")
   @get:JsonGetter("taxonExclude")
   @set:JsonSetter("taxonExclude")
-  var taxonExclude: List<String>
+  var taxonExclude: List<String>?
 
   /**
    * Filter the database by list of accessions.
@@ -372,7 +372,7 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("seqidlist")
   @get:JsonGetter("seqIdList")
   @set:JsonSetter("seqIdList")
-  var seqIdList: Path
+  var seqIdList: Path?
 
   /**
    * Ignore accessions missing in the database.
@@ -382,6 +382,6 @@ interface AlignerGeneralOptionContainer {
   @CliFlag("skip-missing-seqids")
   @get:JsonGetter("skipMissingSeqIDs")
   @set:JsonSetter("skipMissingSeqIDs")
-  var skipMissingSeqIDs: Boolean
+  var skipMissingSeqIDs: Boolean?
 }
 

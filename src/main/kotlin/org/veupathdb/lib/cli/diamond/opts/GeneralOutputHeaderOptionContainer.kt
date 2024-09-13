@@ -33,6 +33,6 @@ interface GeneralOutputHeaderOptionContainer {
   @CliFlag("header")
   @get:JsonGetter("header")
   @set:JsonSetter("header")
-  var header: HeaderOption
+  var header: HeaderOption?
 }
 

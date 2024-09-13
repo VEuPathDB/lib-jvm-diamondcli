@@ -31,5 +31,5 @@ interface ViewAlignOptionContainer {
   @CliFlag("daa", 'a')
   @get:JsonGetter("daa")
   @set:JsonSetter("daa")
-  var daa: Path
+  var daa: Path?
 }

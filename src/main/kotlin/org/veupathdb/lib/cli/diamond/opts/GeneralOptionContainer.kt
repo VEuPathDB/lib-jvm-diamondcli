@@ -38,7 +38,7 @@ interface GeneralOptionContainer {
   @CliFlag("threads", 'p')
   @get:JsonGetter("threads")
   @set:JsonSetter("threads")
-  var threads: Int
+  var threads: Int?
 
   /**
    * Enable more verbose terminal output.
@@ -50,7 +50,7 @@ interface GeneralOptionContainer {
   @CliFlag("verbose", 'v')
   @get:JsonGetter("verbose")
   @set:JsonSetter("verbose")
-  var verbose: Boolean
+  var verbose: Boolean?
 
   /**
    * Enable even more verbose terminal output, which is also written to a file
@@ -63,7 +63,7 @@ interface GeneralOptionContainer {
   @CliFlag("log")
   @get:JsonGetter("log")
   @set:JsonSetter("log")
-  var log: Boolean
+  var log: Boolean?
 
   /**
    * Disable all terminal output.
@@ -75,7 +75,7 @@ interface GeneralOptionContainer {
   @CliFlag("quiet")
   @get:JsonGetter("quiet")
   @set:JsonSetter("quiet")
-  var quiet: Boolean
+  var quiet: Boolean?
 
   /**
    * Directory for temporary files.
@@ -85,6 +85,6 @@ interface GeneralOptionContainer {
   @CliFlag("tmpdir", 't')
   @get:JsonGetter("tmpdir")
   @set:JsonSetter("tmpdir")
-  var tempDir: Path
+  var tempDir: Path?
 }
 

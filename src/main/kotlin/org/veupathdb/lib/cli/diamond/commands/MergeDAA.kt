@@ -32,7 +32,7 @@ interface MergeDAA : DiamondCommandConfig, GeneralOptionContainer, GeneralOutput
   @CliFlag("in")
   @get:JsonGetter("inputFiles")
   @set:JsonSetter("inputFiles")
-  var inputFiles: List<Path>
+  var inputFiles: List<Path>?
 
   override val tool: DiamondCommand
     get() = DiamondCommand.MergeDAA

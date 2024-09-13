@@ -32,7 +32,7 @@ interface AlignerViewOptionContainer {
   @CliFlag("max-target-seqs", 'k')
   @get:JsonGetter("maxTargetSeqs")
   @set:JsonSetter("maxTargetSeqs")
-  var maxTargetSeqs: Long
+  var maxTargetSeqs: Long?
 
   /**
    * Report alignments within this percentage range of top alignment score.
@@ -46,5 +46,5 @@ interface AlignerViewOptionContainer {
   @CliFlag("top")
   @get:JsonGetter("top")
   @set:JsonSetter("top")
-  var top: Double
+  var top: Double?
 }

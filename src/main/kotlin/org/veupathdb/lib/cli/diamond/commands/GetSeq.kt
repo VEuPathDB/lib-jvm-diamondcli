@@ -43,7 +43,7 @@ interface GetSeq
   @CliFlag("seq")
   @get:JsonGetter("seq")
   @set:JsonSetter("seq")
-  var seq: List<Int>
+  var seq: List<Int>?
 
   override val tool: DiamondCommand
     get() = DiamondCommand.GetSeq

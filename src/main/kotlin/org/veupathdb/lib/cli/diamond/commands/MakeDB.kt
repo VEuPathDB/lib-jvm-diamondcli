@@ -47,7 +47,7 @@ interface MakeDB
   @CliFlag("in", required = CliFlag.Toggle.Yes)
   @get:JsonGetter("inputFile")
   @set:JsonSetter("inputFile")
-  var inputFile: Path
+  var inputFile: Path?
 
   /**
    * Path to mapping file that maps NCBI protein accession numbers to taxon ids
@@ -65,7 +65,7 @@ interface MakeDB
   @CliFlag("taxonmap")
   @get:JsonGetter("taxonMap")
   @set:JsonSetter("taxonMap")
-  var taxonMapFile: Path
+  var taxonMapFile: Path?
 
   /**
    * Path to the `nodes.dmp` file from the NCBI taxonomy.
@@ -80,7 +80,7 @@ interface MakeDB
   @CliFlag("taxonnodes")
   @get:JsonGetter("taxonNodes")
   @set:JsonSetter("taxonNodes")
-  var taxonNodesFile: Path
+  var taxonNodesFile: Path?
 
   /**
    * Path to the `names.dmp` file from the NCBI taxonomy.
@@ -95,7 +95,7 @@ interface MakeDB
   @CliFlag("taxonnames")
   @get:JsonGetter("taxonNames")
   @set:JsonSetter("taxonNames")
-  var taxonNamesFile: Path
+  var taxonNamesFile: Path?
 
   override val tool: DiamondCommand
     get() = DiamondCommand.MakeDB

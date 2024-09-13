@@ -31,5 +31,5 @@ interface GeneralDBOptionContainer {
   @CliFlag("db", 'd')
   @get:JsonGetter("db")
   @set:JsonSetter("db")
-  var databaseFile: Path
+  var databaseFile: Path?
 }
