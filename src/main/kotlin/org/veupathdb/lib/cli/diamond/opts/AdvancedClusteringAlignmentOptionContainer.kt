@@ -23,9 +23,9 @@ import io.foxcapades.lib.cli.builder.flag.CliFlag
 
 interface AdvancedClusteringAlignmentOptionContainer {
   /**
-   * Number of query bins for seed search
+   * Number of query bins for seed search.
    *
-   * Flag = `--bin`
+   * Flag: `--bin`
    */
   @CliFlag("bin")
   @get:JsonGetter("bins")
@@ -33,9 +33,9 @@ interface AdvancedClusteringAlignmentOptionContainer {
   var bins: UInt
 
   /**
-   * Chunk size for adaptive ranking (default=auto)
+   * Chunk size for adaptive ranking.
    *
-   * Flag = `--ext-chunk-size`
+   * Flag: `--ext-chunk-size`
    */
   @CliFlag("ext-chunk-size")
   @get:JsonGetter("extChunkSize")
@@ -45,8 +45,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   /**
    * Disable ranking heuristic.
    *
-   * Flag = `--no-ranking`
-   * Default = `false`
+   * Flag: `--no-ranking`
    */
   @CliFlag("no-ranking")
   @get:JsonGetter("noRanking")
@@ -54,10 +53,9 @@ interface AdvancedClusteringAlignmentOptionContainer {
   var noRanking: Boolean
 
   /**
-   * Effective database size (in letters)
+   * Effective database size (in letters).
    *
-   * Flag = `--dbsize`
-   * Default = `0`
+   * Flag: `--dbsize`
    */
   @CliFlag("dbsize")
   @get:JsonGetter("dbSize")
@@ -67,8 +65,7 @@ interface AdvancedClusteringAlignmentOptionContainer {
   /**
    * Disable auto appending of DAA and DMND file extensions.
    *
-   * Flag = `--no-auto-append`
-   * Default = `false`
+   * Flag: `--no-auto-append`
    */
   @CliFlag("no-auto-append")
   @get:JsonGetter("noAutoAppend")
@@ -76,10 +73,11 @@ interface AdvancedClusteringAlignmentOptionContainer {
   var noAutoAppend: Boolean
 
   /**
-   * minimum repeat probability for masking (default=0.9)
+   * Minimum repeat probability for masking.
    *
-   * Flag = `--tantan-minMaskProb`
-   * Default = `0.9`
+   * Flag: `--tantan-minMaskProb`
+   *
+   * Default: `0.9`
    */
   @CliFlag("tantan-minMaskProb")
   @get:JsonGetter("tantanMinMaskProb")

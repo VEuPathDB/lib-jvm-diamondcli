@@ -27,8 +27,9 @@ interface AlignerClusteringOptionContainer {
   /**
    * Maximum e-value to report alignments.
    *
-   * Flag = `--evalue` | `-e`
-   * Default = `0.001`
+   * Flag: `--evalue` | `-e`
+   *
+   * Default: `0.001`
    */
   @CliFlag("evalue", 'e')
   @get:JsonGetter("eValue")
@@ -36,9 +37,9 @@ interface AlignerClusteringOptionContainer {
   var expectValue: Double
 
   /**
-   * Softmask abundant motifs (0/1)
+   * Softmask abundant motifs.
    *
-   * Flag = `--motif-masking`
+   * Flag: `--motif-masking`
    */
   @CliFlag("motif-masking")
   @get:JsonGetter("motifMasking")
@@ -48,7 +49,7 @@ interface AlignerClusteringOptionContainer {
   /**
    * Minimum approximate identity % to report an alignment/to cluster sequences.
    *
-   * Flag = `--approx-id`
+   * Flag: `--approx-id`
    */
   @CliFlag("approx-id")
   @get:JsonGetter("approxID")
@@ -58,7 +59,7 @@ interface AlignerClusteringOptionContainer {
   /**
    * Extension mode.
    *
-   * Flag = `--ext`
+   * Flag: `--ext`
    */
   @CliFlag("ext")
   @get:JsonGetter("ext")

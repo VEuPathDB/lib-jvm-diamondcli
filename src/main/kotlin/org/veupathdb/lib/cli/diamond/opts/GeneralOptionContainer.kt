@@ -30,12 +30,10 @@ interface GeneralOptionContainer {
    * By default, the program will auto-detect and use all available virtual
    * cores on the machine.
    *
-   * > `--threads/-p #`
+   * Flag: `--threads` | `-p`
    *
    * Setting this to a value that is less than or equal to zero results in the
    * option being omitted from the CLI call.
-   *
-   * Default: `0`
    */
   @CliFlag("threads", 'p')
   @get:JsonGetter("threads")
@@ -45,9 +43,7 @@ interface GeneralOptionContainer {
   /**
    * Enable more verbose terminal output.
    *
-   * > `--verbose/-v`
-   *
-   * Default: `false`
+   * Flag: `--verbose` | `-v`
    *
    * TODO: verify whether this is mutually exclusive with [quiet]
    */
@@ -60,9 +56,7 @@ interface GeneralOptionContainer {
    * Enable even more verbose terminal output, which is also written to a file
    * named `diamond.log` is the current working directory.
    *
-   * > `--log`
-   *
-   * Default: `false`
+   * Flag: `--log`
    *
    * TODO: how does this interact with [quiet] and [verbose]?
    */
@@ -74,9 +68,7 @@ interface GeneralOptionContainer {
   /**
    * Disable all terminal output.
    *
-   * > `--quiet`
-   *
-   * Default: `false`
+   * Flag: `--quiet`
    *
    * TODO: verify whether this is mutually exclusive with [verbose]
    */
@@ -88,9 +80,7 @@ interface GeneralOptionContainer {
   /**
    * Directory for temporary files.
    *
-   * > `--tmpdir/-t <path>`
-   *
-   * Default: `null`
+   * Flag: `--tmpdir` | `-t`
    */
   @CliFlag("tmpdir", 't')
   @get:JsonGetter("tmpdir")

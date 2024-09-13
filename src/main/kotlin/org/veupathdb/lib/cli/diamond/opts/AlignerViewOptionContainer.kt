@@ -26,6 +26,7 @@ interface AlignerViewOptionContainer {
    * Maximum number of target sequences to report alignments for.
    *
    * Flag: `--max-target-seqs` | `-k`
+   *
    * Default: `25`
    */
   @CliFlag("max-target-seqs", 'k')
@@ -38,8 +39,9 @@ interface AlignerViewOptionContainer {
    *
    * Overrides: `--max-target-seqs`
    *
-   * Flag = `--top`
-   * Default = `100.0`
+   * Flag: `--top`
+   *
+   * Default: `100.0`
    */
   @CliFlag("top")
   @get:JsonGetter("top")

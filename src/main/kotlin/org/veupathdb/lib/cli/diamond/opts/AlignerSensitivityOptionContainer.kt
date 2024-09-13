@@ -25,6 +25,21 @@ import org.veupathdb.lib.cli.diamond.opts.fields.Sensitivity
 
 interface AlignerSensitivityOptionContainer {
 
+  /**
+   * Aligner sensitivity.
+   *
+   * This is the root sensitivity config value, the following properties are
+   * empty setters over this value:
+   *
+   * * [faster]
+   * * [fast]
+   * * [midSensitive]
+   * * [shapes30x10]
+   * * [sensitive]
+   * * [moreSensitive]
+   * * [verySensitive]
+   * * [ultraSensitive]
+   */
   @get:JsonGetter("sensitivity")
   @set:JsonSetter("sensitivity")
   var sensitivity: Sensitivity
@@ -87,11 +102,11 @@ interface AlignerSensitivityOptionContainer {
     }
 
   /**
-  // enable mode using 30 seed shapes of weight 10
-  // `--shapes-30x10`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_shapes30x10`
+   * Enable mode using 30 seed shapes of weight 10
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--shapes-30x10`
    */
   @CliFlag("shapes-30x10")
   @get:JsonIgnore
@@ -106,11 +121,11 @@ interface AlignerSensitivityOptionContainer {
     }
 
   /**
-  // enable sensitive mode)
-  // `--sensitive`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_sensitive`
+   * Enable sensitive mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--sensitive`
    */
   @CliFlag("sensitive")
   @get:JsonIgnore
@@ -125,11 +140,11 @@ interface AlignerSensitivityOptionContainer {
     }
 
   /**
-  // enable more sensitive mode
-  // `--more-sensitive`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_more_sensitive`
+   * Enable more sensitive mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--more-sensitive`
    */
   @CliFlag("more-sensitive")
   @get:JsonIgnore
@@ -144,11 +159,11 @@ interface AlignerSensitivityOptionContainer {
     }
 
   /**
-  // enable very sensitive mode
-  // `--very-sensitive`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_very_sensitive`
+   * Enable very sensitive mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--very-sensitive`
    */
   @CliFlag("very-sensitive")
   @get:JsonIgnore
@@ -163,11 +178,11 @@ interface AlignerSensitivityOptionContainer {
     }
 
   /**
-  // enable ultra sensitive mode
-  // `--ultra-sensitive`
-  // Default = ``
-  // Type = `bool`
-  // Config Var = `mode_ultra_sensitive`
+   * Enable ultra sensitive mode.
+   *
+   * This is a virtual property over the value of [sensitivity].
+   *
+   * Flag: `--ultra-sensitive`
    */
   @CliFlag("ultra-sensitive")
   @get:JsonIgnore
@@ -182,11 +197,11 @@ interface AlignerSensitivityOptionContainer {
     }
 
   /**
-  // number of seed shapes (default=all available)
-  // `--shapes` | `-s`
-  // Default = ``
-  // Type = `unsigned`
-  // Config Var = `shapes`
+   * Number of seed shapes.
+   *
+   * Defaults to all available.
+   *
+   * Flag: `--shapes` | `-s`
    */
   @CliFlag("shapes", 's')
   @get:JsonGetter("shapes")

@@ -25,8 +25,9 @@ interface AdvancedGeneralOptionContainer {
   /**
    * File buffer size in bytes.
    *
-   * Flag = `--file-buffer-size`
-   * Default = `67108864`
+   * Flag: `--file-buffer-size`
+   *
+   * Default: `67108864`
    */
   @CliFlag("file-buffer-size")
   @get:JsonGetter("fileBufferSize")
@@ -36,7 +37,7 @@ interface AdvancedGeneralOptionContainer {
   /**
    * Do not unlink temporary files.
    *
-   * Flag = `--no-unlink`
+   * Flag: `--no-unlink`
    */
   @CliFlag("no-unlink")
   @get:JsonGetter("noUnlink")
@@ -46,7 +47,7 @@ interface AdvancedGeneralOptionContainer {
   /**
    * Ignore warnings
    *
-   * Flag = `--ignore-warnings`
+   * Flag: `--ignore-warnings`
    */
   @CliFlag("ignore-warnings")
   @get:JsonGetter("ignoreWarnings")
@@ -56,7 +57,7 @@ interface AdvancedGeneralOptionContainer {
   /**
    * Print raw seqids without parsing
    *
-   * Flag = `--no-parse-seqids`
+   * Flag: `--no-parse-seqids`
    */
   @CliFlag("no-parse-seqids")
   @get:JsonGetter("noParseSeqIDs")

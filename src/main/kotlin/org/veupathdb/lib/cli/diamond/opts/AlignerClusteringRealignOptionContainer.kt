@@ -26,7 +26,7 @@ import org.veupathdb.lib.cli.diamond.opts.fields.SoftMaskingAlgorithm
 
 interface AlignerClusteringRealignOptionContainer {
   /**
-   * Composition based statistics mode (0-4)
+   * Composition based statistics mode.
    *
    * Flag: `--comp-based-stats`
    *

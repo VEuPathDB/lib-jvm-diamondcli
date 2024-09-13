@@ -20,6 +20,7 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
+import org.veupathdb.lib.cli.diamond.opts.output_format.MemoryLimit
 
 interface ClusteringReassignOptionContainer {
   /**
@@ -32,7 +33,7 @@ interface ClusteringReassignOptionContainer {
   @CliFlag("memory-limit", 'M')
   @get:JsonGetter("memoryLimit")
   @set:JsonSetter("memoryLimit")
-  var memoryLimit: String // TODO: new-type this
+  var memoryLimit: MemoryLimit
 
   /**
    * Minimum coverage percentage of the cluster member sequence.

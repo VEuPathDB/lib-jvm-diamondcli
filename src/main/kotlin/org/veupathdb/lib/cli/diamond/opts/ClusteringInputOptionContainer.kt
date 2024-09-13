@@ -27,7 +27,7 @@ interface ClusteringInputOptionContainer {
    * Clustering input file as 2-column tabular format mapping sequences to
    * representatives.
    *
-   * Flag = `--clusters`
+   * Flag: `--clusters`
    */
   @CliFlag("clusters")
   @get:JsonGetter("clusters")
