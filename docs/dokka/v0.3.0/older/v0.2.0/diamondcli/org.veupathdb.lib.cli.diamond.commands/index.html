@@ -1,0 +1,362 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
+    <title>org.veupathdb.lib.cli.diamond.commands</title>
+    <link href="../../images/logo-icon.svg" rel="icon" type="image/svg">
+    <script>var pathToRoot = "../../";</script>
+    <script>document.documentElement.classList.replace("no-js","js");</script>
+    <script>const storage = localStorage.getItem("dokka-dark-mode")
+    if (storage == null) {
+        const osDarkSchemePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        if (osDarkSchemePreferred === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    } else {
+        const savedDarkMode = JSON.parse(storage)
+        if(savedDarkMode === true) {
+            document.getElementsByTagName("html")[0].classList.add("theme-dark")
+        }
+    }
+    </script>
+<script type="text/javascript" src="https://unpkg.com/kotlin-playground@1/dist/playground.min.js" async></script>
+<script type="text/javascript" src="../../scripts/sourceset_dependencies.js" async></script>
+<link href="../../styles/style.css" rel="Stylesheet">
+<link href="../../styles/main.css" rel="Stylesheet">
+<link href="../../styles/prism.css" rel="Stylesheet">
+<link href="../../styles/logo-styles.css" rel="Stylesheet">
+<link href="../../styles/font-jb-sans-auto.css" rel="Stylesheet">
+<script type="text/javascript" src="../../scripts/clipboard.js" async></script>
+<script type="text/javascript" src="../../scripts/navigation-loader.js" async></script>
+<script type="text/javascript" src="../../scripts/platform-content-handler.js" async></script>
+<script type="text/javascript" src="../../scripts/main.js" defer></script>
+<script type="text/javascript" src="../../scripts/prism.js" async></script>
+<script type="text/javascript" src="../../scripts/symbol-parameters-wrapper_deferred.js" defer></script>
+<link href="../../styles/multimodule.css" rel="Stylesheet">
+</head>
+<body>
+    <div class="root">
+<nav class="navigation" id="navigation-wrapper">
+    <div class="navigation--inner">
+        <div class="navigation-title">
+            <button class="menu-toggle" id="menu-toggle" type="button">toggle menu</button>
+            <div class="library-name">
+                    <a class="library-name--link" href="../../index.html">
+                            diamondcli
+                    </a>
+            </div>
+            <div class="library-version">
+<dokka-template-command data="{&quot;@class&quot;:&quot;org.jetbrains.dokka.base.templating.ReplaceVersionsCommand&quot;,&quot;location&quot;:&quot;diamondcli/org.veupathdb.lib.cli.diamond.commands/index.html&quot;}"><div class="versions-dropdown">
+  <div class="versions-dropdown-button">v0.2.0</div>
+  <div class="versions-dropdown-data"><a href="../../../../diamondcli/org.veupathdb.lib.cli.diamond.commands/index.html">v0.3.0</a><a href="index.html">v0.2.0</a><a href="../../../v0.1.0/diamondcli/org.veupathdb.lib.cli.diamond.commands/index.html">v0.1.0</a></div>
+</div>
+</dokka-template-command>            </div>
+        </div>
+        <div class="filter-section" id="filter-section">
+                <button class="platform-tag platform-selector jvm-like" data-active="" data-filter=":dokkaHtml/main">jvm</button>
+        </div>
+    </div>
+    <div class="navigation-controls">
+        <button class="navigation-controls--btn navigation-controls--theme" id="theme-toggle-button" type="button">switch theme</button>
+        <div class="navigation-controls--btn navigation-controls--search" id="searchBar" role="button">search in API</div>
+    </div>
+</nav>
+        <div id="container">
+            <div class="sidebar" id="leftColumn">
+                <div class="sidebar--inner" id="sideMenu"></div>
+            </div>
+            <div id="main">
+<div class="main-content" data-page-type="package" id="content" pageids="diamondcli::org.veupathdb.lib.cli.diamond.commands////PointingToDeclaration//769193423">
+  <div class="breadcrumbs"><a href="../../index.html">diamondcli</a><span class="delimiter">/</span><span class="current">org.veupathdb.lib.cli.diamond.commands</span></div>
+  <div class="cover ">
+    <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+  </div>
+  <div class="tabbedcontent">
+    <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button></div>
+    <div class="tabs-section-body">
+      <div data-togglable="TYPE">
+        <h2 class="">Types</h2>
+        <div class="table"><a data-name="-2128169164%2FClasslikes%2F769193423" anchor-label="BlastN" id="-2128169164%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-blast-n/index.html"><span>Blast</span><wbr><span><span>N</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2128169164%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><div class="block"><div class="block"><span class="token annotation builtin">@</span><a href="../org.veupathdb.lib.cli.diamond/-diamond-extras/index.html"><span class="token annotation builtin">DiamondExtras</span></a></div></div><span class="token keyword">interface </span><a href="-blast-n/index.html">BlastN</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-query-option-container/index.html">AdvancedQueryOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-2066129550%2FClasslikes%2F769193423" anchor-label="BlastP" id="-2066129550%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-blast-p/index.html"><span>Blast</span><wbr><span><span>P</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-2066129550%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-blast-p/index.html">BlastP</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-general-option-container/index.html">AlignerGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-sensitivity-option-container/index.html">AlignerSensitivityOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-view-option-container/index.html">AlignerViewOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-output-format-option-container/index.html">OutputFormatOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-query-option-container/index.html">AdvancedQueryOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-view-align-option-container/index.html">ViewAlignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1817971094%2FClasslikes%2F769193423" anchor-label="BlastX" id="-1817971094%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-blast-x/index.html"><span>Blast</span><wbr><span><span>X</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1817971094%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-blast-x/index.html">BlastX</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-general-option-container/index.html">AlignerGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-sensitivity-option-container/index.html">AlignerSensitivityOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-view-option-container/index.html">AlignerViewOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-output-format-option-container/index.html">OutputFormatOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-query-option-container/index.html">AdvancedQueryOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-view-align-option-container/index.html">ViewAlignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1492599550%2FClasslikes%2F769193423" anchor-label="Cluster" id="1492599550%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-cluster/index.html"><span><span>Cluster</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1492599550%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-cluster/index.html">Cluster</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-general-option-container/index.html">ClusteringGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-reassign-option-container/index.html">ClusteringReassignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="959789170%2FClasslikes%2F769193423" anchor-label="ClusterRealign" id="959789170%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-cluster-realign/index.html"><span>Cluster</span><wbr><span><span>Realign</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="959789170%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-cluster-realign/index.html">ClusterRealign</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-output-format-option-container/index.html">OutputFormatOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-input-option-container/index.html">ClusteringInputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="363223838%2FClasslikes%2F769193423" anchor-label="DBInfo" id="363223838%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-d-b-info/index.html"><span><span>DBInfo</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="363223838%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-d-b-info/index.html">DBInfo</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="2119570326%2FClasslikes%2F769193423" anchor-label="DeepClustering" id="2119570326%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-deep-clustering/index.html"><span>Deep</span><wbr><span><span>Clustering</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="2119570326%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-deep-clustering/index.html">DeepClustering</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-general-option-container/index.html">ClusteringGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-reassign-option-container/index.html">ClusteringReassignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="811319473%2FClasslikes%2F769193423" anchor-label="DiamondCommandConfig" id="811319473%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-diamond-command-config/index.html"><span>Diamond</span><wbr><span>Command</span><wbr><span><span>Config</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="811319473%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">sealed </span><span class="token keyword">interface </span><a href="-diamond-command-config/index.html">DiamondCommandConfig</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1061332287%2FClasslikes%2F769193423" anchor-label="GetSeq" id="-1061332287%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-get-seq/index.html"><span>Get</span><wbr><span><span>Seq</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1061332287%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-get-seq/index.html">GetSeq</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1521550289%2FClasslikes%2F769193423" anchor-label="GreedyVortexCover" id="-1521550289%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-greedy-vortex-cover/index.html"><span>Greedy</span><wbr><span>Vortex</span><wbr><span><span>Cover</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1521550289%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-greedy-vortex-cover/index.html">GreedyVortexCover</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-reassign-option-container/index.html">ClusteringReassignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-158826237%2FClasslikes%2F769193423" anchor-label="LinearCluster" id="-158826237%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-linear-cluster/index.html"><span>Linear</span><wbr><span><span>Cluster</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-158826237%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-linear-cluster/index.html">LinearCluster</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-general-option-container/index.html">ClusteringGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-reassign-option-container/index.html">ClusteringReassignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-66490786%2FClasslikes%2F769193423" anchor-label="MakeDB" id="-66490786%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-make-d-b/index.html"><span>Make</span><wbr><span><span>DB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-66490786%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-make-d-b/index.html">MakeDB</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-201013516%2FClasslikes%2F769193423" anchor-label="MakeIndex" id="-201013516%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-make-index/index.html"><span>Make</span><wbr><span><span>Index</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-201013516%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-make-index/index.html">MakeIndex</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-sensitivity-option-container/index.html">AlignerSensitivityOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-540162338%2FClasslikes%2F769193423" anchor-label="MergeDAA" id="-540162338%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-merge-d-a-a/index.html"><span>Merge</span><wbr><span><span>DAA</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-540162338%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-merge-d-a-a/index.html">MergeDAA</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1487461697%2FClasslikes%2F769193423" anchor-label="PrepDB" id="-1487461697%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-prep-d-b/index.html"><span>Prep</span><wbr><span><span>DB</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1487461697%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-prep-d-b/index.html">PrepDB</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="-1647691729%2FClasslikes%2F769193423" anchor-label="ReassignClusters" id="-1647691729%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-reassign-clusters/index.html"><span>Reassign</span><wbr><span><span>Clusters</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="-1647691729%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-reassign-clusters/index.html">ReassignClusters</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-reassign-option-container/index.html">ClusteringReassignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-input-option-container/index.html">ClusteringInputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-general-option-container/index.html">AdvancedGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="924291404%2FClasslikes%2F769193423" anchor-label="RecomputeClustering" id="924291404%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-recompute-clustering/index.html"><span>Recompute</span><wbr><span><span>Clustering</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="924291404%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-recompute-clustering/index.html">RecomputeClustering</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-realign-option-container/index.html">AlignerClusteringRealignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-clustering-option-container/index.html">AlignerClusteringOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-general-option-container/index.html">ClusteringGeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-reassign-option-container/index.html">ClusteringReassignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-clustering-input-option-container/index.html">ClusteringInputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-advanced-clustering-alignment-option-container/index.html">AdvancedClusteringAlignmentOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+<a data-name="1104741125%2FClasslikes%2F769193423" anchor-label="View" id="1104741125%2FClasslikes%2F769193423" data-filterable-set=":dokkaHtml/main"></a>
+          <div class="table-row" data-filterable-current=":dokkaHtml/main" data-filterable-set=":dokkaHtml/main">
+            <div class="main-subrow keyValue ">
+              <div class=""><span class="inline-flex">
+                  <div><a href="-view/index.html"><span><span>View</span></span></a></div>
+<span class="anchor-wrapper"><span class="anchor-icon" pointing-to="1104741125%2FClasslikes%2F769193423"></span>
+                    <div class="copy-popup-wrapper "><span class="copy-popup-icon"></span><span>Link copied to clipboard</span></div>
+                  </span></span></div>
+              <div>
+                <div class="title">
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":dokkaHtml/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-view/index.html">View</a> : <a href="-diamond-command-config/index.html">DiamondCommandConfig</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-option-container/index.html">GeneralOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-d-b-option-container/index.html">GeneralDBOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-header-option-container/index.html">GeneralOutputHeaderOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-general-output-option-container/index.html">GeneralOutputOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-aligner-view-option-container/index.html">AlignerViewOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-output-format-option-container/index.html">OutputFormatOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-view-align-option-container/index.html">ViewAlignOptionContainer</a>, <a href="../org.veupathdb.lib.cli.diamond.opts/-hidden-option-container/index.html">HiddenOptionContainer</a></div></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class="footer">
+        <span class="go-to-top-icon"><a href="#content" id="go-to-top-link"></a></span><span>© 2024 Copyright</span><span class="pull-right"><span>Generated by </span><a href="https://github.com/Kotlin/dokka"><span>dokka</span><span class="padded-icon"></span></a></span>
+      </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
