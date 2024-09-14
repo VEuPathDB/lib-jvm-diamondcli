@@ -1,6 +1,4 @@
 import org.gradle.api.tasks.testing.logging.TestLogEvent
-import org.jetbrains.dokka.versioning.VersioningPlugin
-import org.jetbrains.dokka.versioning.VersioningConfiguration
 
 plugins {
   kotlin("jvm") version "2.0.20"
@@ -10,12 +8,6 @@ plugins {
 
 group = "org.veupathdb.lib"
 version = "0.5.0"
-
-buildscript {
-  dependencies {
-    classpath("org.jetbrains.dokka:versioning-plugin:1.9.20")
-  }
-}
 
 repositories {
   mavenCentral()
@@ -38,8 +30,6 @@ dependencies {
   api("org.slf4j:slf4j-api:2.0.16")
 
   implementation("io.foxcapades.kt:cli-builder:0.7.1")
-
-  dokkaHtmlPlugin("org.jetbrains.dokka:versioning-plugin:1.9.20")
 
   testImplementation("org.mockito:mockito-junit-jupiter:5.13.0")
   testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
@@ -69,11 +59,6 @@ kotlin {
 tasks.dokkaHtml {
   val featVersion = (version as String).substring(0, (version as String).lastIndexOf('.')) + ".0"
   outputDirectory.set(file("docs/dokka/v$featVersion"))
-
-  pluginConfiguration<VersioningPlugin, VersioningConfiguration> {
-    version = "v$featVersion"
-    olderVersionsDir = file("docs/dokka")
-  }
 }
 
 publishing {
