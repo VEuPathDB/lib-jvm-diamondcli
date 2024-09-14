@@ -1,4 +1,4 @@
-package org.veupathdb.lib.cli.diamond.opts.output_format
+package org.veupathdb.lib.cli.diamond.opts.fields.output_format
 
 private var formatFieldCache: Map<String, FormatField>? = null
 

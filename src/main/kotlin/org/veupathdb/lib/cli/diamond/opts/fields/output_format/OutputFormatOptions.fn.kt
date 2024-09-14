@@ -1,4 +1,4 @@
-package org.veupathdb.lib.cli.diamond.opts.output_format
+package org.veupathdb.lib.cli.diamond.opts.fields.output_format
 
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node.ArrayNode

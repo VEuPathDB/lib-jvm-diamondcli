@@ -25,7 +25,7 @@ import org.veupathdb.lib.cli.diamond.commands.BlastX
 import org.veupathdb.lib.cli.diamond.commands.impl.BlastNImpl
 import org.veupathdb.lib.cli.diamond.commands.impl.BlastPImpl
 import org.veupathdb.lib.cli.diamond.commands.impl.BlastXImpl
-import org.veupathdb.lib.cli.diamond.opts.output_format.cacheFormatFields
+import org.veupathdb.lib.cli.diamond.opts.fields.output_format.cacheFormatFields
 import org.veupathdb.lib.jackson.Json
 import java.io.InputStream
 
@@ -38,6 +38,18 @@ object Diamond {
   @JvmStatic
   @DiamondExtras
   fun blastN(): BlastN = BlastNImpl()
+
+  /**
+   * Creates a new, blank [BlastN] CLI configuration instance and passes it to
+   * the given action before returning it.
+   *
+   * @param action Action which may be used to mutate the new `BlastN` instance.
+   *
+   * @return The new `BlastN` instance.
+   */
+  @JvmStatic
+  @DiamondExtras
+  inline fun blastN(action: BlastN.() -> Unit): BlastN = blastN().apply(action)
 
   /**
    * Attempts to parse the given JSON value as a [BlastN] CLI configuration.
@@ -97,6 +109,17 @@ object Diamond {
   fun blastP(): BlastP = BlastPImpl()
 
   /**
+   * Creates a new, blank [BlastP] CLI configuration instance and passes it to
+   * the given action before returning it.
+   *
+   * @param action Action which may be used to mutate the new `BlastP` instance.
+   *
+   * @return The new `BlastP` instance.
+   */
+  @JvmStatic
+  inline fun blastP(action: BlastP.() -> Unit) = blastP().apply(action)
+
+  /**
    * Attempts to parse the given JSON value as a [BlastP] CLI configuration.
    *
    * @param json JSON value to parse.
@@ -149,6 +172,17 @@ object Diamond {
    */
   @JvmStatic
   fun blastX(): BlastX = BlastXImpl()
+
+  /**
+   * Creates a new, blank [BlastX] CLI configuration instance and passes it to
+   * the given action before returning it.
+   *
+   * @param action Action which may be used to mutate the new `BlastX` instance.
+   *
+   * @return The new `BlastX` instance.
+   */
+  @JvmStatic
+  inline fun blastX(action: BlastX.() -> Unit) = blastX().apply(action)
 
   /**
    * Attempts to parse the given JSON value as a [BlastX] CLI configuration.

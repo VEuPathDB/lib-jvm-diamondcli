@@ -1,4 +1,4 @@
-package org.veupathdb.lib.cli.diamond.opts.output_format
+package org.veupathdb.lib.cli.diamond.opts.fields.output_format
 
 import io.foxcapades.lib.cli.builder.arg.Argument
 import io.foxcapades.lib.cli.builder.arg.format.ArgumentFormatter

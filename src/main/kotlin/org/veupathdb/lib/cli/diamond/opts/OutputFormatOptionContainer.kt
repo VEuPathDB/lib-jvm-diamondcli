@@ -20,7 +20,7 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
-import org.veupathdb.lib.cli.diamond.opts.output_format.OutputFormatOptions
+import org.veupathdb.lib.cli.diamond.opts.fields.output_format.OutputFormatOptions
 
 interface OutputFormatOptionContainer {
   /**
