@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "org.veupathdb.lib"
-version = "0.5.6"
+version = "0.5.7"
 
 repositories {
   mavenCentral()
@@ -29,7 +29,7 @@ dependencies {
   api("org.veupathdb.lib:jackson-singleton:3.2.0")
   api("org.slf4j:slf4j-api:2.0.16")
 
-  implementation("io.foxcapades.kt:cli-builder:0.8.1")
+  implementation("io.foxcapades.kt:cli-builder:0.8.2")
 
   testImplementation("org.mockito:mockito-junit-jupiter:5.13.0")
   testImplementation("org.mockito.kotlin:mockito-kotlin:5.4.0")
