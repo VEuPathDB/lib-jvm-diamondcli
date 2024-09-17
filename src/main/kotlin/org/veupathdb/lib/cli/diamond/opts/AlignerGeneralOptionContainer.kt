@@ -98,8 +98,8 @@ interface AlignerGeneralOptionContainer {
    * Flag: `--unal`
    */
   @CliFlag("unal")
-  @get:JsonGetter("unal")
-  @set:JsonSetter("unal")
+  @get:JsonGetter("reportUnaligned")
+  @set:JsonSetter("reportUnaligned")
   var reportUnalignedQueries: Boolean?
 
   /**
