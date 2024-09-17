@@ -19,6 +19,7 @@ package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.arg.CliArgument
 import io.foxcapades.lib.cli.builder.flag.CliFlag
@@ -26,6 +27,7 @@ import org.veupathdb.lib.cli.diamond.opts.fields.Sensitivity
 import org.veupathdb.lib.cli.diamond.util.FauxToggleFormatter
 import org.veupathdb.lib.cli.diamond.util.FauxToggleTest
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 interface AlignerSensitivityOptionContainer {
 
   /**

@@ -18,10 +18,12 @@
 package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import java.nio.file.Path
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 interface GeneralDBOptionContainer {
   /**
    * Path to the target DIAMOND database file.

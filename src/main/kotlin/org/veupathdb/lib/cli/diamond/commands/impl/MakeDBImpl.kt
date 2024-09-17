@@ -36,7 +36,7 @@ internal class MakeDBImpl : MakeDB
 
   // region AdvancedGeneralOptionContainer
 
-  override var fileBufferSize by ulongFlag { default = 67108864u }
+  override var fileBufferSize by ulongFlag()
   override var noUnlink by toggleFlag()
   override var ignoreWarnings by toggleFlag()
   override var noParseSeqIDs by toggleFlag()

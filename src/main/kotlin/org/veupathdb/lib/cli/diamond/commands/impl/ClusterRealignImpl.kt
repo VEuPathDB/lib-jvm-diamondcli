@@ -40,8 +40,8 @@ internal class ClusterRealignImpl : ClusterRealign {
 
   // region AlignerClusteringRealignOptionContainer
 
-  override var compBasedStats by customFlag<CompositionBasedStats> { default = CompositionBasedStats.Hauser }
-  override var masking by customFlag<MaskingMode>() { default = MaskingMode.Tantan }
+  override var compBasedStats by customFlag<CompositionBasedStats>()
+  override var masking by customFlag<MaskingMode>()
   override var softMasking by customFlag<SoftMaskingAlgorithm>()
   override var mmseqsCompat by toggleFlag()
   override var noBlockSizeLimit by toggleFlag()

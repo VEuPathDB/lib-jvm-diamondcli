@@ -18,12 +18,14 @@
 package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.fields.CompositionBasedStats
 import org.veupathdb.lib.cli.diamond.opts.fields.MaskingMode
 import org.veupathdb.lib.cli.diamond.opts.fields.SoftMaskingAlgorithm
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 interface AlignerClusteringRealignOptionContainer {
   /**
    * Composition based statistics mode.

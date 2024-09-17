@@ -50,7 +50,7 @@ internal class GreedyVortexCoverImpl : GreedyVortexCover {
   // region ClusteringReassignOptionContainer
 
   override var memoryLimit by customFlag<MemoryLimit>()
-  override var memberCover by doubleFlag { default = 80.0 }
+  override var memberCover by doubleFlag()
   override var mutualCover by doubleFlag()
 
   // endregion ClusteringReassignOptionContainer

@@ -38,8 +38,8 @@ internal class RecomputeClusteringImpl : RecomputeClustering {
 
   // region AlignerClusteringRealignOptionContainer
 
-  override var compBasedStats by customFlag<CompositionBasedStats> { default = CompositionBasedStats.Hauser }
-  override var masking by customFlag<MaskingMode>() { default = MaskingMode.Tantan }
+  override var compBasedStats by customFlag<CompositionBasedStats>()
+  override var masking by customFlag<MaskingMode>()
   override var softMasking by customFlag<SoftMaskingAlgorithm>()
   override var mmseqsCompat by toggleFlag()
   override var noBlockSizeLimit by toggleFlag()
@@ -48,7 +48,7 @@ internal class RecomputeClusteringImpl : RecomputeClustering {
 
   // region AlignerClusteringOptionContainer
 
-  override var expectValue by doubleFlag { default = 0.001 }
+  override var expectValue by doubleFlag()
   override var motifMasking by customFlag<MotifMaskingAlgorithm>()
   override var approxIdentity by doubleFlag()
   override var extensionMode by customFlag<ExtensionMode>()
@@ -67,7 +67,7 @@ internal class RecomputeClusteringImpl : RecomputeClustering {
   // region ClusteringReassignOptionContainer
 
   override var memoryLimit by customFlag<MemoryLimit>()
-  override var memberCover by doubleFlag { default = 80.0 }
+  override var memberCover by doubleFlag()
   override var mutualCover by doubleFlag()
 
   // endregion ClusteringReassignOptionContainer
@@ -85,7 +85,7 @@ internal class RecomputeClusteringImpl : RecomputeClustering {
   override var noRanking by toggleFlag()
   override var dbSize by ulongFlag()
   override var noAutoAppend by toggleFlag()
-  override var tantanMinMaskProb by doubleFlag { default = 0.9 }
+  override var tantanMinMaskProb by doubleFlag()
 
   // endregion AdvancedClusteringAlignmentOptionContainer
 

@@ -18,6 +18,7 @@
 package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondHidden
@@ -26,6 +27,7 @@ import java.nio.file.Path
 
 // THIS IS ONLY USED WHEN COMPILED WITH 'EXTRA' AND IT IS UNCLEAR WHAT FLAG GOES
 // WITH WHAT COMMAND.  ADD A GENERAL WARNING TO ALL PROPERTIES IN THIS TYPE!
+@JsonInclude(JsonInclude.Include.NON_NULL)
 interface HiddenOptionContainer {
    // ("match1", 0, "", match_file1) // unused in 2.1.9
    // ("match2", 0, "", match_file2) // unused in 2.1.9

@@ -18,9 +18,11 @@
 package org.veupathdb.lib.cli.diamond.opts
 
 import com.fasterxml.jackson.annotation.JsonGetter
+import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.annotation.JsonSetter
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 interface AdvancedClusteringAlignmentOptionContainer {
   /**
    * Number of query bins for seed search.
