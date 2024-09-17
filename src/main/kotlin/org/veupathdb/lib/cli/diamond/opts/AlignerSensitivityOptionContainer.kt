@@ -20,8 +20,11 @@ package org.veupathdb.lib.cli.diamond.opts
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonIgnore
 import com.fasterxml.jackson.annotation.JsonSetter
+import io.foxcapades.lib.cli.builder.arg.CliArgument
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.opts.fields.Sensitivity
+import org.veupathdb.lib.cli.diamond.util.FauxToggleFormatter
+import org.veupathdb.lib.cli.diamond.util.FauxToggleTest
 
 interface AlignerSensitivityOptionContainer {
 
@@ -51,7 +54,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--faster`
    */
-  @CliFlag("faster")
+  @CliFlag("faster", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var faster: Boolean
@@ -70,7 +73,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--fast`
    */
-  @CliFlag("fast")
+  @CliFlag("fast", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var fast: Boolean
@@ -89,7 +92,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--mid-sensitive`
    */
-  @CliFlag("mid-sensitive")
+  @CliFlag("mid-sensitive", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var midSensitive: Boolean
@@ -108,7 +111,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--shapes-30x10`
    */
-  @CliFlag("shapes-30x10")
+  @CliFlag("shapes-30x10", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var shapes30x10: Boolean
@@ -127,7 +130,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--sensitive`
    */
-  @CliFlag("sensitive")
+  @CliFlag("sensitive", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var sensitive: Boolean
@@ -146,7 +149,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--more-sensitive`
    */
-  @CliFlag("more-sensitive")
+  @CliFlag("more-sensitive", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var moreSensitive: Boolean
@@ -165,7 +168,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--very-sensitive`
    */
-  @CliFlag("very-sensitive")
+  @CliFlag("very-sensitive", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var verySensitive: Boolean
@@ -184,7 +187,7 @@ interface AlignerSensitivityOptionContainer {
    *
    * Flag: `--ultra-sensitive`
    */
-  @CliFlag("ultra-sensitive")
+  @CliFlag("ultra-sensitive", inclusionTest = FauxToggleTest::class, argument = CliArgument(formatter = FauxToggleFormatter::class))
   @get:JsonIgnore
   @set:JsonIgnore
   var ultraSensitive: Boolean
