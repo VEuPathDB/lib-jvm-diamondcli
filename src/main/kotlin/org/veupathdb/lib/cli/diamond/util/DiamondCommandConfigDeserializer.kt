@@ -23,8 +23,8 @@ internal class DiamondCommandConfigDeserializer : JsonDeserializer<DiamondComman
       )
 
     return when (DiamondCommand.fromJson(obj["tool"])) {
-      DiamondCommand.BlastP -> Json.parse<BlastPImpl>(obj)
-      DiamondCommand.BlastX -> Json.parse<BlastXImpl>(obj)
+      DiamondCommand.BlastP -> Json.Mapper.updateValue(BlastPImpl(), obj)
+      DiamondCommand.BlastX -> Json.Mapper.updateValue(BlastXImpl(), obj)
       else -> TODO("unsupported type")
     }
   }
