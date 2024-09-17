@@ -27,7 +27,7 @@ implementation("org.veupathdb.lib:diamond-cli:{version-actual}")
 ----
 val bp = Diamond.blastP {
   databaseFile = Path("path/to/some/db.dmnd")
-  query = listOf(Path("path/to/my/query.fasta"))
+  query        = listOf(Path("path/to/my/query.fasta"))
 }
 ----
 
