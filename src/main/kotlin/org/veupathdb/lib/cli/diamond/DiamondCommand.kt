@@ -18,6 +18,7 @@
 package org.veupathdb.lib.cli.diamond
 
 import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonValue
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.node.TextNode
 import org.veupathdb.lib.cli.diamond.commands.SubCommands
@@ -33,7 +34,7 @@ import kotlin.jvm.Throws
  *
  * @since v1.0.0
  */
-enum class DiamondCommand(val command: String) {
+enum class DiamondCommand(@get:JsonValue val command: String) {
   /**
    * Create a DIAMOND formatted reference database from a FASTA input file.
    */
