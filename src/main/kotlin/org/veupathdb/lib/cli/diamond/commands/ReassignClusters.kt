@@ -17,12 +17,15 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.ReassignClustersImpl
 import org.veupathdb.lib.cli.diamond.opts.*
 
 // CLUSTER_REASSIGN
 @CliCommand(Command, SubCommands.ReassignClusters)
+@JsonDeserialize(`as` = ReassignClustersImpl::class)
 interface ReassignClusters
   : DiamondCommandConfig
   , GeneralOptionContainer

@@ -10,7 +10,6 @@ import org.veupathdb.lib.cli.diamond.opts.fields.*
 import org.veupathdb.lib.cli.diamond.util.customFlag
 import java.nio.file.Path
 
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class MergeDAAImpl : MergeDAA {
   // region MergeDAA
 

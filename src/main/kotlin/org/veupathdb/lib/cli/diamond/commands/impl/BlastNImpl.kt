@@ -10,7 +10,6 @@ import org.veupathdb.lib.cli.diamond.opts.fields.*
 import org.veupathdb.lib.cli.diamond.util.customFlag
 
 @DiamondExtras
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class BlastNImpl : BlastN {
   // region AdvancedGeneralOptionContainer
 

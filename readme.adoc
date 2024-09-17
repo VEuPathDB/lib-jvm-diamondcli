@@ -1,7 +1,7 @@
 = DIAMOND CLI Config
 :url-gh: https://github.com
 :url-diamond: {url-gh}/bbuchfink/diamond
-:version-actual: 0.5.15
+:version-actual: 0.5.16
 :version-feature: 0.5.0
 
 Provides an API for constructing CLI calls to the link:{url-diamond}[DIAMOND]

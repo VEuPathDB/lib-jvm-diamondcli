@@ -19,9 +19,11 @@ package org.veupathdb.lib.cli.diamond.commands
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.MakeDBImpl
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
@@ -29,6 +31,7 @@ import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.MakeDB)
+@JsonDeserialize(`as` = MakeDBImpl::class)
 interface MakeDB
   : DiamondCommandConfig
   , GeneralOptionContainer

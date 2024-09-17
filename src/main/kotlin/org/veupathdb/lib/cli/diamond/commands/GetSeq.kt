@@ -19,15 +19,18 @@ package org.veupathdb.lib.cli.diamond.commands
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.GetSeqImpl
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOutputOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.GetSeq)
+@JsonDeserialize(`as` = GetSeqImpl::class)
 interface GetSeq
   : DiamondCommandConfig
   , GeneralOptionContainer

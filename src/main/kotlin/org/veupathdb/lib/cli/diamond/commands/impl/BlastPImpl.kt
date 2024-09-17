@@ -16,7 +16,6 @@ import org.veupathdb.lib.cli.diamond.util.customFlag
 import org.veupathdb.lib.cli.diamond.util.listFlag
 import java.nio.file.Path
 
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class BlastPImpl : BlastP {
   // region GeneralOptionContainer
 

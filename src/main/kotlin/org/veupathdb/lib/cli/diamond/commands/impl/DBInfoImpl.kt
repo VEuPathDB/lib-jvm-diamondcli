@@ -9,7 +9,6 @@ import org.veupathdb.lib.cli.diamond.commands.DBInfo
 import org.veupathdb.lib.cli.diamond.opts.fields.*
 import org.veupathdb.lib.cli.diamond.util.customFlag
 
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class DBInfoImpl : DBInfo {
   // region GeneralOptionContainer
 

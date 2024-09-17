@@ -11,7 +11,6 @@ import org.veupathdb.lib.cli.diamond.opts.fields.output_format.OutFormatFormatte
 import org.veupathdb.lib.cli.diamond.opts.fields.output_format.OutputFormatOptions
 import org.veupathdb.lib.cli.diamond.util.customFlag
 
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class ViewImpl : View {
   // region View
 

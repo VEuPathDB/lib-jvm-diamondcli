@@ -17,11 +17,14 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.BlastXImpl
 import org.veupathdb.lib.cli.diamond.opts.*
 
 @CliCommand(Command, SubCommands.BlastX)
+@JsonDeserialize(`as` = BlastXImpl::class)
 interface BlastX
   : DiamondCommandConfig
   , GeneralOptionContainer

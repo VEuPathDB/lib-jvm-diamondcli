@@ -19,14 +19,17 @@ package org.veupathdb.lib.cli.diamond.commands
 
 import com.fasterxml.jackson.annotation.JsonGetter
 import com.fasterxml.jackson.annotation.JsonSetter
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import io.foxcapades.lib.cli.builder.flag.CliFlag
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.GreedyVortexCoverImpl
 import org.veupathdb.lib.cli.diamond.opts.*
 import org.veupathdb.lib.cli.diamond.opts.fields.EdgeFormat
 import java.nio.file.Path
 
 @CliCommand(Command, SubCommands.GreedyVortexCover)
+@JsonDeserialize(`as` = GreedyVortexCoverImpl::class)
 interface GreedyVortexCover
   : DiamondCommandConfig
   , GeneralOptionContainer

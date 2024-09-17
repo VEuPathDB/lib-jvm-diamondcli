@@ -10,7 +10,6 @@ import org.veupathdb.lib.cli.diamond.opts.fields.*
 import org.veupathdb.lib.cli.diamond.opts.fields.HeaderOptionFormatter
 import org.veupathdb.lib.cli.diamond.util.customFlag
 
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class DeepClusteringImpl : DeepClustering {
   // region GeneralOptionContainer
 

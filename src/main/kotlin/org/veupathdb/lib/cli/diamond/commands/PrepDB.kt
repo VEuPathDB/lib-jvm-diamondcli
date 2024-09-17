@@ -17,13 +17,16 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.PrepDBImpl
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.PrepDB)
+@JsonDeserialize(`as` = PrepDBImpl::class)
 interface PrepDB : DiamondCommandConfig, GeneralOptionContainer, GeneralDBOptionContainer, HiddenOptionContainer {
   override val tool: DiamondCommand
     get() = DiamondCommand.PrepDB

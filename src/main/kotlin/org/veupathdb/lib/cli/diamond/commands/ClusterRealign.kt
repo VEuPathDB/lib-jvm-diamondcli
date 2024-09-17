@@ -17,12 +17,14 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.opts.*
 
 // CLUSTER_REALIGN
 @CliCommand(Command, SubCommands.ClusterRealign)
+@JsonDeserialize(`as` = ClusterRealign::class)
 interface ClusterRealign
   : DiamondCommandConfig
   , GeneralOptionContainer

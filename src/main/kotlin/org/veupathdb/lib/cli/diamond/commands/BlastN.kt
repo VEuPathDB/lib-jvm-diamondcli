@@ -17,9 +17,11 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
 import org.veupathdb.lib.cli.diamond.DiamondExtras
+import org.veupathdb.lib.cli.diamond.commands.impl.BlastNImpl
 import org.veupathdb.lib.cli.diamond.opts.AdvancedClusteringAlignmentOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.AdvancedGeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.AdvancedQueryOptionContainer
@@ -27,6 +29,7 @@ import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @DiamondExtras
 @CliCommand(Command, SubCommands.BlastN)
+@JsonDeserialize(`as` = BlastNImpl::class)
 interface BlastN
   : DiamondCommandConfig
   , AdvancedGeneralOptionContainer

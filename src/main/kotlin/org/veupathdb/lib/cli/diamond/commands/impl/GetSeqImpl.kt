@@ -9,7 +9,6 @@ import org.veupathdb.lib.cli.diamond.commands.GetSeq
 import org.veupathdb.lib.cli.diamond.opts.fields.*
 import org.veupathdb.lib.cli.diamond.util.customFlag
 
-@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class GetSeqImpl : GetSeq {
   // region GetSeq
 

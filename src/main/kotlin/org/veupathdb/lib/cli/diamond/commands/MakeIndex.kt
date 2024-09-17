@@ -17,14 +17,17 @@
 
 package org.veupathdb.lib.cli.diamond.commands
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.command.CliCommand
 import org.veupathdb.lib.cli.diamond.DiamondCommand
+import org.veupathdb.lib.cli.diamond.commands.impl.MakeIndexImpl
 import org.veupathdb.lib.cli.diamond.opts.AlignerSensitivityOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralDBOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.GeneralOptionContainer
 import org.veupathdb.lib.cli.diamond.opts.HiddenOptionContainer
 
 @CliCommand(Command, SubCommands.MakeIndex)
+@JsonDeserialize(`as` = MakeIndexImpl::class)
 interface MakeIndex
   : DiamondCommandConfig
   , GeneralOptionContainer
