@@ -1,5 +1,7 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.arg.filter.ArgumentPredicate
 import io.foxcapades.lib.cli.builder.arg.format.ArgumentFormatter
 import io.foxcapades.lib.cli.builder.arg.format.BooleanFormat
@@ -14,6 +16,7 @@ import org.veupathdb.lib.cli.diamond.util.customFlag
 import org.veupathdb.lib.cli.diamond.util.listFlag
 import java.nio.file.Path
 
+@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class BlastXImpl : BlastX {
   // region GeneralOptionContainer
 

@@ -1,5 +1,7 @@
 package org.veupathdb.lib.cli.diamond.commands.impl
 
+import com.fasterxml.jackson.databind.JsonDeserializer
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize
 import io.foxcapades.lib.cli.builder.arg.filter.ArgumentPredicate
 import io.foxcapades.lib.cli.builder.flag.*
 import org.veupathdb.lib.cli.diamond.DiamondHidden
@@ -8,6 +10,7 @@ import org.veupathdb.lib.cli.diamond.opts.fields.*
 import org.veupathdb.lib.cli.diamond.util.DefaultableProperty
 import org.veupathdb.lib.cli.diamond.util.customFlag
 
+@JsonDeserialize(using = JsonDeserializer.None::class)
 internal class MakeIndexImpl : MakeIndex {
   // region GeneralOptionContainer
 

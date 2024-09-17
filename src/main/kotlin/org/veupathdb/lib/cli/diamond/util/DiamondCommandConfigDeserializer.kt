@@ -14,7 +14,7 @@ import org.veupathdb.lib.jackson.Json
 
 internal class DiamondCommandConfigDeserializer : JsonDeserializer<DiamondCommandConfig>() {
   override fun deserialize(p: JsonParser, ctxt: DeserializationContext): DiamondCommandConfig {
-    val obj = p.readValueAs(ObjectNode::class.java)
+    val obj = ctxt.readValue(p, ObjectNode::class.java)
 
     if ("tool" !in obj)
       throw JsonMappingException(
@@ -23,8 +23,8 @@ internal class DiamondCommandConfigDeserializer : JsonDeserializer<DiamondComman
       )
 
     return when (DiamondCommand.fromJson(obj["tool"])) {
-      DiamondCommand.BlastP -> Json.Mapper.updateValue(BlastPImpl(), obj)
-      DiamondCommand.BlastX -> Json.Mapper.updateValue(BlastXImpl(), obj)
+      DiamondCommand.BlastP -> Json.parse<BlastPImpl>(obj)
+      DiamondCommand.BlastX -> Json.parse<BlastXImpl>(obj)
       else -> TODO("unsupported type")
     }
   }
