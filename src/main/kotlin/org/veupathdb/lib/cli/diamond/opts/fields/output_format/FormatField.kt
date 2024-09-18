@@ -29,27 +29,27 @@ enum class FormatField(
   // 7 means Subject GI
   SubjectGI("sgi", "subject-gi"),
   // 8 means All subject GIs
-  AllSubjectGIs("sallgi", "allSubjectGIs"),
+  AllSubjectGIs("sallgi", "all-subject-gis"),
   // 9 means Subject accession
-  SubjectAccesion("sacc", "subjectAccesion"),
+  SubjectAccesion("sacc", "subject-accesion"),
   // 10 means Subject accession.version
-  SubjectAccesionVersion("saccver", "subjectAccesionVersion"),
+  SubjectAccesionVersion("saccver", "subject-accesion-version"),
   // 11 means All subject accessions
-  AllSubjectAccesions("sallacc", "allSubjectAccesions"),
+  AllSubjectAccesions("sallacc", "all-subject-accesions"),
   // 12 means Subject sequence length
-  SubjectSequenceLength("slen", "subjectSequenceLength"),
+  SubjectSequenceLength("slen", "subject-sequence-length"),
   // 13 means Start of alignment in query
-  QueryAlignmentStart("qstart", "queryAlignmentStart"),
+  QueryAlignmentStart("qstart", "query-alignment-start"),
   // 14 means End of alignment in query
-  QueryAlignmentEnd("qend", "queryAlignmentEnd"),
+  QueryAlignmentEnd("qend", "query-alignment-end"),
   // 15 means Start of alignment in subject
-  SubjectAlignmentStart("sstart", "subjectAlignmentStart"),
+  SubjectAlignmentStart("sstart", "subject-alignment-start"),
   // 16 means End of alignment in subject
-  SubjectAlignmentEnd("send", "subjectAlignmentEnd"),
+  SubjectAlignmentEnd("send", "subject-alignment-end"),
   // 17 means Aligned part of query sequence
-  AlignedQuerySequence("qseq", "alignedQuerySequence"),
+  AlignedQuerySequence("qseq", "aligned-query-sequence"),
   // 18 means Aligned part of subject sequence
-  AlignedSubjectSequence("sseq", "alignedSubjectSequence"),
+  AlignedSubjectSequence("sseq", "aligned-subject-sequence"),
   // 19 means Expect value
   ExpectValue("evalue", "expect-value"),
   // 20 means Bit score
@@ -91,7 +91,7 @@ enum class FormatField(
   // 38 means unique Subject Super Kingdom(s), separated by a ';'	(in alphabetical order)
   SubjectSuperKingdoms("sskingdoms", "subject-super-kingdoms"),
   // 39 means Subject Title
-  SubjectTitle("stitle", "subjectTitle"),
+  SubjectTitle("stitle", "subject-title"),
   // 40 means All Subject Title(s), separated by a '<>'
   AllSubjectTitles("salltitles", "all-subject-titles"),
   // 41 means Subject Strand
@@ -168,7 +168,6 @@ enum class FormatField(
   SubjectLineages("slineages", "subject-lineages"),
   ;
 
-  @JsonValue
   override fun toString() = cliValue
 
   companion object {
